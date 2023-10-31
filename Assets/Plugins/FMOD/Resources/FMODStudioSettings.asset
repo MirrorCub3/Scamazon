@@ -417,8 +417,8 @@ MonoBehaviour:
   switchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: ../Users/kal20/OneDrive/Documents/Scamazon/Scamazon.fspro
-  sourceBankPath: ../Users/kal20/OneDrive/Documents/Scamazon/Build
+  sourceProjectPath: ../Users/kal20/OneDrive/Desktop/ScamazonFMOD/Scamazon.fspro
+  sourceBankPath: ../Users/kal20/OneDrive/Desktop/ScamazonFMOD/Build
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
