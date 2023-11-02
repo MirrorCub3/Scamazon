@@ -34,15 +34,18 @@ public class Conveyor : MonoBehaviour
 
         foreach (GameObject o in objectPool)
             objectPool_offList.Add(o);
-        
-        StartCoroutine(spawnItem());
     }
 
     private void Update()
     {
+        // Things are always "moving" but sometimes the speed is 0
         moveItems();
+
+        // If its off and things are moving, gradually bring it to a stop
         if(!machineOn && speed != 0)
             speed = Mathf.SmoothDamp(speed, 0, ref velocitySP, smoothTime);
+        
+        // If its on and its not at max speed, start spawning stuff if it's not already, gradually speed up the movement and spawnrate
         if (machineOn && speed != maxSpeed) {
             if (!running) {
                 timeBetweenSpawn = 2f;
@@ -54,24 +57,26 @@ public class Conveyor : MonoBehaviour
 
     }
 
-    public void addOffObject(GameObject go)
+    // If obj is in the objectPool, disable it and add it to the offList
+    public void addOffObject(GameObject obj)
     {
-        if (objectPool.Contains(go)) {
-            go.SetActive(false);
-            objectPool_offList.Add(go);
+        if (objectPool.Contains(obj)) {
+            obj.SetActive(false);
+            objectPool_offList.Add(obj);
         }
     }
 
+    // Move everything in contact with the conveyor
     private void OnCollisionEnter(Collision collision)
     {
         objectsToMove.Add(collision.gameObject);
     }
-
     private void OnCollisionExit(Collision collision)
     {
         objectsToMove.Remove(collision.gameObject);
     }
 
+    // Sets machineOn boolean in a more reader friendly way
     public void startConveyor()
     {
         machineOn = true;
@@ -81,6 +86,7 @@ public class Conveyor : MonoBehaviour
         machineOn = false;
     }
 
+    // Moves and activates objects based on the available options every few seconds
     private IEnumerator spawnItem()
     {
         while (machineOn) {
@@ -96,6 +102,7 @@ public class Conveyor : MonoBehaviour
         running = false;
     }
 
+    // Moves all items in contact
     private void moveItems()
     {
         foreach (GameObject o in objectsToMove)
