@@ -24,7 +24,6 @@ public class Conveyor : MonoBehaviour
         foreach (GameObject o in objectPool)
             objectPool_offList.Add(o);
         
-        startConveyor();
         StartCoroutine(spawnItem());
     }
 
