@@ -4,8 +4,15 @@ using UnityEngine;
 
 public class ObjectExit : MonoBehaviour
 {
+    [SerializeField] private GameObject cv;
+    private Conveyor conveyor;
+    private void Start()
+    {
+        conveyor = cv.GetComponent<Conveyor>();
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
-        collision.gameObject.SetActive(false);
+        conveyor.addOffObject(collision.gameObject);
     }
 }

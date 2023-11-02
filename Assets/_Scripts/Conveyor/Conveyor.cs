@@ -4,30 +4,45 @@ using UnityEngine;
 
 public class Conveyor : MonoBehaviour
 {
-    [SerializeField] private GameObject[] objectPool;
+    [SerializeField] private List<GameObject> objectPool;
     [SerializeField] private GameObject objSpawnLocation;
     [SerializeField] private float timeBetweenSpawn = 1f; // Test number for now 
     private float speed = -0.01f; // Test number for now
     private const int ObjectAmount = 25;
+    [SerializeField] private bool machineOn;
+
+    private List<GameObject> objectPool_offList;
     private List<GameObject> objectsToMove;
     private Vector3 spawnLocation;
 
     void Start()
     {
+        machineOn = false;
         objectsToMove = new List<GameObject>(ObjectAmount);
+        objectPool_offList = new List<GameObject>(objectPool.Count);
         spawnLocation = objSpawnLocation.transform.position;
+        foreach (GameObject o in objectPool)
+            objectPool_offList.Add(o);
+        
+        startConveyor();
+        StartCoroutine(spawnItem());
     }
 
-    
-    void Update()
+    private void Update()
     {
-        //spawnItem();
         moveItems();
+    }
+
+    public void addOffObject(GameObject go)
+    {
+        if (objectPool.Contains(go)) {
+            go.SetActive(false);
+            objectPool_offList.Add(go);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        print("added");
         objectsToMove.Add(collision.gameObject);
     }
 
@@ -38,20 +53,24 @@ public class Conveyor : MonoBehaviour
 
     public void startConveyor()
     {
-
+        machineOn = true;
     }
     public void stopConveyor()
     {
-
+        machineOn = false;
     }
 
     private IEnumerator spawnItem()
     {
-        
-        //Random rand = new Random();
-        //int index = rand.Next(0, objectPool.Length);
-        // move then activate objectPool[index]
-        yield return new WaitForSeconds(timeBetweenSpawn);
+        while (machineOn) {
+            if (objectPool_offList.Count > 0) {
+                int index = Random.Range(0, objectPool_offList.Count);
+                objectPool_offList[index].transform.position = spawnLocation;
+                objectPool_offList[index].SetActive(true);
+                objectPool_offList.RemoveAt(index);
+            }
+            yield return new WaitForSeconds(timeBetweenSpawn);
+        }
     }
 
     private void moveItems()
