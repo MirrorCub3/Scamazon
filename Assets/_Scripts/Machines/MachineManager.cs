@@ -11,23 +11,26 @@ public class MachineManager : MonoBehaviour
         public Transform UpPosition;
         public Transform DownPosition;
         public BaseMachine machine;
+        public BaseMachine swapMachine;
         public MachineType type;
         public float moveDuration;
         public bool hasMovedUp;
         public bool hasBeenSwapped;
-        public BaseMachine swapMachine;
+        public BaseMachine activeMachine;
     }
 
     [SerializeField]
     private List<MachineInfo> machines;
 
-    private Dictionary<MachineType, MachineInfo> machinesDict;
+    private Dictionary<MachineType, MachineInfo> machinesDict = new Dictionary<MachineType, MachineInfo>();
 
     private bool machinesHaveMovedUp = false;
 
     [Header("Testing Variables")]
     public bool testing;
-    public float time;
+    public float moveUpTime;
+    public float executeTime;
+    public float swapMachineTime;
 
     private void Awake()
     {
@@ -35,9 +38,9 @@ public class MachineManager : MonoBehaviour
         {
             try
             {
-                BaseMachine machineTemp =  Instantiate(machine.machine, machine.DownPosition);
+                machine.activeMachine =  Instantiate(machine.machine, machine.DownPosition);
                 machinesDict.Add(machine.type, machine);
-                machineTemp.SetUpMachine(machine.type, this);
+                machine.activeMachine.SetUpMachine(machine.type, this);
             }
 
             catch
@@ -47,24 +50,32 @@ public class MachineManager : MonoBehaviour
             }
         }
 
+
+        if (!testing) return;
+
         StartCoroutine(IMoveMachines(true));
+        StartCoroutine(IExecuteMachines());
+        StartCoroutine(IMachineSwap());
+        StartCoroutine(IExecuteMachine(MachineType.Packaging, executeTime + 5));
     }
 
-    public void MachineSwap(MachineType type)
+    public void MachineSwap(MachineType type, float time = 0)
     {
         MachineInfo info = machinesDict[type];
-        info.machine.SwapMachine();
+        info.activeMachine.SwapMachine(time);
+        info.hasBeenSwapped = true;
     }
 
-    public void MoveMachineSwap(MachineType type, BaseMachine machine)
+    public void MoveMachineSwap(MachineType type)
     { 
         MachineInfo info = machinesDict[type];
-        BaseMachine new_machine = info.hasBeenSwapped ? info.machine : info.swapMachine;
         Transform target = info.hasMovedUp ? info.DownPosition : info.UpPosition;
-        new_machine = Instantiate(new_machine, target);
-        new_machine.SetUpMachine(type, this);
-        new_machine.MoveSwapMachine(info.UpPosition, info.moveDuration);
-        Destroy(machine);
+        info.activeMachine.MoveSwapMachine(target, info.moveDuration);
+        info.activeMachine = info.hasBeenSwapped ? info.machine : info.swapMachine;
+        info.activeMachine = Instantiate(info.activeMachine, target);
+        info.activeMachine.SetUpMachine(type, this);
+        info.activeMachine.MoveSwapMachine(info.UpPosition, info.moveDuration);
+        info.hasBeenSwapped = true;
     }
 
     public void MoveMachinesUp()
@@ -85,18 +96,30 @@ public class MachineManager : MonoBehaviour
     {
         if (!machinesDict[type].hasMovedUp)
         {
-            Debug.LogWarning($"Machine, {type}, have moved down. Can't move them down again");
+            Debug.LogWarning($"Machine, {type}, have moved down. Can't move it down again");
             return;
         }
 
         InternalMoveMachine(type, machinesDict[type].DownPosition, false);
     }
 
+    public void ExecuteAllMachines()
+    {
+        foreach (MachineInfo info in machinesDict.Values)
+            if (info.activeMachine != null)
+                info.activeMachine.ExecuteMachine();
+    }
+
+    public void ExecuteMachine(MachineType type, float executeDelay = 0f)
+    {
+        StartCoroutine(IExecuteMachine(type, executeDelay));
+    }
+
     public void MoveMachineUp(MachineType type)
     {
         if (machinesDict[type].hasMovedUp)
         {
-            Debug.LogWarning($"Machine, {type}, have moved up. Can't move them up again");
+            Debug.LogWarning($"Machine, {type}, have moved up. Can't move it up again");
             return;
         }
 
@@ -121,17 +144,37 @@ public class MachineManager : MonoBehaviour
     public void InternalMoveMachine(MachineType type, Transform target, bool WasMovedUp)
     {
         MachineInfo info = machinesDict[type];
-        info.machine.MoveMachine(target, info.moveDuration);
+        info.activeMachine.MoveMachine(target, info.moveDuration);
         info.hasMovedUp = WasMovedUp;
     }
 
     private IEnumerator IMoveMachines(bool moveUp)
     {
-        yield return new WaitForSeconds(time);
+        yield return new WaitForSeconds(moveUpTime);
         if (moveUp)
             MoveMachinesUp();
         else 
             MoveMachinesDown();
+    }
+
+    //Testing Purposes Methods
+    private IEnumerator IExecuteMachines()
+    { 
+        yield return new WaitForSeconds(executeTime);
+        ExecuteAllMachines();       
+    }
+
+    private IEnumerator IExecuteMachine(MachineType type, float executeDelay = 0f)
+    { 
+        yield return new WaitForSeconds(executeDelay);
+        machinesDict[type].activeMachine.ExecuteMachine();
+    }
+
+
+    private IEnumerator IMachineSwap()
+    {
+        yield return new WaitForSeconds(swapMachineTime);
+        MoveMachineSwap(MachineType.Packaging);
     }
 }
 

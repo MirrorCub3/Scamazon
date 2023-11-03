@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PackagingMachine : BaseMachine
 {
-    protected override void ExecuteMachine()
+    public override void ExecuteMachine()
     {
         Debug.Log("Executing Packaging Machine!!! Yay!!");
     }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ShippingMachine : BaseMachine
 {
-    protected override void ExecuteMachine()
+    public override void ExecuteMachine()
     {
         Debug.Log("Executing Shipping Machine!!! Yay!!");
     }

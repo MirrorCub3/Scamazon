@@ -10,7 +10,7 @@ public abstract class BaseMachine : MonoBehaviour
     protected MachineManager machineManager;
     protected MachineType machineType;
 
-    protected abstract void ExecuteMachine();
+    public abstract void ExecuteMachine();
 
     public virtual void SetUpMachine(MachineType type, MachineManager machineManager)
     { 
@@ -18,12 +18,10 @@ public abstract class BaseMachine : MonoBehaviour
         this.machineManager = machineManager;
     }
 
-    public virtual void MoveSwapMachine(Transform target, float moveDuration, float delaySwap = 0f)
+    public virtual void MoveSwapMachine(Transform target, float moveDuration)
     {
         MoveMachine(target, moveDuration);
-        if (delaySwap <= 0f)
-            delaySwap = moveDuration;
-        SwapMachine();
+        StartCoroutine(WaitToDestroy(moveDuration));
     }
 
     public virtual void SwapMachine(float delaySwap = 0f)
@@ -42,4 +40,9 @@ public abstract class BaseMachine : MonoBehaviour
         ExecuteMachine();
     }
 
+    private IEnumerator WaitToDestroy(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        Destroy(this);
+    }
 }
