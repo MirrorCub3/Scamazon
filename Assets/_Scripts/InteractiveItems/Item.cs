@@ -50,7 +50,7 @@ public class Item : MonoBehaviour
         OnDropped();
     }
 
-    private void OnTriggerEnter(Collider other) // use for dropping items on the ground
+    protected virtual void OnTriggerEnter(Collider other) // use for dropping items on the ground
     {
         if (other.tag.Equals("Despawn") && reactToDrop)
         {
@@ -59,7 +59,7 @@ public class Item : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    protected virtual void OnTriggerExit(Collider other)
     {
         if (other.tag.Equals("Despawn") && reactToDrop)
         {

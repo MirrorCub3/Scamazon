@@ -14,7 +14,9 @@ public class Wrapper : MonoBehaviour
 
     [Header("Wrapping")]
     [SerializeField]
-    private float wrappingThickness = 1.5f;
+    private Vector3 wrappingThickness = Vector3.one * 1.2f;
+    [SerializeField]
+    private Vector3 wrapOffset = Vector3.zero;
 
     [SerializeField]
     private Mesh preferredMesh;
@@ -37,7 +39,8 @@ public class Wrapper : MonoBehaviour
         // creating hthe wrapping and setting as a child
         wrapping = new GameObject("Wrapping");
         wrapping.transform.SetParent(transform, false);
-        wrapping.transform.localScale = Vector3.one * wrappingThickness; // setting the scale to be 2x the parent's
+        wrapping.transform.localPosition = wrapOffset;
+        wrapping.transform.localScale = wrappingThickness; // setting the scale to be 2x the parent's
 
         //adding mesh rendering components
         wrappingMeshFilter = wrapping.AddComponent<MeshFilter>();

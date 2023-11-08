@@ -33,7 +33,7 @@ Material:
   - _MK_LIGHT_BANDED
   - _MK_RECEIVE_SHADOWS
   - _MK_SURFACE_TYPE_TRANSPARENT
-  - _MK_VERTEX_ANIMATION_NOISE
+  - _MK_VERTEX_ANIMATION_STUTTER
   - _MK_WORKFLOW_ROUGHNESS
   - _MK_WRAPPED_DIFFUSE
   m_InvalidKeywords:
@@ -41,6 +41,7 @@ Material:
   - _MK_OUTLINE_HULL_CLIP
   - _RECEIVESHADOWS_ON
   - _SPECULARHIGHLIGHTS_OFF
+  - _VERTEXANIMATIONSTUTTER_ON
   - _WRAPPEDLIGHTING_ON
   m_LightmapFlags: 6
   m_EnableInstancingVariants: 0
@@ -268,7 +269,7 @@ Material:
     - _IndexOfRefraction: 0
     - _IndirectFade: 1
     - _Initialized: 0
-    - _InputTab: 1
+    - _InputTab: 0
     - _Iridescence: 0
     - _IridescenceSize: 1
     - _IridescenceSmoothness: 0.5
@@ -286,7 +287,7 @@ Material:
     - _NormalMapIntensity: 1
     - _OcclusionMapIntensity: 1
     - _OcclusionStrength: 1
-    - _OptionsTab: 0
+    - _OptionsTab: 1
     - _Outline: 3
     - _OutlineData: 0
     - _OutlineFadeMax: 2
@@ -330,9 +331,9 @@ Material:
     - _StylizeTab: 1
     - _Surface: 1
     - _ThresholdMapScale: 1
-    - _VertexAnimation: 3
+    - _VertexAnimation: 0
     - _VertexAnimationIntensity: 0.05
-    - _VertexAnimationStutter: 0
+    - _VertexAnimationStutter: 1
     - _Workflow: 2
     - _WorkflowMode: 1
     - _WrappedLighting: 1
@@ -355,5 +356,5 @@ Material:
     - _RimDarkColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.50735295, g: 0.50735295, b: 0.50735295, a: 1}
     - _SpecularColor: {r: 0.50735295, g: 0.50735295, b: 0.50735295, a: 1}
-    - _VertexAnimationFrequency: {r: 9, g: 9, b: 9, a: 0}
+    - _VertexAnimationFrequency: {r: 2, g: 2, b: 2, a: 0}
   m_BuildTextureStacks: []

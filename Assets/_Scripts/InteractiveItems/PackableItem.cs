@@ -15,9 +15,11 @@ public class PackableItem : Item
          IsWrapped = false;
     }
 
-    private void OnTriggerEnter(Collider other)
+    protected override void OnTriggerEnter(Collider other)
     {
-        if (other.tag.Equals("Wrapping"))
+        base.OnTriggerEnter(other);
+
+        if (other.tag.Equals("Wrapping")/* && !IsWrapped*/) 
         {
             IsWrapped = true;
             myWrapper.Wrap(other.GetComponent<WrappingMaterial>().GetWrappingMat());
