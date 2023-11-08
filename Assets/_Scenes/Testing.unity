@@ -21760,84 +21760,14 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3738849354117071030, guid: 65f4a8989257b2a4081ebfb77649a0dd,
         type: 3}
-      propertyPath: m_Value
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3738849354117071030, guid: 65f4a8989257b2a4081ebfb77649a0dd,
-        type: 3}
-      propertyPath: m_MaxAngle
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 3738849354117071030, guid: 65f4a8989257b2a4081ebfb77649a0dd,
-        type: 3}
-      propertyPath: m_OnLeverActivate.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3738849354117071030, guid: 65f4a8989257b2a4081ebfb77649a0dd,
-        type: 3}
-      propertyPath: m_OnLeverDeactivate.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3738849354117071030, guid: 65f4a8989257b2a4081ebfb77649a0dd,
-        type: 3}
-      propertyPath: m_OnLeverActivate.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3738849354117071030, guid: 65f4a8989257b2a4081ebfb77649a0dd,
-        type: 3}
       propertyPath: m_OnLeverActivate.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1824029366}
     - target: {fileID: 3738849354117071030, guid: 65f4a8989257b2a4081ebfb77649a0dd,
         type: 3}
-      propertyPath: m_OnLeverDeactivate.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3738849354117071030, guid: 65f4a8989257b2a4081ebfb77649a0dd,
-        type: 3}
       propertyPath: m_OnLeverDeactivate.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1824029366}
-    - target: {fileID: 3738849354117071030, guid: 65f4a8989257b2a4081ebfb77649a0dd,
-        type: 3}
-      propertyPath: m_OnLeverActivate.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3738849354117071030, guid: 65f4a8989257b2a4081ebfb77649a0dd,
-        type: 3}
-      propertyPath: m_OnLeverActivate.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: startConveyor
-      objectReference: {fileID: 0}
-    - target: {fileID: 3738849354117071030, guid: 65f4a8989257b2a4081ebfb77649a0dd,
-        type: 3}
-      propertyPath: m_OnLeverDeactivate.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3738849354117071030, guid: 65f4a8989257b2a4081ebfb77649a0dd,
-        type: 3}
-      propertyPath: m_OnLeverDeactivate.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: stopConveyor
-      objectReference: {fileID: 0}
-    - target: {fileID: 3738849354117071030, guid: 65f4a8989257b2a4081ebfb77649a0dd,
-        type: 3}
-      propertyPath: m_OnLeverActivate.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Conveyor, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 3738849354117071030, guid: 65f4a8989257b2a4081ebfb77649a0dd,
-        type: 3}
-      propertyPath: m_OnLeverDeactivate.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Conveyor, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 3738849354117071030, guid: 65f4a8989257b2a4081ebfb77649a0dd,
-        type: 3}
-      propertyPath: m_OnLeverActivate.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 3738849354117071030, guid: 65f4a8989257b2a4081ebfb77649a0dd,
-        type: 3}
-      propertyPath: m_OnLeverDeactivate.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 4502461713103691678, guid: 65f4a8989257b2a4081ebfb77649a0dd,
         type: 3}
       propertyPath: m_Mesh
@@ -21847,16 +21777,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 19
-      objectReference: {fileID: 0}
-    - target: {fileID: 4863304365185301872, guid: 65f4a8989257b2a4081ebfb77649a0dd,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4863304365185301872, guid: 65f4a8989257b2a4081ebfb77649a0dd,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4863304365185301872, guid: 65f4a8989257b2a4081ebfb77649a0dd,
         type: 3}
@@ -21917,36 +21837,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lever
-      objectReference: {fileID: 0}
-    - target: {fileID: 6093915596914000658, guid: 65f4a8989257b2a4081ebfb77649a0dd,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 31102675a8066af48bf42974b353be10, type: 2}
-    - target: {fileID: 6481329591451230207, guid: 65f4a8989257b2a4081ebfb77649a0dd,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9063078
-      objectReference: {fileID: 0}
-    - target: {fileID: 6481329591451230207, guid: 65f4a8989257b2a4081ebfb77649a0dd,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.4226183
-      objectReference: {fileID: 0}
-    - target: {fileID: 6481329591451230207, guid: 65f4a8989257b2a4081ebfb77649a0dd,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -50
-      objectReference: {fileID: 0}
-    - target: {fileID: 6481329591451230207, guid: 65f4a8989257b2a4081ebfb77649a0dd,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6481329591451230207, guid: 65f4a8989257b2a4081ebfb77649a0dd,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
