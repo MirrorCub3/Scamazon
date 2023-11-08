@@ -5,7 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Despawn
-  - Packing
+  - Wrapping
   layers:
   - Default
   - TransparentFX
