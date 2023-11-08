@@ -19,7 +19,7 @@ public class PackableItem : Item
     {
         base.OnTriggerEnter(other);
 
-        if (other.tag.Equals("Wrapping")/* && !IsWrapped*/) 
+        if (other.tag.Equals("Wrapping") && !IsWrapped) 
         {
             IsWrapped = true;
             myWrapper.Wrap(other.GetComponent<WrappingMaterial>().GetWrappingMat());

@@ -33,7 +33,6 @@ Material:
   - _MK_LIGHT_BANDED
   - _MK_RECEIVE_SHADOWS
   - _MK_SURFACE_TYPE_TRANSPARENT
-  - _MK_VERTEX_ANIMATION_STUTTER
   - _MK_WORKFLOW_ROUGHNESS
   - _MK_WRAPPED_DIFFUSE
   m_InvalidKeywords:
@@ -41,7 +40,6 @@ Material:
   - _MK_OUTLINE_HULL_CLIP
   - _RECEIVESHADOWS_ON
   - _SPECULARHIGHLIGHTS_OFF
-  - _VERTEXANIMATIONSTUTTER_ON
   - _WRAPPEDLIGHTING_ON
   m_LightmapFlags: 6
   m_EnableInstancingVariants: 0
@@ -287,7 +285,7 @@ Material:
     - _NormalMapIntensity: 1
     - _OcclusionMapIntensity: 1
     - _OcclusionStrength: 1
-    - _OptionsTab: 1
+    - _OptionsTab: 0
     - _Outline: 3
     - _OutlineData: 0
     - _OutlineFadeMax: 2
@@ -328,12 +326,12 @@ Material:
     - _StencilRef: 0
     - _StencilWriteMask: 255
     - _StencilZFail: 0
-    - _StylizeTab: 1
+    - _StylizeTab: 0
     - _Surface: 1
     - _ThresholdMapScale: 1
     - _VertexAnimation: 0
     - _VertexAnimationIntensity: 0.05
-    - _VertexAnimationStutter: 1
+    - _VertexAnimationStutter: 0
     - _Workflow: 2
     - _WorkflowMode: 1
     - _WrappedLighting: 1
