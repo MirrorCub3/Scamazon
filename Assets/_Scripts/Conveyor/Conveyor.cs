@@ -14,8 +14,11 @@ public class Conveyor : MonoBehaviour
     private List<GameObject> objectsToMove;
     private Vector3 spawnLocation;
 
-    private const float maxTimeBetweenSpawn = 1f;
-    private const float maxSpeed = -0.01f;
+    [SerializeField] private float maxTimeBetweenSpawn;
+    [SerializeField] private float maxSpeed;
+
+    private const float maxFastSpawn = 0.75f; // Test value (WIP)
+    private const float maxFastSpeed = -3f; // Test Value
 
     private float timeBetweenSpawn;
     private float speed;
@@ -28,6 +31,7 @@ public class Conveyor : MonoBehaviour
         machineOn = false;
         running = false;
         speed = 0;
+
         objectsToMove = new List<GameObject>(ObjectAmount);
         objectPool_offList = new List<GameObject>(objectPool.Count);
         spawnLocation = objSpawnLocation.transform.position;
@@ -106,6 +110,6 @@ public class Conveyor : MonoBehaviour
     private void moveItems()
     {
         foreach (GameObject o in objectsToMove)
-            o.transform.position = o.transform.position + new Vector3(0, 0, speed);
+            o.transform.position = o.transform.position + new Vector3(0, 0, speed) * Time.deltaTime;
     }
 }
