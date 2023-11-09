@@ -1269,16 +1269,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8003492185008794451, guid: a79c55ee20451534a8127ca808b3315f,
         type: 3}
-      propertyPath: timeBetweenSpawn
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8003492185008794451, guid: a79c55ee20451534a8127ca808b3315f,
-        type: 3}
-      propertyPath: objectPool.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8003492185008794451, guid: a79c55ee20451534a8127ca808b3315f,
-        type: 3}
       propertyPath: objectPool.Array.data[0]
       value: 
       objectReference: {fileID: 3738378}
