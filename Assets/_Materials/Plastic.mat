@@ -20,33 +20,36 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Yellow
-  m_Shader: {fileID: 4800000, guid: 7633a2fd8a3bed44791c9e952ff86e5d, type: 3}
+  m_Name: Plastic
+  m_Shader: {fileID: 4800000, guid: d99e0f389b1a84a4c8ac98863b78095b, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - _MK_ARTISTIC_ANIMATION_STUTTER
   - _MK_DETAIL_BLEND_MIX
+  - _MK_DIFFUSE_OREN_NAYAR
   - _MK_ENVIRONMENT_REFLECTIONS_AMBIENT
   - _MK_FRESNEL_HIGHLIGHTS
   - _MK_LIGHT_BANDED
-  - _MK_OUTLINE_HULL_CLIP
   - _MK_RECEIVE_SHADOWS
+  - _MK_SURFACE_TYPE_TRANSPARENT
   - _MK_WORKFLOW_ROUGHNESS
   - _MK_WRAPPED_DIFFUSE
   m_InvalidKeywords:
   - _FRESNELHIGHLIGHTS_ON
+  - _MK_OUTLINE_HULL_CLIP
   - _RECEIVESHADOWS_ON
   - _SPECULARHIGHLIGHTS_OFF
   - _WRAPPEDLIGHTING_ON
   m_LightmapFlags: 6
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2000
+  m_CustomRenderQueue: 3000
   stringTagMap:
-    IGNOREPROJECTOR: False
-    RenderType: Opaque
-  disabledShaderPasses: []
+    IGNOREPROJECTOR: true
+    RenderType: Transparent
+  disabledShaderPasses:
+  - SHADOWCASTER
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
@@ -213,7 +216,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AdvancedTab: 1
+    - _AdvancedTab: 0
     - _AlbedoMapIntensity: 1
     - _AlphaClip: 0
     - _AlphaClipping: 0
@@ -224,10 +227,10 @@ Material:
     - _ArtisticFrequency: 1
     - _ArtisticProjection: 0
     - _Blend: 0
-    - _BlendDst: 0
-    - _BlendDstAlpha: 0
+    - _BlendDst: 10
+    - _BlendDstAlpha: 10
     - _BlendModePreserveSpecular: 1
-    - _BlendSrc: 1
+    - _BlendSrc: 5
     - _BlendSrcAlpha: 1
     - _Brightness: 1
     - _BumpScale: 1
@@ -242,7 +245,7 @@ Material:
     - _DetailMix: 0.5
     - _DetailNormalMapIntensity: 1
     - _DetailNormalMapScale: 1
-    - _Diffuse: 0
+    - _Diffuse: 1
     - _DiffuseSmoothness: 0
     - _DiffuseThresholdOffset: 0.25
     - _Dissolve: 0
@@ -264,7 +267,7 @@ Material:
     - _IndexOfRefraction: 0
     - _IndirectFade: 1
     - _Initialized: 0
-    - _InputTab: 1
+    - _InputTab: 0
     - _Iridescence: 0
     - _IridescenceSize: 1
     - _IridescenceSmoothness: 0.5
@@ -290,11 +293,11 @@ Material:
     - _OutlineNoise: 0
     - _OutlineSize: 5
     - _OutlineTab: 1
-    - _Parallax: 0.02
+    - _Parallax: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _RefractionDistortion: 0.1
-    - _RefractionDistortionFade: 0.5
+    - _RefractionDistortionFade: 0
     - _RefractionDistortionMapScale: 1
     - _RefractionTab: 0
     - _RenderFace: 2
@@ -323,8 +326,8 @@ Material:
     - _StencilRef: 0
     - _StencilWriteMask: 255
     - _StencilZFail: 0
-    - _StylizeTab: 1
-    - _Surface: 0
+    - _StylizeTab: 0
+    - _Surface: 1
     - _ThresholdMapScale: 1
     - _VertexAnimation: 0
     - _VertexAnimationIntensity: 0.05
@@ -333,16 +336,16 @@ Material:
     - _WorkflowMode: 1
     - _WrappedLighting: 1
     - _ZTest: 4
-    - _ZWrite: 1
+    - _ZWrite: 0
     m_Colors:
-    - _AlbedoColor: {r: 1, g: 0.9296116, b: 0.14528298, a: 1}
+    - _AlbedoColor: {r: 0.5509434, g: 0.9956431, b: 1, a: 0.5568628}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 0.80784315}
-    - _Color: {r: 1, g: 0.92961156, b: 0.14528295, a: 1}
+    - _Color: {r: 0.5509434, g: 0.9956431, b: 1, a: 0.5568628}
     - _DetailColor: {r: 1, g: 1, b: 1, a: 1}
     - _DissolveBorderColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _GoochBrightColor: {r: 1, g: 1, b: 1, a: 1}
-    - _GoochDarkColor: {r: 0.4716981, g: 0.4716981, b: 0.4716981, a: 1}
+    - _GoochDarkColor: {r: 0, g: 0.29557982, b: 0.3018868, a: 1}
     - _IridescenceColor: {r: 1, g: 1, b: 1, a: 0.5}
     - _LightTransmissionColor: {r: 1, g: 0.65, b: 0, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
@@ -351,5 +354,5 @@ Material:
     - _RimDarkColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.50735295, g: 0.50735295, b: 0.50735295, a: 1}
     - _SpecularColor: {r: 0.50735295, g: 0.50735295, b: 0.50735295, a: 1}
-    - _VertexAnimationFrequency: {r: 2.5, g: 2.5, b: 2.5, a: 1}
+    - _VertexAnimationFrequency: {r: 2, g: 2, b: 2, a: 0}
   m_BuildTextureStacks: []
