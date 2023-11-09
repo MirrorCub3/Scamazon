@@ -17,6 +17,11 @@ public class Item : MonoBehaviour
     [SerializeField, Tooltip("Should item react when dropped")]
     private bool reactToDrop;
 
+    [SerializeField, ConditionalField("reactToDrop")]
+    private GameObject poofPrefab;
+    private GameObject poofParticle;
+    private ParticleSystem poofParticleSystem;
+
     [SerializeField, ConditionalField("reactToDrop"), Tooltip("The amount of time before the item triggers on drop response")]
     private float dropTime = 5f;
 
@@ -33,6 +38,13 @@ public class Item : MonoBehaviour
     {
         myGrabInteractable = GetComponent<XRGrabInteractable>();
         myGrabInteractable.useDynamicAttach = useDynamicAttach;
+
+        if (reactToDrop && poofPrefab) // set up the poof particle
+        {
+            poofParticle = Instantiate(poofPrefab, transform.position, Quaternion.Euler(90, 0, 0));
+            poofParticleSystem = poofParticle.GetComponent<ParticleSystem>();
+            poofParticleSystem.Stop();
+        }
     }
 
     protected virtual void OnDropped() // called when item has been on floor long enough
@@ -40,9 +52,18 @@ public class Item : MonoBehaviour
         print("oh no, ive been forgotten on the floor D:");
     }
 
+    protected void PlayPoof()
+    {
+        poofParticle.transform.position = transform.position;
+        poofParticleSystem.Play();
+    }
+
     private IEnumerator DropCountDown() // counts down for the drop response
     {
         yield return new WaitForSeconds(dropTime);
+
+        if (poofParticle)
+            PlayPoof();
 
         if (respawnOnDrop)
             transform.position = respawnPoint.position;
