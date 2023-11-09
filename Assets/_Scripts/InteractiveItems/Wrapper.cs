@@ -59,7 +59,7 @@ public class Wrapper : MonoBehaviour
             wrapping.transform.localScale = wrapScaling;
         //wrappingRenderer.material = plastic;
 
-        //Unwrap();
+        Unwrap();
     }
 
     private void ExpandMesh()
