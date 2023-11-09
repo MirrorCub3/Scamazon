@@ -38,6 +38,7 @@ public class Item : MonoBehaviour
     {
         myGrabInteractable = GetComponent<XRGrabInteractable>();
         myGrabInteractable.useDynamicAttach = useDynamicAttach;
+        myGrabInteractable.movementType = XRBaseInteractable.MovementType.VelocityTracking;
 
         if (reactToDrop && poofPrefab) // set up the poof particle
         {
