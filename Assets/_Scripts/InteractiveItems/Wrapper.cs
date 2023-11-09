@@ -13,12 +13,18 @@ public class Wrapper : MonoBehaviour
     //private Material paper;
 
     [Header("Wrapping")]
-    [SerializeField]
-    private Vector3 wrappingThickness = Vector3.one * 1.2f;
+
+    public bool proceduralMesh = true;
+    [SerializeField, ConditionalField("proceduralMesh")]
+    private float wrappingThickness = 0.02f;
+
     [SerializeField]
     private Vector3 wrapOffset = Vector3.zero;
 
-    [SerializeField]
+    [SerializeField, ConditionalField("proceduralMesh", true)]
+    private Vector3 wrapScaling = Vector3.one * 1.2f;
+
+    [SerializeField, ConditionalField("proceduralMesh", true)]
     private Mesh preferredMesh;
 
     private MeshFilter myMeshFilter;
@@ -27,7 +33,6 @@ public class Wrapper : MonoBehaviour
     private MeshRenderer wrappingRenderer;
 
     private GameObject wrapping;
-
     private void Awake()
     {
         GenerateWrapping();
@@ -36,21 +41,45 @@ public class Wrapper : MonoBehaviour
     private void GenerateWrapping()
     {
         myMeshFilter = GetComponent<MeshFilter>();
-        // creating hthe wrapping and setting as a child
+        // creating the wrapping and setting as a child
         wrapping = new GameObject("Wrapping");
         wrapping.transform.SetParent(transform, false);
         wrapping.transform.localPosition = wrapOffset;
-        wrapping.transform.localScale = wrappingThickness; // setting the scale to be 2x the parent's
 
         //adding mesh rendering components
         wrappingMeshFilter = wrapping.AddComponent<MeshFilter>();
         wrappingRenderer = wrapping.AddComponent<MeshRenderer>();
 
         //setting the mesh to be same as parent but different material
-        wrappingMeshFilter.mesh = preferredMesh != null ? preferredMesh : myMeshFilter.mesh;
+        wrappingMeshFilter.mesh = !proceduralMesh ? preferredMesh : myMeshFilter.mesh;
+
+        if (proceduralMesh) // creating a mesh based on expanding current mesh
+            ExpandMesh();
+        else
+            wrapping.transform.localScale = wrapScaling;
         //wrappingRenderer.material = plastic;
 
-        Unwrap();
+        //Unwrap();
+    }
+
+    private void ExpandMesh()
+    {
+        Vector3[] vertices = wrappingMeshFilter.mesh.vertices;
+        Vector3[] normals = wrappingMeshFilter.mesh.normals;
+
+        for (var i = 0; i < vertices.Length; i++)
+        {
+            // normalizing the vector
+            normals[i] = vertices[i];
+            normals[i].Normalize();
+            // caculating new vec location
+            vertices[i] += normals[i] * wrappingThickness;
+        }
+
+        // assign the local vertices array into the vertices array of the Mesh.
+        wrappingMeshFilter.mesh.vertices = vertices;
+        wrappingMeshFilter.mesh.RecalculateNormals();
+        wrappingMeshFilter.mesh.RecalculateBounds();
     }
 
     public void Unwrap()
