@@ -16,7 +16,7 @@ PrefabInstance:
     - target: {fileID: 3387580833779613015, guid: a79c55ee20451534a8127ca808b3315f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3387580833779613015, guid: a79c55ee20451534a8127ca808b3315f,
         type: 3}
@@ -101,11 +101,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 486b798c6ef7ecb469a09892d583aaa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectPool: []
-  objSpawnLocation: {fileID: 6397689734725853258}
   machineOn: 0
-  maxTimeBetweenSpawn: 0.75
-  maxSpeed: -2
+  objSpawnLocation: {fileID: 6397689734725853258}
+  objectPool: []
+  curMaxSpawnFreq: 0
+  curMaxSpeed: 0
+  slowDown: 0
+  fastSpawnFreq: 0.75
+  fastSpeed: 3
+  slowSpawnFreq: 1.5
+  slowSpeed: 1.5
 --- !u!1 &6397689734725853258 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2161095240113191449, guid: a79c55ee20451534a8127ca808b3315f,

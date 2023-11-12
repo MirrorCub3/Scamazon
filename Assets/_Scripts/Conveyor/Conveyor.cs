@@ -4,22 +4,44 @@ using UnityEngine;
 
 public class Conveyor : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> objectPool;
-    [SerializeField] private GameObject objSpawnLocation;
-    private const int ObjectAmount = 25;
     [SerializeField] private bool machineOn;
-    private bool running;
+    
+    [Header("Objects")]
+    [SerializeField] private GameObject objSpawnLocation;
+    [SerializeField] private List<GameObject> objectPool;
+    
 
     private List<GameObject> objectPool_offList;
     private List<GameObject> objectsToMove;
     private Vector3 spawnLocation;
+    private int ObjectAmount;
+    
+    [Header("Current Settings [READ ONLY]")]
+    [SerializeField] private float curMaxSpawnFreq;
+    [Tooltip("Yes, this should be negative :)")]
+    [SerializeField] private float curMaxSpeed;
 
-    [SerializeField] private float maxTimeBetweenSpawn;
-    [SerializeField] private float maxSpeed;
+    [Header("Mode Settings")]
 
-    private const float maxFastSpawn = 0.75f; // Test value (WIP)
-    private const float maxFastSpeed = -3f; // Test Value
+    [Tooltip("On = slow conveyor speed\nOff = fast conveyor speed")]
+    [SerializeField] private bool slowDown;
 
+    [Space(10)]
+
+    [Tooltip("Rate of spawn for fast mode")] [Range(0.15f, 3f)]
+    [SerializeField] private float fastSpawnFreq = 0.75f; // Test value (WIP)
+    [Tooltip("Speed of movement in fast mode")]
+    [Range(0f, 8f)]
+    [SerializeField] private float fastSpeed = -3f; // Test Value
+
+    [Space(10)]
+
+    [Tooltip("Rate of spawn for slow mode")] [Range(0.15f, 3f)]
+    [SerializeField] private float slowSpawnFreq = 1.5f; // Test value
+    [Tooltip("Speed of movement in slow mode")] [Range(0f, 8f)]
+    [SerializeField] private float slowSpeed = -1.5f; // Test Value
+    
+    private bool running;
     private float timeBetweenSpawn;
     private float speed;
     private float velocitySP = 0f;
@@ -32,6 +54,9 @@ public class Conveyor : MonoBehaviour
         running = false;
         speed = 0;
 
+        speedUpConveyor();
+
+        ObjectAmount = objectPool.Count;
         objectsToMove = new List<GameObject>(ObjectAmount);
         objectPool_offList = new List<GameObject>(objectPool.Count);
         spawnLocation = objSpawnLocation.transform.position;
@@ -45,20 +70,40 @@ public class Conveyor : MonoBehaviour
         // Things are always "moving" but sometimes the speed is 0
         moveItems();
 
+        // TESTING PURPOSES
+        if (slowDown)
+            slowDownConveyor();
+        else
+            speedUpConveyor();
+
         // If its off and things are moving, gradually bring it to a stop
         if(!machineOn && speed != 0)
             speed = Mathf.SmoothDamp(speed, 0, ref velocitySP, smoothTime);
         
         // If its on and its not at max speed, start spawning stuff if it's not already, gradually speed up the movement and spawnrate
-        if (machineOn && speed != maxSpeed) {
+        if (machineOn && speed != curMaxSpeed) {
             if (!running) {
                 timeBetweenSpawn = 2f;
                 StartCoroutine(spawnItem());
             }
-            speed = Mathf.SmoothDamp(speed, maxSpeed, ref velocitySP, smoothTime);
-            timeBetweenSpawn = Mathf.SmoothDamp(timeBetweenSpawn, maxTimeBetweenSpawn, ref velocityTM, smoothTime);
+            speed = Mathf.SmoothDamp(speed, curMaxSpeed, ref velocitySP, smoothTime);
+            timeBetweenSpawn = Mathf.SmoothDamp(timeBetweenSpawn, curMaxSpawnFreq, ref velocityTM, smoothTime);
         }
 
+    }
+
+    // Set conveyor to slow speeds
+    public void slowDownConveyor()
+    {
+        curMaxSpeed = -slowSpeed;
+        curMaxSpawnFreq = slowSpawnFreq;
+    }
+
+    // set conveyor to fast speeds
+    public void speedUpConveyor()
+    {
+        curMaxSpeed = -fastSpeed;
+        curMaxSpawnFreq = fastSpawnFreq;
     }
 
     // If obj is in the objectPool, disable it and add it to the offList

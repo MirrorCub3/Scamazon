@@ -627,7 +627,7 @@ Transform:
   - {fileID: 2014190744125415762}
   - {fileID: 2010541374555101578}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3270673656127547237
 GameObject:
@@ -1744,13 +1744,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83f4e780bf919df43ad242dbf0e5bf01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  machineOn: 0
+  objSpawnLocation: {fileID: 2161095240113191449}
   objectPool:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  objSpawnLocation: {fileID: 2161095240113191449}
-  machineOn: 0
-  maxTimeBetweenSpawn: 0.75
-  maxSpeed: -2
+  curSpawnFreq: 0
+  curMaxSpeed: 0
+  slowDown: 0
+  fastSpawnFreq: 0.75
+  fastSpeed: 3
+  slowSpawnFreq: 1.5
+  slowSpeed: 1.5
