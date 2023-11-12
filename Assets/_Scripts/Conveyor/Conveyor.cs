@@ -62,7 +62,7 @@ public class Conveyor : MonoBehaviour
     }
 
     // If obj is in the objectPool, disable it and add it to the offList
-    public void addOffObject(GameObject obj)
+    public virtual void addOffObject(GameObject obj)
     {
         if (objectPool.Contains(obj)) {
             obj.SetActive(false);
@@ -97,6 +97,7 @@ public class Conveyor : MonoBehaviour
             if (objectPool_offList.Count > 0) {
                 int index = Random.Range(0, objectPool_offList.Count);
                 objectPool_offList[index].transform.position = spawnLocation;
+                objectPool_offList[index].transform.rotation = new Quaternion(0, 0, 0, 0);
                 objectPool_offList[index].SetActive(true);
                 objectPool_offList.RemoveAt(index);
             }
