@@ -89,4 +89,6 @@ public class Item : MonoBehaviour
             print("you remembered me!");
         }
     }
+
+    //protected virtual restart, set conveyor, and repool
 }
