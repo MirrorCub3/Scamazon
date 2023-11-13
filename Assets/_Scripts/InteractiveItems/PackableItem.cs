@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PackableItem : Item
+public class PackableItem : PooledItem
 {
     [Header("Pack Variables")]
     [SerializeField]
@@ -12,7 +12,7 @@ public class PackableItem : Item
     // DO NOT CALL AWAKE IT WILL OVERLOAD BASE CLASS
     private void Start()
     {
-         IsWrapped = false;
+        Reset();
     }
 
     protected override void OnTriggerEnter(Collider other)
@@ -25,8 +25,7 @@ public class PackableItem : Item
             myWrapper.Wrap(other.GetComponent<WrappingMaterial>().GetWrappingMat());
         }
     }
-
-    private void Reset()
+    protected override void Reset()
     {
         IsWrapped = false;
         myWrapper.Unwrap();
