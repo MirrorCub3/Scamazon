@@ -31,14 +31,14 @@ public class Conveyor : MonoBehaviour
     [Tooltip("Rate of spawn for fast mode")] [Range(0.15f, 3f)]
     [SerializeField] private float fastSpawnFreq = 0.75f; // Test value (WIP)
     [Tooltip("Speed of movement in fast mode")]
-    [Range(0f, 8f)]
+    [Range(-8f, 8f)]
     [SerializeField] private float fastSpeed = -3f; // Test Value
 
     [Space(10)]
 
     [Tooltip("Rate of spawn for slow mode")] [Range(0.15f, 3f)]
     [SerializeField] private float slowSpawnFreq = 1.5f; // Test value
-    [Tooltip("Speed of movement in slow mode")] [Range(0f, 8f)]
+    [Tooltip("Speed of movement in slow mode")] [Range(-8f, 8f)]
     [SerializeField] private float slowSpeed = -1.5f; // Test Value
     
     private bool running;
@@ -172,6 +172,6 @@ public class Conveyor : MonoBehaviour
     private void moveItems()
     {
         foreach (GameObject o in objectsToMove)
-            o.transform.position = o.transform.position + new Vector3(0, 0, speed) * Time.deltaTime;
+            o.transform.position = o.transform.position + new Vector3(0, 0, speed * Time.deltaTime);
     }
 }
