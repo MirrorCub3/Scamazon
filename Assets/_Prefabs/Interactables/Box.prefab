@@ -107,7 +107,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 97cfd4d75af811a419cf42c596fca2cb,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 97cfd4d75af811a419cf42c596fca2cb,
         type: 3}
@@ -127,17 +127,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 97cfd4d75af811a419cf42c596fca2cb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 2.4842203
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 97cfd4d75af811a419cf42c596fca2cb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.44
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 97cfd4d75af811a419cf42c596fca2cb,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -6.804569
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 97cfd4d75af811a419cf42c596fca2cb,
         type: 3}
@@ -183,6 +183,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Box
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 97cfd4d75af811a419cf42c596fca2cb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3579277052665567994, guid: 97cfd4d75af811a419cf42c596fca2cb,
         type: 3}
@@ -382,7 +387,7 @@ Rigidbody:
   serializedVersion: 4
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 20
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -566,6 +571,7 @@ MonoBehaviour:
   dropTime: 5
   respawnOnDrop: 0
   respawnPoint: {fileID: 0}
+  myConveyor: {fileID: 0}
   startScale: 1.5
   openBox: {fileID: 8715862369314988701}
   closedBox: {fileID: 2301027895389660807}
