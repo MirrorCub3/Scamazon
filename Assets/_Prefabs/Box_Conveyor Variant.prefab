@@ -16,7 +16,7 @@ PrefabInstance:
     - target: {fileID: 3387580833779613015, guid: a79c55ee20451534a8127ca808b3315f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3387580833779613015, guid: a79c55ee20451534a8127ca808b3315f,
         type: 3}
@@ -68,6 +68,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4592510876394216984, guid: a79c55ee20451534a8127ca808b3315f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.053
+      objectReference: {fileID: 0}
     - target: {fileID: 8003492185008794451, guid: a79c55ee20451534a8127ca808b3315f,
         type: 3}
       propertyPath: maxTimeBetweenSpawn
@@ -103,12 +108,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   machineOn: 0
   objSpawnLocation: {fileID: 6397689734725853258}
-  objectPool: []
+  objectPool:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   curMaxSpawnFreq: 0
   curMaxSpeed: 0
   slowDown: 0
-  fastSpawnFreq: 0.75
-  fastSpeed: 3
+  fastSpawnFreq: 0.35
+  fastSpeed: 2.5
   slowSpawnFreq: 1.5
   slowSpeed: 1.5
 --- !u!1 &6397689734725853258 stripped

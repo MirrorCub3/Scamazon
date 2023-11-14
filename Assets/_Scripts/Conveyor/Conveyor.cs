@@ -9,7 +9,7 @@ public class Conveyor : MonoBehaviour
     [Header("Objects")]
     [SerializeField] private GameObject objSpawnLocation;
     [SerializeField] private List<GameObject> objectPool;
-    
+
 
     private List<GameObject> objectPool_offList;
     private List<GameObject> objectsToMove;
@@ -61,8 +61,16 @@ public class Conveyor : MonoBehaviour
         objectPool_offList = new List<GameObject>(objectPool.Count);
         spawnLocation = objSpawnLocation.transform.position;
 
-        foreach (GameObject o in objectPool)
+        foreach (GameObject o in objectPool) {
             objectPool_offList.Add(o);
+            try {
+                o.GetComponent<PooledItem>().SetConveyor(this);
+            }
+             catch {
+                Debug.LogError(o.name + " in " + gameObject.transform.parent.name + "'s object pool does not have a PooledItem script (or subclass script).");
+            }
+                
+        }
     }
 
     private void Update()
@@ -109,7 +117,7 @@ public class Conveyor : MonoBehaviour
     // If obj is in the objectPool, disable it and add it to the offList
     public virtual void addOffObject(GameObject obj)
     {
-        if (objectPool.Contains(obj)) {
+        if (objectPool.Contains(obj) && !objectPool_offList.Contains(obj)) {
             obj.SetActive(false);
             objectPool_offList.Add(obj);
         }
@@ -118,8 +126,16 @@ public class Conveyor : MonoBehaviour
     // Move everything in contact with the conveyor
     private void OnCollisionEnter(Collision collision)
     {
-        objectsToMove.Add(collision.gameObject);
+        if(!objectsToMove.Contains(collision.gameObject))
+            objectsToMove.Add(collision.gameObject);
     }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if (!objectsToMove.Contains(collision.gameObject))
+            objectsToMove.Add(collision.gameObject);
+    }
+
     private void OnCollisionExit(Collision collision)
     {
         objectsToMove.Remove(collision.gameObject);

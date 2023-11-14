@@ -12,7 +12,7 @@ public class PackableItem : PooledItem
     // DO NOT CALL AWAKE IT WILL OVERLOAD BASE CLASS
     private void Start()
     {
-        Reset();
+        IsWrapped = false;
     }
 
     protected override void OnTriggerEnter(Collider other)
