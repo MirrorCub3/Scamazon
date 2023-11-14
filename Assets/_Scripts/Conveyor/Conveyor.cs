@@ -61,8 +61,16 @@ public class Conveyor : MonoBehaviour
         objectPool_offList = new List<GameObject>(objectPool.Count);
         spawnLocation = objSpawnLocation.transform.position;
 
-        foreach (GameObject o in objectPool)
+        foreach (GameObject o in objectPool) {
             objectPool_offList.Add(o);
+            try {
+                o.GetComponent<PooledItem>().SetConveyor(this);
+            }
+             catch {
+                Debug.LogError(o.name + " in " + gameObject.transform.parent.name + "'s object pool does not have a PooledItem script (or subclass script).");
+            }
+                
+        }
     }
 
     private void Update()

@@ -7,8 +7,10 @@ public class Counter_Conveyor : Conveyor
     public override void addOffObject(GameObject obj)
     {
         base.addOffObject(obj);
-        // if packed box
-            // increase counter to summon boss
-            // reset box
+        Box bx = obj.GetComponent<Box>();
+        if(bx && bx.IsPacked) {
+            print("packed and counted");
+            // TODO: implement and increment counter
+        }
     }
 }
