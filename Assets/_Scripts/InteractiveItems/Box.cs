@@ -41,8 +41,9 @@ public class Box : PooledItem
         closedBox.SetActive(false);
     }
 
-    private void OnTriggerEnter(Collider other)
+    protected override void OnTriggerEnter(Collider other)
     {
+        base.OnTriggerEnter(other);
         PackableItem item = other.GetComponent<PackableItem>();
         if (item && item.IsWrapped) // only if the object is packable
         {
