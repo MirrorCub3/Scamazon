@@ -21,8 +21,8 @@ public class PooledItem : Item
 
     public void RepoolObject()
     {
-        Reset();
         myConveyor.addOffObject(gameObject);
+        Reset();
     }
 
     protected virtual void Reset()
