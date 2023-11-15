@@ -17,18 +17,18 @@ public class Item : MonoBehaviour
     [SerializeField, Tooltip("Should item react when dropped")]
     private bool reactToDrop;
 
-    [SerializeField, ConditionalField("reactToDrop")]
+    [SerializeField]
     private GameObject poofPrefab;
     private GameObject poofParticle;
     private ParticleSystem poofParticleSystem;
 
-    [SerializeField, ConditionalField("reactToDrop"), Tooltip("The amount of time before the item triggers on drop response")]
+    [SerializeField, Tooltip("The amount of time before the item triggers on drop response")]
     private float dropTime = 5f;
 
-    [SerializeField, ConditionalField("reactToDrop"), Tooltip("Should the item reappear somewhere")]
+    [SerializeField, Tooltip("Should the item reappear somewhere")]
     private bool respawnOnDrop; // should the item respawn once dropped
 
-    [SerializeField, ConditionalField("respawnOnDrop"), Tooltip("Where the item respawns to")]
+    [SerializeField, Tooltip("Where the item respawns to")]
     private Transform respawnPoint; // where to respawn if dropped
 
     private XRGrabInteractable myGrabInteractable;
