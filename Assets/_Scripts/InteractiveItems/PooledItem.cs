@@ -21,7 +21,6 @@ public class PooledItem : Item
 
     public void RepoolObject()
     {
-        GetComponent<Rigidbody>().velocity = Vector3.zero;
         myConveyor.addOffObject(gameObject);
         Reset();
     }

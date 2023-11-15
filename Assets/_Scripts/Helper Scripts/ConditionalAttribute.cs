@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-#if UNITY_EDITOR
 
 [Serializable]
 public class ConditionalFieldAttribute : PropertyAttribute
@@ -20,4 +19,4 @@ public class ConditionalFieldAttribute : PropertyAttribute
     }
 }
 
-#endif
+
