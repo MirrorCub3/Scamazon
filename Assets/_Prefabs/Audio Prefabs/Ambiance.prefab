@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4943636246490688885}
   - component: {fileID: 963693541937499452}
+  - component: {fileID: -2285995866540734749}
   m_Layer: 0
   m_Name: Ambiance
   m_TagString: Untagged
@@ -55,6 +56,37 @@ MonoBehaviour:
   Event: 
   PlayEvent: 11
   StopEvent: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &-2285995866540734749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8175358735635338267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 125120684
+      Data2: 1138550177
+      Data3: -458379647
+      Data4: -54145018
+    Path: event:/SFX/FactoryAmbiance
+  Event: 
+  PlayEvent: 1
+  StopEvent: 2
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
