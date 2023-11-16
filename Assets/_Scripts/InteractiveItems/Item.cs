@@ -67,7 +67,10 @@ public class Item : MonoBehaviour
             PlayPoof();
 
         if (respawnOnDrop)
+        {
             transform.position = respawnPoint.position;
+            transform.rotation = respawnPoint.rotation;
+        }
 
         OnDropped();
     }
