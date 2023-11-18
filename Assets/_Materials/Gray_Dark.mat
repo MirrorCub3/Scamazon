@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Dark_Gray
+  m_Name: Gray_Dark
   m_Shader: {fileID: 4800000, guid: 7633a2fd8a3bed44791c9e952ff86e5d, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
