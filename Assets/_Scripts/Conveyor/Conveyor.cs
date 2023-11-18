@@ -8,10 +8,10 @@ public class Conveyor : MonoBehaviour
     
     [Header("Objects")]
     [SerializeField] private GameObject objSpawnLocation;
-    [SerializeField] private List<GameObject> objectPool;
+    [SerializeField] protected List<GameObject> objectPool;
 
 
-    private List<GameObject> objectPool_offList;
+    protected List<GameObject> objectPool_offList;
     private List<GameObject> objectsToMove;
     private Vector3 spawnLocation;
     private int ObjectAmount;
