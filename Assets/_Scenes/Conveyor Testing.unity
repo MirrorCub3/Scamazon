@@ -3326,51 +3326,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1683171661662866215, guid: 9090acf0bc1f9ac4ab845db3b36fc0a1,
-        type: 3}
-      propertyPath: m_Text
-      value: 0/10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1683171661662866215, guid: 9090acf0bc1f9ac4ab845db3b36fc0a1,
-        type: 3}
-      propertyPath: m_FontData.m_BestFit
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1683171661662866215, guid: 9090acf0bc1f9ac4ab845db3b36fc0a1,
-        type: 3}
-      propertyPath: m_FontData.m_MaxSize
-      value: 53
-      objectReference: {fileID: 0}
-    - target: {fileID: 1683171661662866215, guid: 9090acf0bc1f9ac4ab845db3b36fc0a1,
-        type: 3}
-      propertyPath: m_FontData.m_FontSize
-      value: 53
-      objectReference: {fileID: 0}
-    - target: {fileID: 1683171661662866215, guid: 9090acf0bc1f9ac4ab845db3b36fc0a1,
-        type: 3}
-      propertyPath: m_FontData.m_AlignByGeometry
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1683171661662866215, guid: 9090acf0bc1f9ac4ab845db3b36fc0a1,
-        type: 3}
-      propertyPath: m_FontData.m_VerticalOverflow
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1683171661662866215, guid: 9090acf0bc1f9ac4ab845db3b36fc0a1,
-        type: 3}
-      propertyPath: m_FontData.m_HorizontalOverflow
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3904221272019445913, guid: 9090acf0bc1f9ac4ab845db3b36fc0a1,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 3904221272019445913, guid: 9090acf0bc1f9ac4ab845db3b36fc0a1,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 50
-      objectReference: {fileID: 0}
     - target: {fileID: 3994140248955095949, guid: 9090acf0bc1f9ac4ab845db3b36fc0a1,
         type: 3}
       propertyPath: objectPool.Array.data[0]
