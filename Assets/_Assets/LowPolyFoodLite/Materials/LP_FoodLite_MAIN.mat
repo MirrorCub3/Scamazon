@@ -30,7 +30,7 @@ Material:
   - _MK_DETAIL_BLEND_MIX
   - _MK_ENVIRONMENT_REFLECTIONS_ADVANCED
   - _MK_FRESNEL_HIGHLIGHTS
-  - _MK_LIGHT_CEL
+  - _MK_LIGHT_BANDED
   - _MK_OUTLINE_HULL_CLIP
   - _MK_RECEIVE_SHADOWS
   - _MK_SPECULAR_ISOTROPIC
@@ -403,7 +403,7 @@ Material:
     - _IridescenceSmoothness: 0.5
     - _IridescenceThickness: 1
     - _IridescenceThresholdOffset: 0
-    - _Light: 1
+    - _Light: 2
     - _LightBands: 4
     - _LightBandsScale: 0.5
     - _LightThreshold: 0.5
@@ -488,7 +488,7 @@ Material:
     - _StencilWriteMaskMV: 40
     - _StencilZFail: 0
     - _Stiffness: 1
-    - _StylizeTab: 0
+    - _StylizeTab: 1
     - _SubsurfaceMask: 1
     - _SupportDecals: 1
     - _Surface: 0
