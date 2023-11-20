@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6546884373216221933}
   - component: {fileID: 338940329084793129}
   - component: {fileID: 6980915736557787918}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Waste_Recycling
   m_TagString: Untagged
   m_Icon: {fileID: 0}

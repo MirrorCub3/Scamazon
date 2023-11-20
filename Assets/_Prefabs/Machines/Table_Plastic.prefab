@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7768255147891577963}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Table_Plastic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 1784285616193092223}
   - component: {fileID: 652100330637716668}
   - component: {fileID: 3139419251042642135}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Table Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152,7 +152,7 @@ GameObject:
   - component: {fileID: 7361503203078865218}
   - component: {fileID: 3232554964581556934}
   - component: {fileID: 2161456428991570564}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Packing Block (Plastic)
   m_TagString: Wrapping
   m_Icon: {fileID: 0}
@@ -272,7 +272,7 @@ GameObject:
   - component: {fileID: 9091232794425061913}
   - component: {fileID: 7810535883084001419}
   - component: {fileID: 342470844494037238}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Packing Block (Paper)
   m_TagString: Wrapping
   m_Icon: {fileID: 0}
@@ -387,7 +387,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9097268370485261496}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TableSurface
   m_TagString: Untagged
   m_Icon: {fileID: 0}
