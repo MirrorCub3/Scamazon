@@ -57,6 +57,6 @@ public class GasPowerMachine : BaseMachine
 
     public override void ExecuteMachine()
     {
-        throw new NotImplementedException();
+        Debug.Log("Executing Power Machine. Yay!!");
     }
 }

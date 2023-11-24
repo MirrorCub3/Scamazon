@@ -43,6 +43,7 @@ public abstract class BaseMachine : MonoBehaviour
     private IEnumerator WaitToDestroy(float duration)
     {
         yield return new WaitForSeconds(duration);
-        Destroy(this);
+        gameObject.SetActive(false);
+        //Destroy(this);
     }
 }
