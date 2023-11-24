@@ -27,6 +27,7 @@ Material:
   m_ValidKeywords:
   - _MK_ARTISTIC_ANIMATION_STUTTER
   - _MK_DETAIL_BLEND_MIX
+  - _MK_EMISSION
   - _MK_ENVIRONMENT_REFLECTIONS_AMBIENT
   - _MK_FRESNEL_HIGHLIGHTS
   - _MK_LIGHT_BANDED
@@ -39,7 +40,7 @@ Material:
   - _RECEIVESHADOWS_ON
   - _SPECULARHIGHLIGHTS_OFF
   - _WRAPPEDLIGHTING_ON
-  m_LightmapFlags: 6
+  m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 2000
@@ -340,7 +341,7 @@ Material:
     - _Color: {r: 1, g: 0.5024014, b: 0, a: 1}
     - _DetailColor: {r: 1, g: 1, b: 1, a: 1}
     - _DissolveBorderColor: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _EmissionColor: {r: 0.6132076, g: 0.01781187, b: 0, a: 1}
     - _GoochBrightColor: {r: 1, g: 1, b: 1, a: 1}
     - _GoochDarkColor: {r: 0.4716981, g: 0.4716981, b: 0.4716981, a: 1}
     - _IridescenceColor: {r: 1, g: 1, b: 1, a: 0.5}
