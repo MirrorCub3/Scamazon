@@ -17,6 +17,11 @@ public class Trash : Item
         myMatRenderer = GetComponent<MeshRenderer>();
         matSet = false;
     }
+    
+    public void InTrash()
+    {
+        OnDropped();
+    }
 
     public void SetMaterial(Material mat)
     {
@@ -43,4 +48,5 @@ public class Trash : Item
     {
         matSet = false;
     }
+
 }

@@ -10,7 +10,7 @@ public class MachineManager : MonoBehaviour
     {
         public Transform UpPosition;
         public Transform DownPosition;
-        public BaseMachine machine;
+        public BaseMachine initialMachine;
         public BaseMachine swapMachine;
         public MachineType type;
         public float moveDuration;
@@ -38,15 +38,28 @@ public class MachineManager : MonoBehaviour
         {
             try
             {
-                machine.activeMachine =  Instantiate(machine.machine, machine.DownPosition);
+                /*machine.activeMachine =  Instantiate(machine.machine, machine.DownPosition);
                 machinesDict.Add(machine.type, machine);
+                machine.activeMachine.SetUpMachine(machine.type, this);*/
+                
+                //Set active machine to the initial machine
+                machine.activeMachine = machine.initialMachine;
+
+                //Set initial Positions of all machines to down position
+                machine.activeMachine.gameObject.transform.position = machine.DownPosition.position;
+                if (machine.swapMachine)
+                machine.swapMachine.transform.position = machine.DownPosition.position;
+                
+                //Set up ActiveMachine
                 machine.activeMachine.SetUpMachine(machine.type, this);
+                //Add to dictionary so it can be referenced by other scripts
+                machinesDict.Add(machine.type, machine);
             }
 
             catch
             {
-                Debug.LogError($"Machine type, {machine.type} ,has already been added." +
-                    $"you can only have one machine type at the same time");
+                Debug.LogError($"Machine type, {machine.type} ,has already been added. " +
+                    $"You can only have one machine type at the same time");
             }
         }
 
@@ -56,7 +69,7 @@ public class MachineManager : MonoBehaviour
         StartCoroutine(IMoveMachines(true));
         StartCoroutine(IExecuteMachines());
         StartCoroutine(IMachineSwap());
-        StartCoroutine(IExecuteMachine(MachineType.Packaging, executeTime + 5));
+        StartCoroutine(IExecuteMachine(MachineType.Power, swapMachineTime + 5));
     }
 
     public void MachineSwap(MachineType type, float time = 0)
@@ -71,10 +84,14 @@ public class MachineManager : MonoBehaviour
         MachineInfo info = machinesDict[type];
         Transform target = info.hasMovedUp ? info.DownPosition : info.UpPosition;
         info.activeMachine.MoveSwapMachine(target, info.moveDuration);
-        info.activeMachine = info.hasBeenSwapped ? info.machine : info.swapMachine;
-        info.activeMachine = Instantiate(info.activeMachine, target);
+        info.activeMachine = info.hasBeenSwapped ? info.initialMachine : info.swapMachine;
+        info.activeMachine.gameObject.SetActive(true);
+
+
+        //info.activeMachine = Instantiate(info.activeMachine, target);
+        
         info.activeMachine.SetUpMachine(type, this);
-        info.activeMachine.MoveSwapMachine(info.UpPosition, info.moveDuration);
+        info.activeMachine.MoveMachine(info.UpPosition, info.moveDuration);
         info.hasBeenSwapped = true;
     }
 
@@ -174,7 +191,7 @@ public class MachineManager : MonoBehaviour
     private IEnumerator IMachineSwap()
     {
         yield return new WaitForSeconds(swapMachineTime);
-        MoveMachineSwap(MachineType.Packaging);
+        MoveMachineSwap(MachineType.Power);
     }
 }
 
@@ -182,8 +199,8 @@ public class MachineManager : MonoBehaviour
 public enum MachineType
 { 
     Packaging,
-    Shipping,
     Power,
     WasteManagement,
-    OtimizePackingSize
+    ItemConveyor,
+    BoxConveyor
 }
