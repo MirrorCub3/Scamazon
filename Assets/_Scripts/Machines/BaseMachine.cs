@@ -26,7 +26,7 @@ public abstract class BaseMachine : MonoBehaviour
 
     public virtual void SwapMachine(float delaySwap = 0f)
     {
-        StartCoroutine(WaitForChange(delaySwap));
+        StartCoroutine(WaitForActivation(delaySwap));
     }
 
     public void MoveMachine(Transform target, float duration)
@@ -34,7 +34,7 @@ public abstract class BaseMachine : MonoBehaviour
         objectMover.MoveObject(transform, target, duration);
     }
 
-    private IEnumerator WaitForChange(float duration)
+    private IEnumerator WaitForActivation(float duration)
     { 
         yield return new WaitForSeconds(duration);
         ExecuteMachine();

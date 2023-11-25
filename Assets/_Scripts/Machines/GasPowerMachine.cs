@@ -8,7 +8,7 @@ using UnityEngine.VFX;
 public class GasPowerMachine : BaseMachine
 {
     [SerializeField]
-    private VisualEffect visualEffect;
+    private List<VisualEffect> visualEffects;
 
     private XRLever lever;
 
@@ -23,6 +23,7 @@ public class GasPowerMachine : BaseMachine
     private void Awake()
     {
         gasPowerMachine = this;
+        StopMachine();
     }
 
     public void FuelMachine(bool fueled)
@@ -36,13 +37,35 @@ public class GasPowerMachine : BaseMachine
 
     public void StartMachine()
     { 
-        visualEffect.Play();    
-    }    
+        ToggleVisualEffect(true);
+    }
+
+    public override void MoveSwapMachine(Transform target, float moveDuration)
+    {
+        StopMachine();
+        base.MoveSwapMachine(target, moveDuration);
+    }
+
+    public override void SwapMachine(float delaySwap = 0)
+    {
+        StopMachine();
+        base.SwapMachine(delaySwap);
+    }
 
     public void StopMachine()
     {
-        visualEffect.Stop();
+        ToggleVisualEffect(false);
         MachineWasTurnedOff?.Invoke();
+    }
+
+
+    public void ToggleVisualEffect(bool turnOn)
+    {
+        foreach (var effect in visualEffects)
+        {
+            if (turnOn) effect.Play();
+            else effect.Stop();     
+        }
     }
 
     public void TurnOffLever()
@@ -58,5 +81,6 @@ public class GasPowerMachine : BaseMachine
     public override void ExecuteMachine()
     {
         Debug.Log("Executing Power Machine. Yay!!");
+        StartMachine();
     }
 }

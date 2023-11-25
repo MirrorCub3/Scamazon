@@ -69,7 +69,7 @@ public class MachineManager : MonoBehaviour
         StartCoroutine(IMoveMachines(true));
         StartCoroutine(IExecuteMachines());
         StartCoroutine(IMachineSwap());
-        StartCoroutine(IExecuteMachine(MachineType.Power, executeTime + 5));
+        StartCoroutine(IExecuteMachine(MachineType.Power, swapMachineTime + 5));
     }
 
     public void MachineSwap(MachineType type, float time = 0)
