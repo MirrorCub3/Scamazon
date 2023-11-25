@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5845756715723621059}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Solar Power Machine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 1614578068509716328}
   - component: {fileID: 7290414506011684334}
   - component: {fileID: 4822902213261737945}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Machine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,7 +148,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3693666512259591082}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -185,7 +185,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7321517405483959530}
   - component: {fileID: 2180277648889105840}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Rot Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -240,7 +240,7 @@ PrefabInstance:
     - target: {fileID: 1552799322133235929, guid: 65f4a8989257b2a4081ebfb77649a0dd,
         type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3738849354117071030, guid: 65f4a8989257b2a4081ebfb77649a0dd,
         type: 3}
@@ -490,7 +490,7 @@ PrefabInstance:
     - target: {fileID: 4915664460882326482, guid: 65f4a8989257b2a4081ebfb77649a0dd,
         type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4994134489565958255, guid: 65f4a8989257b2a4081ebfb77649a0dd,
         type: 3}
@@ -505,7 +505,7 @@ PrefabInstance:
     - target: {fileID: 5993487997519950547, guid: 65f4a8989257b2a4081ebfb77649a0dd,
         type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6093915596914000658, guid: 65f4a8989257b2a4081ebfb77649a0dd,
         type: 3}
@@ -515,7 +515,7 @@ PrefabInstance:
     - target: {fileID: 8152785070666301209, guid: 65f4a8989257b2a4081ebfb77649a0dd,
         type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

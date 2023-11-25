@@ -22,7 +22,9 @@ public class PackableItem : PooledItem
         if (other.tag.Equals("Wrapping") && !IsWrapped) 
         {
             IsWrapped = true;
-            myWrapper.Wrap(other.GetComponent<WrappingMaterial>().GetWrappingMat());
+            WrappingMaterial wrappingMat = other.GetComponent<WrappingMaterial>();
+            myWrapper.Wrap(wrappingMat.GetWrappingMat());
+            wrappingMat.SpawnTrash();
         }
     }
     protected override void Reset()
