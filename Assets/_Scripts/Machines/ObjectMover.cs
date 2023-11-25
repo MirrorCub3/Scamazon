@@ -21,11 +21,14 @@ public class ObjectMover : MonoBehaviour
     private IEnumerator IMoveObject(Transform current, Transform target, float duration)
     {
         time = 0;
+        Vector3 startingPos = current.position;
         while (time < duration)
         {
-            current.position = Vector3.Lerp(current.position, target.position, time / duration);
+            current.position = Vector3.Lerp(startingPos, target.position, time / duration);
             time += Time.deltaTime;
             yield return null;
         }
+
+        current.position = target.position;
     }
 }
