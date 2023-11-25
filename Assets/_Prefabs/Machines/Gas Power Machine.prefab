@@ -9,7 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 20148257047173235}
-  m_Layer: 7
+  - component: {fileID: 8330945831086961350}
+  - component: {fileID: 5133367206576724190}
+  m_Layer: 0
   m_Name: Gas Power Machine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,6 +44,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8330945831086961350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948542877254629387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23b87a01b97f683409167d85b3ed005a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectMover: {fileID: 5133367206576724190}
+  visualEffects: []
+--- !u!114 &5133367206576724190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948542877254629387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23363dd8fbc7f2149b20aade04275334, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2418399375925582556
 GameObject:
   m_ObjectHideFlags: 0
@@ -57,7 +85,7 @@ GameObject:
   - component: {fileID: 6275611868286731891}
   - component: {fileID: 4174418532598540413}
   - component: {fileID: 7217681501309284178}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -378,7 +406,7 @@ GameObject:
   - component: {fileID: 2012333144071974865}
   - component: {fileID: 6156269310405303865}
   - component: {fileID: 5207927405306479267}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Front Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -485,7 +513,7 @@ GameObject:
   - component: {fileID: 7691174479657602202}
   - component: {fileID: 4566210998753211506}
   - component: {fileID: 2348920282241461450}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Tube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1879,7 +1907,7 @@ GameObject:
   - component: {fileID: 5054474551433367061}
   - component: {fileID: 1516043871948470641}
   - component: {fileID: 525762447630448689}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Machine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2554,7 +2582,7 @@ GameObject:
   - component: {fileID: 1917222509611246183}
   - component: {fileID: 6684184900276515763}
   - component: {fileID: 5671400620739943988}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Tube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3941,7 +3969,8 @@ GameObject:
   - component: {fileID: 1580818071987291377}
   - component: {fileID: 8313649381713523041}
   - component: {fileID: 2687326765498334457}
-  m_Layer: 7
+  - component: {fileID: 38162737813859803}
+  m_Layer: 0
   m_Name: GasCanSocket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4041,6 +4070,18 @@ MonoBehaviour:
   m_InteractableHoverScale: 1
   m_RecycleDelayTime: 1
   targetTag: Gas
+--- !u!114 &38162737813859803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6199395243299084502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d36771604f38f0f49883429b9b05c5cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8036684003906885688
 GameObject:
   m_ObjectHideFlags: 0
@@ -4050,7 +4091,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 862598496127541396}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: GasRespawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4084,7 +4125,7 @@ GameObject:
   - component: {fileID: 3902397834623947728}
   - component: {fileID: 8965191487244801262}
   - component: {fileID: 8482850427133376329}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4248,7 +4289,7 @@ PrefabInstance:
     - target: {fileID: 2108075124636678569, guid: 6ba8396c2734f654c93e7631ffda6905,
         type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2677078174098957787, guid: 6ba8396c2734f654c93e7631ffda6905,
         type: 3}
@@ -4352,7 +4393,7 @@ PrefabInstance:
     - target: {fileID: 8802898511622649165, guid: dbff65fb43bfdaa4a84e9d8b443a5071,
         type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4481,7 +4522,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b0e27f23a15efb74eba5b984acb601e3,
         type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4537,7 +4578,7 @@ PrefabInstance:
     - target: {fileID: 1552799322133235929, guid: 65f4a8989257b2a4081ebfb77649a0dd,
         type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3738849354117071030, guid: 65f4a8989257b2a4081ebfb77649a0dd,
         type: 3}
@@ -4782,7 +4823,7 @@ PrefabInstance:
     - target: {fileID: 4915664460882326482, guid: 65f4a8989257b2a4081ebfb77649a0dd,
         type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4994134489565958255, guid: 65f4a8989257b2a4081ebfb77649a0dd,
         type: 3}
@@ -4797,7 +4838,7 @@ PrefabInstance:
     - target: {fileID: 5993487997519950547, guid: 65f4a8989257b2a4081ebfb77649a0dd,
         type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6093915596914000658, guid: 65f4a8989257b2a4081ebfb77649a0dd,
         type: 3}
@@ -4807,7 +4848,7 @@ PrefabInstance:
     - target: {fileID: 8152785070666301209, guid: 65f4a8989257b2a4081ebfb77649a0dd,
         type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4906,7 +4947,7 @@ PrefabInstance:
     - target: {fileID: 8802898511622649165, guid: dbff65fb43bfdaa4a84e9d8b443a5071,
         type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
