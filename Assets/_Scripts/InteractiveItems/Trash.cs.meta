@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 0e630159834e1a74ea6310b4a758efeb
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - poofPrefab: {fileID: 9205993424961766283, guid: f58033619f41ad24dbd9bdd258af97a5,
+      type: 3}
+  - respawnPoint: {instanceID: 0}
+  - myMat: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
