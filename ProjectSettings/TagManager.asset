@@ -8,6 +8,7 @@ TagManager:
   - Wrapping
   - Gas
   - Desktop
+  - Trash
   layers:
   - Default
   - TransparentFX

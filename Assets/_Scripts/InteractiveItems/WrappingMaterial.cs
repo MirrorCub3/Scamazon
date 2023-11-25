@@ -7,6 +7,8 @@ public class WrappingMaterial : MonoBehaviour
 {
     [SerializeField]
     private Material wrappingMaterial;
+    [SerializeField]
+    private TrashPool trashPool;
 
     private void Awake()
     {
@@ -17,5 +19,11 @@ public class WrappingMaterial : MonoBehaviour
     public Material GetWrappingMat()
     { 
         return wrappingMaterial; 
+    }
+
+    public void SpawnTrash()
+    {
+        if(trashPool)
+            trashPool.SpawnTrash();
     }
 }
