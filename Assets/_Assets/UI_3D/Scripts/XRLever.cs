@@ -170,7 +170,7 @@ namespace UnityEngine.XR.Content.Interaction
             SetValue(newValue);
         }
 
-        void SetValue(bool isOn, bool forceRotation = false)
+        public void SetValue(bool isOn, bool forceRotation = false)
         {
             if (m_Value == isOn)
             {
