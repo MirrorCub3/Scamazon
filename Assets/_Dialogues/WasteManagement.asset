@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8366da5b8f2f4c94eb1d956212873473, type: 3}
+  m_Name: WasteManagement
+  m_EditorClassIdentifier: 
+  openingPrompt:
+    audioClip: {fileID: 8300000, guid: 2afcb4650f92126439e3ea67cb66f106, type: 3}
+  goodChoice:
+    audioClip: {fileID: 8300000, guid: 26a1819149524744e9640e17d6f40689, type: 3}
+  good_GoodResult:
+    audioClip: {fileID: 8300000, guid: add5207d3da97a54ba68833ae1d221c6, type: 3}
+  good_BadResult:
+    audioClip: {fileID: 8300000, guid: 049f37eb7f321da43b706728cbaf0139, type: 3}
+  badChoice:
+    audioClip: {fileID: 8300000, guid: bb4e0647aebf1a943b432c252f4db346, type: 3}
+  bad_GoodResult:
+    audioClip: {fileID: 8300000, guid: bd3cd7be9277b8244814ef99ad516af2, type: 3}
+  bad_BadResult:
+    audioClip: {fileID: 8300000, guid: ba010f81552431842be50ce833dbeb72, type: 3}
