@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8366da5b8f2f4c94eb1d956212873473, type: 3}
+  m_Name: PackingSize
+  m_EditorClassIdentifier: 
+  openingPrompt:
+    audioClip: {fileID: 8300000, guid: ddc1389e98aad2a43a39ca515e364452, type: 3}
+  goodChoice:
+    audioClip: {fileID: 8300000, guid: 93d59261f1a37ed4ba28d6f1cfdf426d, type: 3}
+  good_GoodResult:
+    audioClip: {fileID: 8300000, guid: 23fa4f535571b5449b9adac63934736f, type: 3}
+  good_BadResult:
+    audioClip: {fileID: 8300000, guid: 181572192c4796e4da381872102b7609, type: 3}
+  badChoice:
+    audioClip: {fileID: 8300000, guid: c4c67db4de170f142a82e0745a484b0b, type: 3}
+  bad_GoodResult:
+    audioClip: {fileID: 8300000, guid: f7e12e889706a7e4ca074be5aeab0918, type: 3}
+  bad_BadResult:
+    audioClip: {fileID: 8300000, guid: d4aae0e58c43008419da9eb214cdf8d6, type: 3}
