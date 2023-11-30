@@ -34,6 +34,11 @@ public class PromptTree : ScriptableObject
         currNode = openingPrompt;
     }
 
+    public void Restart()
+    {
+        currNode = openingPrompt;
+    }
+
     private void ConstructTree()
     {
         openingPrompt.SetNodes(goodChoice, badChoice);
