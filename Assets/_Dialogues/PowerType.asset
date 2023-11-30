@@ -13,16 +13,58 @@ MonoBehaviour:
   m_Name: PowerType
   m_EditorClassIdentifier: 
   openingPrompt:
-    audioClip: {fileID: 8300000, guid: 9906a55a273135e4ebdacf03f3134142, type: 3}
+    audioClip:
+      Guid:
+        Data1: -1656998530
+        Data2: 1323854511
+        Data3: 977896342
+        Data4: 2105221387
+      Path: event:/SFX/3a
   goodChoice:
-    audioClip: {fileID: 8300000, guid: 7b7bb3aa3038c774aab6e531019d311f, type: 3}
+    audioClip:
+      Guid:
+        Data1: 806894196
+        Data2: 1122823054
+        Data3: 579787401
+        Data4: -2024511093
+      Path: event:/SFX/3a 2
   good_GoodResult:
-    audioClip: {fileID: 8300000, guid: b6c16bd58399b2245afb93db775a1d3f, type: 3}
+    audioClip:
+      Guid:
+        Data1: 380424535
+        Data2: 1239379846
+        Data3: -1225691469
+        Data4: 1376757146
+      Path: event:/SFX/3a 3
   good_BadResult:
-    audioClip: {fileID: 8300000, guid: 38016cc97c984054e94cf70a3c4264e5, type: 3}
+    audioClip:
+      Guid:
+        Data1: 768536748
+        Data2: 1308928225
+        Data3: 1435978934
+        Data4: 1501512138
+      Path: event:/SFX/3a 4
   badChoice:
-    audioClip: {fileID: 8300000, guid: 20c39e4506971c644a543f873358f93f, type: 3}
+    audioClip:
+      Guid:
+        Data1: -2146813708
+        Data2: 1322348635
+        Data3: 304077711
+        Data4: 1785648589
+      Path: event:/SFX/3a 5
   bad_GoodResult:
-    audioClip: {fileID: 8300000, guid: d0a5a9c041bd45644bf733c6f9253035, type: 3}
+    audioClip:
+      Guid:
+        Data1: -1461482524
+        Data2: 1307270878
+        Data3: 1840714376
+        Data4: 1214126391
+      Path: event:/SFX/3a 6
   bad_BadResult:
-    audioClip: {fileID: 8300000, guid: 2d7c43e8ac426e64f9f75e586d1d850b, type: 3}
+    audioClip:
+      Guid:
+        Data1: -548023524
+        Data2: 1243099308
+        Data3: 592485521
+        Data4: 539675434
+      Path: event:/SFX/3a 7
