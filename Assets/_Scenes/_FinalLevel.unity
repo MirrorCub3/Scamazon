@@ -5003,6 +5003,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: mesh_cleaning_vroom
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d47e9697a1edf004980516e303f52155, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d47e9697a1edf004980516e303f52155, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -8883,6 +8887,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Barrel_03_Purple (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 112082, guid: ae8c8e436c4cd634d9d09709c9537a72, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 428934, guid: ae8c8e436c4cd634d9d09709c9537a72, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -9240,6 +9248,7 @@ GameObject:
   - component: {fileID: 1042225865}
   - component: {fileID: 1042225867}
   - component: {fileID: 1042225866}
+  - component: {fileID: 1042225868}
   m_Layer: 6
   m_Name: Work Area Modifiers
   m_TagString: Untagged
@@ -9274,8 +9283,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Size: {x: 0.7387476, y: 6.3270855, z: 4.8681736}
-  m_Center: {x: -11.256115, y: 12.376903, z: 4.1130314}
+  m_Size: {x: 0.6000004, y: 7, z: 4.9213552}
+  m_Center: {x: -11.15, y: 12, z: 4.060677}
   m_Area: 1
   m_AffectedAgents: ffffffff
 --- !u!114 &1042225867
@@ -9290,8 +9299,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Size: {x: 0.6616821, y: 6.3270855, z: 4.760338}
-  m_Center: {x: -8.739544, y: 12.376903, z: 3.3696442}
+  m_Size: {x: 0.6000004, y: 7, z: 4.880903}
+  m_Center: {x: -8.75, y: 12, z: 3.3404515}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
+--- !u!114 &1042225868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1042225864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 0.6, y: 7, z: 0.7}
+  m_Center: {x: -9.9, y: 12, z: 2.93}
   m_Area: 1
   m_AffectedAgents: ffffffff
 --- !u!1001 &1055064399
@@ -12305,7 +12330,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400416, guid: 208ca54455d8ac34d8e8c32f367a245d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.71
+      value: 4.47
       objectReference: {fileID: 0}
     - target: {fileID: 400416, guid: 208ca54455d8ac34d8e8c32f367a245d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -13213,6 +13238,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: mesh_cleaning_cube
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 073ad4d1b0bcb9c42999c82f3a243287, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 073ad4d1b0bcb9c42999c82f3a243287, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -13746,7 +13775,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.14
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 6dcac9a1a5ffa8a4dbf36b41ffed5575, type: 2}
   m_BuildHeightMesh: 0
@@ -18332,7 +18361,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2044381229}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
   m_Name: 
