@@ -10,7 +10,7 @@ public class VotingSystem : MonoBehaviour
     private float setRotationDuration;
     private float rotationSpeed;
     private bool deactivateVoting;
-    private bool activateVoting;
+    public bool activateVoting;
     private bool activateButtons;          /// change to true when vote needs to be activated (might need to make public)
     private bool processVote;
     private bool voteSwitched;
