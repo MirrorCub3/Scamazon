@@ -10,7 +10,7 @@ public class VotingSystem : MonoBehaviour
     private float setRotationDuration;
     private float rotationSpeed;
     private bool deactivateVoting;
-    public bool activateVoting;
+    private bool activateVoting;
     private bool activateButtons;          /// change to true when vote needs to be activated (might need to make public)
     private bool processVote;
     private bool voteSwitched;
@@ -43,7 +43,7 @@ public class VotingSystem : MonoBehaviour
     [Tooltip("time (in seconds) it takes for the table to flip over to the voting side")]
     [SerializeField] private float rotationDuration;
     [SerializeField] private GameObject coffee;
-    [SerializeField] private GameObject pen;
+    //[SerializeField] private GameObject pen;
     [SerializeField] private GameObject table;
     [SerializeField] private TableCollision tableCollision;
 
@@ -70,7 +70,7 @@ public class VotingSystem : MonoBehaviour
         voteProcessingSlider.maxValue = voteProcessingTime;
 
         coffee = GameObject.Find("Coffee");
-        pen = GameObject.Find("Pen");
+        //pen = GameObject.Find("Pen");
         tableCollision = table.GetComponent<TableCollision>();
     }
 
@@ -155,8 +155,8 @@ public class VotingSystem : MonoBehaviour
 
             if (tableCollision.penOn == true)
             {
-                pen.GetComponent<Rigidbody>().isKinematic = true;
-                pen.transform.RotateAround(table.transform.position, Vector3.right, Time.deltaTime * rotationSpeed);
+                //pen.GetComponent<Rigidbody>().isKinematic = true;
+                //pen.transform.RotateAround(table.transform.position, Vector3.right, Time.deltaTime * rotationSpeed);
             }
 
             table.transform.RotateAround(table.transform.position, Vector3.right, Time.deltaTime * rotationSpeed);
@@ -185,8 +185,8 @@ public class VotingSystem : MonoBehaviour
 
             if (tableCollision.penOn == true)
             {
-                pen.GetComponent<Rigidbody>().isKinematic = true;
-                pen.transform.RotateAround(table.transform.position, Vector3.left, Time.deltaTime * rotationSpeed);
+                //pen.GetComponent<Rigidbody>().isKinematic = true;
+                //pen.transform.RotateAround(table.transform.position, Vector3.left, Time.deltaTime * rotationSpeed);
             }
 
             table.transform.RotateAround(table.transform.position, Vector3.left, Time.deltaTime * rotationSpeed);
@@ -198,7 +198,7 @@ public class VotingSystem : MonoBehaviour
             table.transform.eulerAngles = new Vector3(0, 0, 0);
 
             coffee.GetComponent<Rigidbody>().isKinematic = false;
-            pen.GetComponent<Rigidbody>().isKinematic = false;
+            //pen.GetComponent<Rigidbody>().isKinematic = false;
 
             voteNumber++;
             voteSwitched = false;
