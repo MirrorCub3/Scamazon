@@ -30,6 +30,7 @@ public class PromptManager : MonoBehaviour
     {
         source.Stop();
         currPrompt = (currPrompt + 1) % prompts.Count;
+        prompts[currPrompt].Restart();
         source.clip = prompts[currPrompt].GetOpeningPrompt();
     }
 
