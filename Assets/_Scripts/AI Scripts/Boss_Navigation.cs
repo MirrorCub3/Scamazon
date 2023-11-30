@@ -10,8 +10,8 @@ public class Boss_Navigation : MonoBehaviour
     private NavMeshAgent agent;
     [SerializeField] private bool moving;
     private bool forward;
-    [SerializeField] VotingSystem monitor;
-    [SerializeField] VotingSystem votingSystem;
+    [SerializeField] private GameObject monitor;
+    private VotingSystem votingSystem;
 
     void Start()
     {
@@ -21,7 +21,7 @@ public class Boss_Navigation : MonoBehaviour
         forward = true;
         Count_Manager.bossAppears += moveForward;
 
-        votingSystem = monitor.GetComponent<VotingSystem>();
+        votingSystem = GetComponent<VotingSystem>();
     }
 
     private void Update()
