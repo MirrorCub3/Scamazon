@@ -54,6 +54,7 @@ public class PromptTree : ScriptableObject
     public FMODUnity.EventReference SelectGood() // returns the good option of the current node AND advances the current node to that option
     {
         // if(currNode == null || currNode.good == null) return null;
+        if (currNode.good == null) return currNode.audioClip;
 
         currNode = currNode.good;
         return currNode.audioClip;
@@ -62,6 +63,7 @@ public class PromptTree : ScriptableObject
     public FMODUnity.EventReference SelectBad() // returns the good option of the current node AND advances the current node to that option
     {
         // if (currNode == null || currNode.bad == null) return null;
+        if (currNode.bad == null) return currNode.audioClip;
 
         currNode = currNode.bad;
         return currNode.audioClip;
