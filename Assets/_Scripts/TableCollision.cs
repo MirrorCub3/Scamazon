@@ -11,12 +11,12 @@ public class TableCollision : MonoBehaviour
     public bool penOn;
 
     [SerializeField] private GameObject coffee;
-    [SerializeField] private GameObject pen;
+    //[SerializeField] private GameObject pen;
 
     private void Start()
     {
         coffee = GameObject.Find("Coffee");
-        pen = GameObject.Find("Pen");
+        //pen = GameObject.Find("Pen");
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -27,10 +27,10 @@ public class TableCollision : MonoBehaviour
             Debug.Log("coffee is on the table");
         }
 
-        if (collision.gameObject == pen)
+        //if (collision.gameObject == pen)
         {
-            penOn = true;
-            Debug.Log("pen is on the table");
+            //penOn = true;
+            //Debug.Log("pen is on the table");
         }
     }
 
@@ -45,12 +45,12 @@ public class TableCollision : MonoBehaviour
             }
         }
 
-        if (pen.GetComponent<Rigidbody>().isKinematic == false)
+        //if (pen.GetComponent<Rigidbody>().isKinematic == false)
         {
-            if (collision.gameObject == pen)
+            //if (collision.gameObject == pen)
             {
-                penOn = false;
-                Debug.Log("pen is off the table");
+                //penOn = false;
+                //Debug.Log("pen is off the table");
             }
         }
     }
