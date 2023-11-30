@@ -8,15 +8,16 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: plant
-  m_Shader: {fileID: 4800000, guid: df695d70c539c3d4c87b79de307ab7bb, type: 3}
+  m_Shader: {fileID: 4800000, guid: 7633a2fd8a3bed44791c9e952ff86e5d, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - _MK_ARTISTIC_ANIMATION_STUTTER
   - _MK_DETAIL_BLEND_MIX
   - _MK_ENVIRONMENT_REFLECTIONS_AMBIENT
-  - _MK_LIGHT_CEL
+  - _MK_LIGHT_BANDED
   - _MK_RECEIVE_SHADOWS
+  - _MK_WORKFLOW_ROUGHNESS
   - _MK_WRAPPED_DIFFUSE
   m_InvalidKeywords:
   - TCP2_DISABLE_WRAPPED_LIGHT
@@ -268,7 +269,7 @@ Material:
     - _IridescenceSize: 1
     - _IridescenceSmoothness: 0.5
     - _IridescenceThresholdOffset: 0
-    - _Light: 1
+    - _Light: 2
     - _LightBands: 4
     - _LightBandsScale: 0.5
     - _LightThreshold: 0.5
@@ -307,7 +308,7 @@ Material:
     - _RimSize: 1
     - _RimSmoothness: 0.5
     - _RimThresholdOffset: 0.25
-    - _Roughness: 0.5
+    - _Roughness: 1
     - _Saturation: 1
     - _Shadow: 0.4
     - _SketchMapScale: 1
@@ -329,7 +330,7 @@ Material:
     - _StencilRef: 0
     - _StencilWriteMask: 255
     - _StencilZFail: 0
-    - _StylizeTab: 0
+    - _StylizeTab: 1
     - _Surface: 0
     - _TexLod: 5
     - _ThresholdMapScale: 1
@@ -337,7 +338,7 @@ Material:
     - _VertexAnimation: 0
     - _VertexAnimationIntensity: 0.05
     - _VertexAnimationStutter: 0
-    - _Workflow: 0
+    - _Workflow: 2
     - _WrappedLighting: 1
     - _ZSmooth: -0.5
     - _ZTest: 4
@@ -345,8 +346,8 @@ Material:
     - _outline_tint: 0.5
     - _outline_width: 0.2
     m_Colors:
-    - _AlbedoColor: {r: 0.06030614, g: 0.41509432, b: 0.11533408, a: 1}
-    - _Color: {r: 0.06030611, g: 0.4150943, b: 0.11533403, a: 1}
+    - _AlbedoColor: {r: 0.060306087, g: 0.41509426, b: 0.115334, a: 1}
+    - _Color: {r: 0.060306065, g: 0.41509423, b: 0.11533397, a: 1}
     - _Color0: {r: 1, g: 0, b: 0, a: 1}
     - _Color1: {r: 0, g: 1, b: 0, a: 1}
     - _DetailColor: {r: 1, g: 1, b: 1, a: 1}
