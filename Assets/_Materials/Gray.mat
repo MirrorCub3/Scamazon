@@ -282,7 +282,7 @@ Material:
     - _NormalMapIntensity: 1
     - _OcclusionMapIntensity: 1
     - _OcclusionStrength: 1
-    - _OptionsTab: 0
+    - _OptionsTab: 1
     - _Outline: 3
     - _OutlineData: 0
     - _OutlineFadeMax: 2
@@ -297,7 +297,7 @@ Material:
     - _RefractionDistortionFade: 0.5
     - _RefractionDistortionMapScale: 1
     - _RefractionTab: 0
-    - _RenderFace: 2
+    - _RenderFace: 0
     - _RenderPriority: 0
     - _Rim: 0
     - _RimSize: 1

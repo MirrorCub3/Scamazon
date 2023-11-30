@@ -21,6 +21,7 @@ Material:
   - _MK_OUTLINE_HULL_CLIP
   - _MK_RECEIVE_SHADOWS
   - _MK_SPECULAR_ISOTROPIC
+  - _MK_WORKFLOW_ROUGHNESS
   - _MK_WRAPPED_DIFFUSE
   m_InvalidKeywords:
   - _FRESNELHIGHLIGHTS_ON
@@ -265,7 +266,7 @@ Material:
     - _RimSize: 1
     - _RimSmoothness: 0.5
     - _RimThresholdOffset: 0.25
-    - _Roughness: 0.5
+    - _Roughness: 1
     - _Saturation: 1
     - _SketchMapScale: 1
     - _Smoothness: 0.5
@@ -291,7 +292,7 @@ Material:
     - _VertexAnimation: 0
     - _VertexAnimationIntensity: 0.05
     - _VertexAnimationStutter: 0
-    - _Workflow: 0
+    - _Workflow: 2
     - _WrappedLighting: 1
     - _ZTest: 4
     - _ZWrite: 1
