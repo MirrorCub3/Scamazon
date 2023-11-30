@@ -10,6 +10,8 @@ public class Boss_Navigation : MonoBehaviour
     private NavMeshAgent agent;
     [SerializeField] private bool moving;
     private bool forward;
+    [SerializeField] VotingSystem monitor;
+    [SerializeField] VotingSystem votingSystem;
 
     void Start()
     {
@@ -18,6 +20,8 @@ public class Boss_Navigation : MonoBehaviour
         moving = false;
         forward = true;
         Count_Manager.bossAppears += moveForward;
+
+        votingSystem = monitor.GetComponent<VotingSystem>();
     }
 
     private void Update()
@@ -31,9 +35,9 @@ public class Boss_Navigation : MonoBehaviour
 
                         } else {
                             moving = false;
-                            //if(forward) {
-                            // START VOTING STUFF HERE
-                            //}
+                            if(forward) {
+                                votingSystem.activateVoting = true;
+                            }
                             forward = !forward;
                         }
                         xCrement();
