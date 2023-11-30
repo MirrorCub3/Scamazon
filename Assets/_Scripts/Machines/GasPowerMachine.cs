@@ -52,6 +52,7 @@ public class GasPowerMachine : BaseMachine
 
     public void StartMachine()
     {
+        if (!wasFueled) return;
         print("STARTING");
         ToggleVisualEffect(true);
     }

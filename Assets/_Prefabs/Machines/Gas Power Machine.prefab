@@ -66,6 +66,9 @@ MonoBehaviour:
   visualEffects:
   - {fileID: 2597242067560700737}
   - {fileID: 1890062558974632203}
+  lever: {fileID: 0}
+  doorRB: {fileID: 0}
+  gasCan: {fileID: 0}
 --- !u!114 &5133367206576724190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5401,7 +5404,7 @@ PrefabInstance:
     - target: {fileID: 4863304365185301872, guid: 65f4a8989257b2a4081ebfb77649a0dd,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.13
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 4863304365185301872, guid: 65f4a8989257b2a4081ebfb77649a0dd,
         type: 3}
