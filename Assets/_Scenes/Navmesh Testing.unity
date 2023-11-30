@@ -298,7 +298,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: c61c6a0b1d843d34298feaf614878b9d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -694,12 +694,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5543167622929328193, guid: 9d1edc0992293ac4bbcb7bfd6319a625,
     type: 3}
   m_PrefabInstance: {fileID: 124842194}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &132913349 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5101957314762065955, guid: 4fa7ce6ad43d8e141b1d550b46bbbce7,
-    type: 3}
-  m_PrefabInstance: {fileID: 449427152}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &151519598
 PrefabInstance:
@@ -3701,59 +3695,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boss
       objectReference: {fileID: 0}
+    - target: {fileID: 7503838507328355112, guid: 4fa7ce6ad43d8e141b1d550b46bbbce7,
+        type: 3}
+      propertyPath: points.Array.data[0]
+      value: 
+      objectReference: {fileID: 390585438}
+    - target: {fileID: 7503838507328355112, guid: 4fa7ce6ad43d8e141b1d550b46bbbce7,
+        type: 3}
+      propertyPath: points.Array.data[1]
+      value: 
+      objectReference: {fileID: 272860854}
+    - target: {fileID: 7503838507328355112, guid: 4fa7ce6ad43d8e141b1d550b46bbbce7,
+        type: 3}
+      propertyPath: points.Array.data[2]
+      value: 
+      objectReference: {fileID: 1710356765}
+    - target: {fileID: 7503838507328355112, guid: 4fa7ce6ad43d8e141b1d550b46bbbce7,
+        type: 3}
+      propertyPath: points.Array.data[3]
+      value: 
+      objectReference: {fileID: 825748567}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5101957314762065955, guid: 4fa7ce6ad43d8e141b1d550b46bbbce7,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 449427155}
-    - targetCorrespondingSourceObject: {fileID: 5101957314762065955, guid: 4fa7ce6ad43d8e141b1d550b46bbbce7,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 449427154}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4fa7ce6ad43d8e141b1d550b46bbbce7, type: 3}
---- !u!114 &449427154
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 132913349}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49e21f1d0f433604fb75eae49cc83097, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  points:
-  - {fileID: 390585438}
-  - {fileID: 272860854}
-  - {fileID: 1710356765}
-  - {fileID: 825748567}
-  moving: 0
---- !u!195 &449427155
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 132913349}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0.1
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1001 &451120082
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4494,7 +4460,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: c61c6a0b1d843d34298feaf614878b9d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
