@@ -12,7 +12,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: Scamazon Inc
+  companyName: DefaultCompany
   productName: Scamazon
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -136,7 +136,6 @@ PlayerSettings:
   bundleVersion: 0.1.0
   preloadedAssets:
   - {fileID: -5149374111844333715, guid: d465e9a3723d79c498f48c73052cc605, type: 2}
-  - {fileID: 11400000, guid: d24d8473203ed494ab98c39a593b4a92, type: 2}
   - {fileID: 943020678849046095, guid: 666ee59fd5a3f0e49b9c55a8b4f861f0, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -157,7 +156,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.ScamazonInc.Scamazon
+    Android: com.DefaultCompany.Scamazon
     Standalone: com.Unity-Technologies.com.unity.template.urp-blank
     iPhone: com.Unity-Technologies.com.unity.template.urp-blank
   buildNumber:

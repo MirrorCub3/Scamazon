@@ -15,16 +15,16 @@ public class Wrapper : MonoBehaviour
     [Header("Wrapping")]
 
     public bool proceduralMesh = true;
-    [SerializeField]
+    [SerializeField, ConditionalField("proceduralMesh")]
     private float wrappingThickness = 0.02f;
 
     [SerializeField]
     private Vector3 wrapOffset = Vector3.zero;
 
-    [SerializeField]
+    [SerializeField, ConditionalField("proceduralMesh", true)]
     private Vector3 wrapScaling = Vector3.one * 1.2f;
 
-    [SerializeField]
+    [SerializeField, ConditionalField("proceduralMesh", true)]
     private Mesh preferredMesh;
 
     private MeshFilter myMeshFilter;
