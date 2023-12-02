@@ -445,7 +445,7 @@ MonoBehaviour:
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0
-  AndroidUseOBB: 0
+  AndroidUseOBB: 1
   AndroidPatchBuild: 0
   MeterChannelOrdering: 0
   StopEventsOutsideMaxDistance: 0
@@ -519,7 +519,8 @@ MonoBehaviour:
       Value: 0
       HasValue: 0
     Plugins:
-      Value: []
+      Value:
+      - OculusSpatializerFMOD
       HasValue: 1
     StaticPlugins:
       Value: []
@@ -796,8 +797,9 @@ MonoBehaviour:
       Value: 0
       HasValue: 0
     Plugins:
-      Value: []
-      HasValue: 0
+      Value:
+      - OculusSpatializerFMOD
+      HasValue: 1
     StaticPlugins:
       Value: []
       HasValue: 0
