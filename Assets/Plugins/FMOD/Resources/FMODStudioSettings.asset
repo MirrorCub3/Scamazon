@@ -418,7 +418,7 @@ MonoBehaviour:
   HasSourceProject: 0
   HasPlatforms: 0
   sourceProjectPath: ../Users/kal20/OneDrive/Desktop/ScamazonFMOD/Scamazon.fspro
-  sourceBankPath: Assets/FMODBanks/Desktop
+  sourceBankPath: Assets/FMODBanks
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
@@ -445,7 +445,7 @@ MonoBehaviour:
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0
-  AndroidUseOBB: 1
+  AndroidUseOBB: 0
   AndroidPatchBuild: 0
   MeterChannelOrdering: 0
   StopEventsOutsideMaxDistance: 0
@@ -504,8 +504,8 @@ MonoBehaviour:
       Value: 
       HasValue: 0
     SpeakerMode:
-      Value: 3
-      HasValue: 1
+      Value: 0
+      HasValue: 0
     VirtualChannelCount:
       Value: 0
       HasValue: 0
@@ -519,8 +519,7 @@ MonoBehaviour:
       Value: 0
       HasValue: 0
     Plugins:
-      Value:
-      - OculusSpatializerFMOD
+      Value: []
       HasValue: 1
     StaticPlugins:
       Value: []
@@ -797,9 +796,8 @@ MonoBehaviour:
       Value: 0
       HasValue: 0
     Plugins:
-      Value:
-      - OculusSpatializerFMOD
-      HasValue: 1
+      Value: []
+      HasValue: 0
     StaticPlugins:
       Value: []
       HasValue: 0
