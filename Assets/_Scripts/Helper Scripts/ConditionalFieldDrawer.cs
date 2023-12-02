@@ -3,6 +3,7 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+#if UNITY_EDITOR
 
 [CustomPropertyDrawer(typeof(ConditionalFieldAttribute))]
 public class ConditialFieldDrawer : PropertyDrawer
@@ -48,4 +49,4 @@ public class ConditialFieldDrawer : PropertyDrawer
 
 }
 
-
+#endif
