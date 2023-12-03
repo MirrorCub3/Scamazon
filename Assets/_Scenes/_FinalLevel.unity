@@ -917,6 +917,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Despawn Zone (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 4727775306662588009, guid: 7e79d5a8a6a30314d8b4e278cefe77c3,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1633,6 +1638,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Despawn Zone (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4727775306662588009, guid: 7e79d5a8a6a30314d8b4e278cefe77c3,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11840,6 +11850,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Despawn Zone (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 4727775306662588009, guid: 7e79d5a8a6a30314d8b4e278cefe77c3,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16232,6 +16247,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Despawn Zone (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4727775306662588009, guid: 7e79d5a8a6a30314d8b4e278cefe77c3,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19303,6 +19323,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Despawn Zone
+      objectReference: {fileID: 0}
+    - target: {fileID: 4727775306662588009, guid: 7e79d5a8a6a30314d8b4e278cefe77c3,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
