@@ -76,6 +76,7 @@ public class Boss_Navigation : MonoBehaviour
         pIndex = points.Length - 1;
         moving = true;
         forward = false;
+        Count_Manager.resetCount();
     }
 
 }
