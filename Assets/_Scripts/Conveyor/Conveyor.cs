@@ -13,7 +13,7 @@ public class Conveyor : MonoBehaviour
 
     protected List<GameObject> objectPool_offList;
     private List<GameObject> objectsToMove;
-    private Vector3 spawnLocation;
+    //private Vector3 spawnLocation;
     private int ObjectAmount;
     
     [Header("Current Settings [READ ONLY]")]
@@ -59,7 +59,7 @@ public class Conveyor : MonoBehaviour
         ObjectAmount = objectPool.Count;
         objectsToMove = new List<GameObject>(ObjectAmount);
         objectPool_offList = new List<GameObject>(objectPool.Count);
-        spawnLocation = objSpawnLocation.transform.position;
+        //spawnLocation = objSpawnLocation.transform.position;
 
         foreach (GameObject o in objectPool) {
             objectPool_offList.Add(o);
@@ -157,7 +157,7 @@ public class Conveyor : MonoBehaviour
         while (machineOn) {
             if (objectPool_offList.Count > 0) {
                 int index = Random.Range(0, objectPool_offList.Count);
-                objectPool_offList[index].transform.position = spawnLocation;
+                objectPool_offList[index].transform.position = objSpawnLocation.transform.position;
                 objectPool_offList[index].transform.rotation = new Quaternion(0, 0, 0, 0);
                 objectPool_offList[index].SetActive(true);
                 objectPool_offList.RemoveAt(index);

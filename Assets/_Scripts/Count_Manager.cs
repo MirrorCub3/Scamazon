@@ -12,15 +12,17 @@ public class Count_Manager : MonoBehaviour
     private static int packageCount;
     //private static int totalPackaged;
     private static bool gameDone;
+    private static bool bossHere;
 
     public delegate void BossAppearance();
     public static BossAppearance bossAppears;
 
     private void Start()
     {
-        bossAppears += testDelegate;
-        bossAppears += testDelegate2;
+        bossAppears += bossIsHere;
+
         packageQuota = packQuota;
+        bossHere = false;
         resetCount();
         //totalPackaged = 0;
         gameDone = false;
@@ -36,18 +38,20 @@ public class Count_Manager : MonoBehaviour
 
     public static void incrementCount()
     {
-        packageCount++;
+        if(/*!bossHere &&*/ packageCount < packageQuota) // UNCOMMENT once the boss part of the gameloop is complete
+            packageCount++;
         //totalPackaged++;
 
         if (!gameDone && packageCount >= packageQuota) {
             bossAppears();
-            resetCount(); // TBD to move based on the delegate action thing
+            resetCount(); // REMOVE once the boss part of the gameloop is complete
         }
     }
 
     public static void resetCount()
     {
         packageCount = 0;
+        bossHere = false;
     }
 
     public void gameIsDone()
@@ -56,12 +60,8 @@ public class Count_Manager : MonoBehaviour
         gameDone = true;
     }
 
-    public void testDelegate()
+    public void bossIsHere()
     {
-        print("delegate");
-    }
-    public void testDelegate2()
-    {
-        print("works");
+        bossHere = true;
     }
 }

@@ -10,7 +10,8 @@ public class VotingSystem : MonoBehaviour
     private float setRotationDuration;
     private float rotationSpeed;
     private bool deactivateVoting;
-    private bool activateVoting;          /// change to true when vote needs to be activated (might need to make public)
+    public bool activateVoting;
+    private bool activateButtons;          /// change to true when vote needs to be activated (might need to make public)
     private bool processVote;
     private bool voteSwitched;
     private bool pickedGood;
@@ -20,6 +21,8 @@ public class VotingSystem : MonoBehaviour
     private bool badOption;
 
     [Header("Voting System")]
+    [Tooltip("delay (in seconds) before the table flips over to the button side")]
+    [SerializeField] private int buttonActivateDelay;
     [Tooltip("delay (in seconds) before the table flips back over to the packing side")]
     [SerializeField] private int voteDeactivateDelay;
     [Tooltip("time (in seconds) it takes for the vote to process before displaying the actual selection on screen")]
@@ -40,8 +43,9 @@ public class VotingSystem : MonoBehaviour
     [Tooltip("time (in seconds) it takes for the table to flip over to the voting side")]
     [SerializeField] private float rotationDuration;
     [SerializeField] private GameObject coffee;
-    [SerializeField] private GameObject pen;
+    //[SerializeField] private GameObject pen;
     [SerializeField] private GameObject table;
+    [SerializeField] private TableCollision tableCollision;
 
     [Header("Monitor Screens")]
     [SerializeField] private GameObject blankScreen;
@@ -64,6 +68,10 @@ public class VotingSystem : MonoBehaviour
         setRotationDuration = rotationDuration;
         voteProcessingSlider.value = 0;
         voteProcessingSlider.maxValue = voteProcessingTime;
+
+        coffee = GameObject.Find("Coffee");
+        //pen = GameObject.Find("Pen");
+        tableCollision = table.GetComponent<TableCollision>();
     }
 
     void Update()
@@ -106,6 +114,11 @@ public class VotingSystem : MonoBehaviour
             DeactivateVoting();
         }
 
+        if (activateButtons == true)
+        {
+            ActivateButtons();
+        }
+
         if (processVote == true)
         {
             ProcessVote();
@@ -121,25 +134,39 @@ public class VotingSystem : MonoBehaviour
             voteScreen.GetComponent<Image>().sprite = voteScreens[voteNumber];
             voteTitle.GetComponent<TextMeshProUGUI>().text = voteTitles[voteNumber];
 
+            StartCoroutine("DelayButtonActivate");
+
             voteSwitched = true;
         }
+    }
 
+    public void ActivateButtons()
+    {
         if (rotationDuration > 0)
         {
             rotationDuration -= Time.deltaTime;
 
-            coffee.GetComponent<Rigidbody>().isKinematic = true;
-            pen.GetComponent<Rigidbody>().isKinematic = true;
+            // rotates objects on x-axis at specified degrees per second
+            if (tableCollision.coffeeOn == true)
+            {
+                coffee.GetComponent<Rigidbody>().isKinematic = true;
+                coffee.transform.RotateAround(table.transform.position, Vector3.right, Time.deltaTime * rotationSpeed);
+            }
 
-            // rotates object on x-axis at specified degrees per second
-            coffee.transform.RotateAround(table.transform.position, Vector3.right, Time.deltaTime * rotationSpeed);
-            pen.transform.RotateAround(table.transform.position, Vector3.right, Time.deltaTime * rotationSpeed);
+            if (tableCollision.penOn == true)
+            {
+                //pen.GetComponent<Rigidbody>().isKinematic = true;
+                //pen.transform.RotateAround(table.transform.position, Vector3.right, Time.deltaTime * rotationSpeed);
+            }
+
             table.transform.RotateAround(table.transform.position, Vector3.right, Time.deltaTime * rotationSpeed);
         }
         else
         {
             activateVoting = false;
-            rotationDuration = setRotationDuration + rotationDuration;
+            activateButtons = false;
+            rotationDuration = setRotationDuration;
+            table.transform.eulerAngles = new Vector3(180, 0, 0);
         }
     }
 
@@ -149,21 +176,29 @@ public class VotingSystem : MonoBehaviour
         {
             rotationDuration -= Time.deltaTime;
 
-            coffee.GetComponent<Rigidbody>().isKinematic = true;
-            pen.GetComponent<Rigidbody>().isKinematic = true;
+            // rotates objects on x-axis at specified degrees per second
+            if (tableCollision.coffeeOn == true)
+            {
+                coffee.GetComponent<Rigidbody>().isKinematic = true;
+                coffee.transform.RotateAround(table.transform.position, Vector3.left, Time.deltaTime * rotationSpeed);
+            }
 
-            // rotates object on x-axis at specified degrees per second
-            coffee.transform.RotateAround(table.transform.position, Vector3.left, Time.deltaTime * rotationSpeed);
-            pen.transform.RotateAround(table.transform.position, Vector3.left, Time.deltaTime * rotationSpeed);
+            if (tableCollision.penOn == true)
+            {
+                //pen.GetComponent<Rigidbody>().isKinematic = true;
+                //pen.transform.RotateAround(table.transform.position, Vector3.left, Time.deltaTime * rotationSpeed);
+            }
+
             table.transform.RotateAround(table.transform.position, Vector3.left, Time.deltaTime * rotationSpeed);
         }
         else
         {
             deactivateVoting = false;
-            rotationDuration = setRotationDuration + rotationDuration;
+            rotationDuration = setRotationDuration;
+            table.transform.eulerAngles = new Vector3(0, 0, 0);
 
             coffee.GetComponent<Rigidbody>().isKinematic = false;
-            pen.GetComponent<Rigidbody>().isKinematic = false;
+            //pen.GetComponent<Rigidbody>().isKinematic = false;
 
             voteNumber++;
             voteSwitched = false;
@@ -201,6 +236,13 @@ public class VotingSystem : MonoBehaviour
         pickedBad = true;
 
         StartCoroutine("DelayDeactivate");
+    }
+
+    IEnumerator DelayButtonActivate()
+    {
+        yield return new WaitForSeconds(buttonActivateDelay);
+
+        activateButtons = true;
     }
 
     IEnumerator DelayDeactivate()

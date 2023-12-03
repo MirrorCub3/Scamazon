@@ -43,6 +43,7 @@ public class Item : MonoBehaviour
         if (reactToDrop && poofPrefab) // set up the poof particle
         {
             poofParticle = Instantiate(poofPrefab, transform.position, Quaternion.Euler(90, 0, 0));
+            poofParticle.name = poofPrefab.name + name;
             poofParticleSystem = poofParticle.GetComponent<ParticleSystem>();
             poofParticleSystem.Stop();
         }

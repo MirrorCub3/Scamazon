@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8366da5b8f2f4c94eb1d956212873473, type: 3}
+  m_Name: PackingType
+  m_EditorClassIdentifier: 
+  openingPrompt:
+    audioClip:
+      Guid:
+        Data1: 1385345814
+        Data2: 1210548539
+        Data3: 395982485
+        Data4: 343658607
+      Path: event:/SFX/2a
+  goodChoice:
+    audioClip:
+      Guid:
+        Data1: 1282749843
+        Data2: 1194800952
+        Data3: 1923475373
+        Data4: -696198975
+      Path: event:/SFX/2b
+  good_GoodResult:
+    audioClip:
+      Guid:
+        Data1: -1746898963
+        Data2: 1087535411
+        Data3: 1064114096
+        Data4: -177604896
+      Path: event:/SFX/2b 2
+  good_BadResult:
+    audioClip:
+      Guid:
+        Data1: -1706262457
+        Data2: 1214885899
+        Data3: 2025828543
+        Data4: -752459993
+      Path: event:/1h 2
+  badChoice:
+    audioClip:
+      Guid:
+        Data1: -1232259684
+        Data2: 1270902449
+        Data3: -1544872523
+        Data4: 284735112
+      Path: event:/SFX/2b 3
+  bad_GoodResult:
+    audioClip:
+      Guid:
+        Data1: -174961645
+        Data2: 1233022341
+        Data3: 1138781629
+        Data4: -1006589052
+      Path: event:/SFX/2b 4
+  bad_BadResult:
+    audioClip:
+      Guid:
+        Data1: 1120721193
+        Data2: 1259480264
+        Data3: 797176192
+        Data4: 913488561
+      Path: event:/SFX/2b 5

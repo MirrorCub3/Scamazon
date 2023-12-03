@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8366da5b8f2f4c94eb1d956212873473, type: 3}
+  m_Name: ShippingFrequency
+  m_EditorClassIdentifier: 
+  openingPrompt:
+    audioClip:
+      Guid:
+        Data1: -1652181109
+        Data2: 1330475326
+        Data3: 1823259040
+        Data4: -1184040704
+      Path: event:/SFX/1a
+  goodChoice:
+    audioClip:
+      Guid:
+        Data1: -396299547
+        Data2: 1204458741
+        Data3: 1475079056
+        Data4: -1441988762
+      Path: event:/SFX/1b
+  good_GoodResult:
+    audioClip:
+      Guid:
+        Data1: -459288585
+        Data2: 1265196366
+        Data3: 729423245
+        Data4: -588424286
+      Path: event:/SFX/1c
+  good_BadResult:
+    audioClip:
+      Guid:
+        Data1: 1540831769
+        Data2: 1289425367
+        Data3: -1166949975
+        Data4: -1785325485
+      Path: event:/1h
+  badChoice:
+    audioClip:
+      Guid:
+        Data1: -1923573495
+        Data2: 1310678848
+        Data3: 546626231
+        Data4: -1347967368
+      Path: event:/SFX/1d
+  bad_GoodResult:
+    audioClip:
+      Guid:
+        Data1: 1928332650
+        Data2: 1265148212
+        Data3: -1915222631
+        Data4: -1068441827
+      Path: event:/SFX/1e
+  bad_BadResult:
+    audioClip:
+      Guid:
+        Data1: -1464449011
+        Data2: 1193743121
+        Data3: 1692825532
+        Data4: 671561032
+      Path: event:/SFX/1f
