@@ -16,9 +16,9 @@ public class ConveyorBeltSound : MonoBehaviour
     private float speed;
 
     // Start is called before the first frame update
-    public void switchClicked()
+    public void switchClicked(bool _on)
     {
-        on = !on;
+        on = _on;
     }
     void Start()
     {

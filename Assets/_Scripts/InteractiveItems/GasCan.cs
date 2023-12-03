@@ -11,7 +11,7 @@ public class GasCan : Item
 
     private float timeToDeplete;
 
-    private void Awake()
+    private void Start()
     {
         ResetTimer();
     }

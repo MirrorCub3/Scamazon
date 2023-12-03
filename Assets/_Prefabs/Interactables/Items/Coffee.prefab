@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5912233068170863064}
   - component: {fileID: 2262361641133535106}
   m_Layer: 0
-  m_Name: CoffeCup
+  m_Name: Coffee
   m_TagString: Desktop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35,7 +35,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1991445945447093054
 MeshFilter:
@@ -298,7 +298,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useDynamicAttach: 1
   reactToDrop: 1
-  poofPrefab: {fileID: 9205993424961766283, guid: f58033619f41ad24dbd9bdd258af97a5,
+  poofPrefab: {fileID: 3188533037924163303, guid: f58033619f41ad24dbd9bdd258af97a5,
     type: 3}
   dropTime: 5
   respawnOnDrop: 1

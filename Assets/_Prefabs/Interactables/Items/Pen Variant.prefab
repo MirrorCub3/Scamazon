@@ -314,7 +314,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useDynamicAttach: 1
   reactToDrop: 1
-  poofPrefab: {fileID: 9205993424961766283, guid: f58033619f41ad24dbd9bdd258af97a5,
+  poofPrefab: {fileID: 3188533037924163303, guid: f58033619f41ad24dbd9bdd258af97a5,
     type: 3}
   dropTime: 5
   respawnOnDrop: 1
