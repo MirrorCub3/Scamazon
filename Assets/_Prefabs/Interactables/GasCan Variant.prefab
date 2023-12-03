@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 5a632352c56a8704dabb80a82cfc9579,
         type: 3}
       propertyPath: m_RootOrder
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5a632352c56a8704dabb80a82cfc9579,
         type: 3}
@@ -125,10 +125,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 2142027162993136543}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5a632352c56a8704dabb80a82cfc9579,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2677078174098957787}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5a632352c56a8704dabb80a82cfc9579,
         type: 3}
       insertIndex: -1
@@ -315,25 +311,6 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
---- !u!114 &2677078174098957787
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2108075124636678569}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d4a9e85edce6e54cbbbd09c39231e8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  useDynamicAttach: 1
-  reactToDrop: 1
-  poofPrefab: {fileID: 9205993424961766283, guid: f58033619f41ad24dbd9bdd258af97a5,
-    type: 3}
-  dropTime: 5
-  respawnOnDrop: 1
-  respawnPoint: {fileID: 0}
 --- !u!65 &8951202968951720687
 BoxCollider:
   m_ObjectHideFlags: 0
