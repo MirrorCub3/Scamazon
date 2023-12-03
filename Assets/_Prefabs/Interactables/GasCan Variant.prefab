@@ -129,6 +129,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 8951202968951720687}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5a632352c56a8704dabb80a82cfc9579,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2110340960130292317}
   m_SourcePrefab: {fileID: 100100000, guid: 5a632352c56a8704dabb80a82cfc9579, type: 3}
 --- !u!1 &2108075124636678569 stripped
 GameObject:
@@ -332,3 +336,24 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.009437203, y: 0.0030930464, z: 0.012430399}
   m_Center: {x: -0.00018975325, y: 0, z: 0.0061977548}
+--- !u!114 &2110340960130292317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2108075124636678569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cded1e57ad5bcc449a57e8720a07a85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useDynamicAttach: 1
+  reactToDrop: 1
+  poofPrefab: {fileID: 3188533037924163303, guid: f58033619f41ad24dbd9bdd258af97a5,
+    type: 3}
+  dropTime: 5
+  respawnOnDrop: 1
+  respawnPoint: {fileID: 0}
+  timerLowerBound: 90
+  timerUpperBound: 150

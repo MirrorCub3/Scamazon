@@ -11,6 +11,12 @@ public class GasPowerMachine : BaseMachine
     private List<VisualEffect> visualEffects;
 
     [SerializeField]
+    private List<Conveyor> conveyors;
+
+    [SerializeField]
+    private List<ConveyorBeltSound> conveyorSFX;
+
+    [SerializeField]
     private XRLever lever;
 
     private bool wasFueled;
@@ -55,11 +61,15 @@ public class GasPowerMachine : BaseMachine
         if (!wasFueled) return;
         print("STARTING");
         ToggleVisualEffect(true);
+        ToggleConveyors(true);
+        ToggleConveyorSFX(true);
     }
     public void StopMachine()
     {
         print("STOPPING");
         ToggleVisualEffect(false);
+        ToggleConveyors(false);
+        ToggleConveyorSFX(false);
         MachineWasTurnedOff?.Invoke();
     }
 
@@ -92,6 +102,23 @@ public class GasPowerMachine : BaseMachine
             } 
             else effect.Stop();     
         }
+    }
+
+    public void ToggleConveyors(bool turnOn)
+    {
+        foreach(Conveyor c in conveyors)
+        {
+            if (turnOn)
+                c.startConveyor();
+            else 
+                c.stopConveyor();
+        }
+    }
+
+    public void ToggleConveyorSFX(bool turnOn)
+    {
+        foreach (ConveyorBeltSound s in conveyorSFX)
+            s.switchClicked(turnOn);
     }
 
     public void TurnOffLever()
