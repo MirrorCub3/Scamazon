@@ -35,7 +35,7 @@ public class Manager_Navigation : MonoBehaviour
                     StartCoroutine(turn(rotation, 0.5f));
 
                     target = null;
-                    print("No littering!");
+                    print("No littering!"); // PLAY SOUND HERE 
                 }
             }
         } else {
