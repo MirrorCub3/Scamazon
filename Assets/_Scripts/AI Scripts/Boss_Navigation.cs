@@ -23,7 +23,7 @@ public class Boss_Navigation : MonoBehaviour
         forward = true;
         Count_Manager.bossAppears += moveForward;
 
-        votingSystem = GetComponent<VotingSystem>();
+        votingSystem = monitor.GetComponent<VotingSystem>();
     }
 
     private void Update()
@@ -73,7 +73,7 @@ public class Boss_Navigation : MonoBehaviour
         gameObject.transform.position = points[0].position;
     }
 
-    public  void moveBackward()
+    public void moveBackward()
     {
         pIndex = points.Length - 1;
         moving = true;

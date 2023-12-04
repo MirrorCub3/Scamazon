@@ -5,6 +5,12 @@ using UnityEngine.AI;
 
 public class Manager_Navigation : MonoBehaviour
 {
+    
+    private FMOD.Studio.EventInstance instance;
+
+    public FMODUnity.EventReference fmodEvent;
+    private int para;
+// fmod stuff ^
     [SerializeField] private Transform homeBase;
     [SerializeField] private Transform player;
 
@@ -19,6 +25,7 @@ public class Manager_Navigation : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         target = null;
         turning = false;
+        instance = FMODUnity.RuntimeManager.CreateInstance(fmodEvent);
     }
 
     private void Update()
@@ -36,6 +43,11 @@ public class Manager_Navigation : MonoBehaviour
 
                     target = null;
                     print("No littering!"); // PLAY SOUND HERE 
+                    para += para == 3 ? -3 : 1;
+                    instance.setParameterByName("NoLittering",para);
+                    
+                    instance.start();
+                        
                 }
             }
         } else {

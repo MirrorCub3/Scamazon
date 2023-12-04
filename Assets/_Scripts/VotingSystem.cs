@@ -6,22 +6,38 @@ using Image = UnityEngine.UI.Image;
 
 public class VotingSystem : MonoBehaviour
 {
-    private int voteNumber;
-    private float setRotationDuration;
-    private float rotationSpeed;
-    private bool deactivateVoting;
+    [HideInInspector]
+    public bool deactivateVoting;
+    [HideInInspector]
     public bool activateVoting;
-    private bool activateButtons;          /// change to true when vote needs to be activated (might need to make public)
+    [HideInInspector]
+    public bool votingReady;
+
+    // Voting Odds //
+    private int goodOdds;
+    private int badOdds;
+    private int randomNumber;
+
+    // Voting System //
+    private int voteNumber;
     private bool processVote;
     private bool voteSwitched;
+    private bool selectedOption;
     private bool pickedGood;
     private bool pickedBad;
-    private bool selectedOption;
     private bool goodOption;
     private bool badOption;
 
+    // Voting Table //
+    private float setRotationDuration;
+    private float rotationSpeed;
+    private bool activateButtons;
+
+    // Boss //
+    private bool letBossLeave;
+
     [Header("Voting System")]
-    [Tooltip("delay (in seconds) before the table flips over to the button side")]
+    [Tooltip("delay (in seconds) before the table flips over to the voting side")]
     [SerializeField] private int buttonActivateDelay;
     [Tooltip("delay (in seconds) before the table flips back over to the packing side")]
     [SerializeField] private int voteDeactivateDelay;
@@ -31,21 +47,16 @@ public class VotingSystem : MonoBehaviour
     [SerializeField] private GameObject voteTitle;          /// remove later if the vote title is in the vote screen
     [SerializeField] private string[] voteTitles;           /// remove later if the vote title is in the vote screen
     [SerializeField] private Sprite[] voteScreens;
-    [SerializeField] private ButtonVR[] buttonScripts;
-
-    // REMOVE FROM INSPECTOR LATER //
-    [Header("Voting Odds")]
-    [SerializeField] private int goodOdds;
-    [SerializeField] private int badOdds;
-    [SerializeField] private int randomNumber;
-
+    
     [Header("Voting Table")]
     [Tooltip("time (in seconds) it takes for the table to flip over to the voting side")]
     [SerializeField] private float rotationDuration;
     [SerializeField] private GameObject coffee;
-    //[SerializeField] private GameObject pen;
-    [SerializeField] private GameObject table;
-    [SerializeField] private TableCollision tableCollision;
+    ///[SerializeField] private GameObject pen;
+    [SerializeField] private GameObject plasticTableTop;
+    [SerializeField] private GameObject paperTableTop;
+    private GameObject table;
+    private TableCollision tableCollision;
 
     [Header("Monitor Screens")]
     [SerializeField] private GameObject blankScreen;
@@ -53,6 +64,12 @@ public class VotingSystem : MonoBehaviour
     [SerializeField] private GameObject processingScreen;
     [SerializeField] private GameObject goodScreen;
     [SerializeField] private GameObject badScreen;
+
+    [Header("Boss Nav")]
+    [SerializeField] private GameObject boss;
+    [Tooltip("delay (in seconds) before the boss leaves after the vote is processed")]
+    [SerializeField] private int bossLeaveDelay;
+    private Boss_Navigation bossNav;
 
 
     void Start()
@@ -69,9 +86,12 @@ public class VotingSystem : MonoBehaviour
         voteProcessingSlider.value = 0;
         voteProcessingSlider.maxValue = voteProcessingTime;
 
-        coffee = GameObject.Find("Coffee");
-        //pen = GameObject.Find("Pen");
-        tableCollision = table.GetComponent<TableCollision>();
+        table = plasticTableTop;
+        paperTableTop.SetActive(false);
+        tableCollision = table.GetComponentInChildren<TableCollision>();
+        bossNav = boss.GetComponent<Boss_Navigation>();
+
+        letBossLeave = false;
     }
 
     void Update()
@@ -79,17 +99,23 @@ public class VotingSystem : MonoBehaviour
         // TEMPORARY TESTING KEYBINDS //
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            Debug.Log("PLAYER PICKED GOOD OPTION");
+            if (votingReady == true)
+            {
+                Debug.Log("PLAYER PICKED GOOD OPTION");
 
-            PlayerPickedGoodOption();
+                PlayerPickedGoodOption();
+            }
         }
 
         // TEMPORARY TESTING KEYBINDS //
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            Debug.Log("PLAYER PICKED BAD OPTION");
+            if (votingReady == true)
+            {
+                Debug.Log("PLAYER PICKED BAD OPTION");
 
-            PlayerPickedBadOption();
+                PlayerPickedBadOption();
+            }
         }
 
         // TEMPORARY TESTING KEYBINDS //
@@ -124,6 +150,19 @@ public class VotingSystem : MonoBehaviour
             ProcessVote();
         }
 
+        if (letBossLeave == true)
+        {
+            bossNav.moveBackward();
+            letBossLeave = false;
+        }
+
+        if (voteNumber == 1 && goodOption == true && selectedOption == true)
+        {
+            // paperTableTop.SetActive(true)
+            // switch out plastic table with paper table (make it rise from the floor)
+            // set "table = paperTable" after the table is done rising from the floor
+        }
+
         MonitorScreenManager();
     }
 
@@ -140,29 +179,37 @@ public class VotingSystem : MonoBehaviour
         }
     }
 
+    IEnumerator DelayButtonActivate()
+    {
+        yield return new WaitForSeconds(buttonActivateDelay);
+
+        activateButtons = true;
+    }
+
     public void ActivateButtons()
     {
         if (rotationDuration > 0)
         {
             rotationDuration -= Time.deltaTime;
 
-            // rotates objects on x-axis at specified degrees per second
             if (tableCollision.coffeeOn == true)
             {
                 coffee.GetComponent<Rigidbody>().isKinematic = true;
                 coffee.transform.RotateAround(table.transform.position, Vector3.right, Time.deltaTime * rotationSpeed);
             }
 
-            if (tableCollision.penOn == true)
+            ///if (tableCollision.penOn == true)
             {
-                //pen.GetComponent<Rigidbody>().isKinematic = true;
-                //pen.transform.RotateAround(table.transform.position, Vector3.right, Time.deltaTime * rotationSpeed);
+                ///pen.GetComponent<Rigidbody>().isKinematic = true;
+                ///pen.transform.RotateAround(table.transform.position, Vector3.right, Time.deltaTime * rotationSpeed);
             }
 
+            // rotates table on x-axis at specified degrees per second
             table.transform.RotateAround(table.transform.position, Vector3.right, Time.deltaTime * rotationSpeed);
         }
         else
         {
+            votingReady = true;
             activateVoting = false;
             activateButtons = false;
             rotationDuration = setRotationDuration;
@@ -170,79 +217,24 @@ public class VotingSystem : MonoBehaviour
         }
     }
 
-    public void DeactivateVoting()
-    {
-        if (rotationDuration > 0)
-        {
-            rotationDuration -= Time.deltaTime;
-
-            // rotates objects on x-axis at specified degrees per second
-            if (tableCollision.coffeeOn == true)
-            {
-                coffee.GetComponent<Rigidbody>().isKinematic = true;
-                coffee.transform.RotateAround(table.transform.position, Vector3.left, Time.deltaTime * rotationSpeed);
-            }
-
-            if (tableCollision.penOn == true)
-            {
-                //pen.GetComponent<Rigidbody>().isKinematic = true;
-                //pen.transform.RotateAround(table.transform.position, Vector3.left, Time.deltaTime * rotationSpeed);
-            }
-
-            table.transform.RotateAround(table.transform.position, Vector3.left, Time.deltaTime * rotationSpeed);
-        }
-        else
-        {
-            deactivateVoting = false;
-            rotationDuration = setRotationDuration;
-            table.transform.eulerAngles = new Vector3(0, 0, 0);
-
-            coffee.GetComponent<Rigidbody>().isKinematic = false;
-            //pen.GetComponent<Rigidbody>().isKinematic = false;
-
-            voteNumber++;
-            voteSwitched = false;
-
-            foreach (ButtonVR scripts in buttonScripts)
-            {
-                scripts.enabled = true;
-            }
-        }
-    }
-
     public void PlayerPickedGoodOption()
     {
-        foreach (ButtonVR scripts in buttonScripts)
-        {
-            scripts.enabled = false;
-        }
-
         randomNumber = Random.Range(0, 100);
         processVote = true;
         pickedGood = true;
+        votingReady = false;
 
         StartCoroutine("DelayDeactivate");
     }
 
     public void PlayerPickedBadOption()
     {
-        foreach (ButtonVR scripts in buttonScripts)
-        {
-            scripts.enabled = false;
-        }
-
         randomNumber = Random.Range(0, 100);
         processVote = true;
         pickedBad = true;
+        votingReady = false;
 
         StartCoroutine("DelayDeactivate");
-    }
-
-    IEnumerator DelayButtonActivate()
-    {
-        yield return new WaitForSeconds(buttonActivateDelay);
-
-        activateButtons = true;
     }
 
     IEnumerator DelayDeactivate()
@@ -252,6 +244,40 @@ public class VotingSystem : MonoBehaviour
         deactivateVoting = true;
     }
 
+    public void DeactivateVoting()
+    {
+        if (rotationDuration > 0)
+        {
+            rotationDuration -= Time.deltaTime;
+
+            if (tableCollision.coffeeOn == true)
+            {
+                coffee.GetComponent<Rigidbody>().isKinematic = true;
+                coffee.transform.RotateAround(table.transform.position, Vector3.left, Time.deltaTime * rotationSpeed);
+            }
+
+            ///if (tableCollision.penOn == true)
+            {
+                ///pen.GetComponent<Rigidbody>().isKinematic = true;
+                ///pen.transform.RotateAround(table.transform.position, Vector3.left, Time.deltaTime * rotationSpeed);
+            }
+
+            // rotates table on x-axis at specified degrees per second
+            table.transform.RotateAround(table.transform.position, Vector3.left, Time.deltaTime * rotationSpeed);
+        }
+        else
+        {
+            deactivateVoting = false;
+            rotationDuration = setRotationDuration;
+            table.transform.eulerAngles = new Vector3(0, 0, 0);
+
+            coffee.GetComponent<Rigidbody>().isKinematic = false;
+            ///pen.GetComponent<Rigidbody>().isKinematic = false;
+
+            voteNumber++;
+            voteSwitched = false;
+        }
+    }
 
     public void ProcessVote()
     {
@@ -288,6 +314,7 @@ public class VotingSystem : MonoBehaviour
             }
 
             selectedOption = true;
+            StartCoroutine("DelayBossLeave");
         }
 
         if (badOdds > goodOdds && selectedOption == false)
@@ -302,6 +329,7 @@ public class VotingSystem : MonoBehaviour
             }
 
             selectedOption = true;
+            StartCoroutine("DelayBossLeave");
         }
 
         if (voteNumber > 0)
@@ -310,17 +338,22 @@ public class VotingSystem : MonoBehaviour
             {
                 goodOdds += 10;
                 badOdds -= 10;
-
                 pickedGood = false;
             }
             else if (pickedBad == true)
             {
                 badOdds += 10;
                 goodOdds -= 10;
-
                 pickedBad = false;
             }
         }
+    }
+
+    IEnumerator DelayBossLeave()
+    {
+        yield return new WaitForSeconds(bossLeaveDelay);
+
+        letBossLeave = true;
     }
 
     public void MonitorScreenManager()
@@ -328,7 +361,6 @@ public class VotingSystem : MonoBehaviour
         if (processVote == true)
         {
             processingScreen.SetActive(true);
-
             voteTitle.SetActive(false);
             voteScreen.SetActive(false);
         }
@@ -344,7 +376,6 @@ public class VotingSystem : MonoBehaviour
             badScreen.SetActive(false);
 
             Debug.Log("GOOD OPTION SELECTED");
-
             goodOption = false;
         }
         else if (badOption == true && selectedOption == true)
@@ -354,7 +385,6 @@ public class VotingSystem : MonoBehaviour
             goodScreen.SetActive(false);
 
             Debug.Log("BAD OPTION SELECTED");
-
             badOption = false;
         }
 
@@ -362,7 +392,6 @@ public class VotingSystem : MonoBehaviour
         {
             voteTitle.SetActive(true);
             voteScreen.SetActive(true);
-
             blankScreen.SetActive(false);
             goodScreen.SetActive(false);
             badScreen.SetActive(false);
