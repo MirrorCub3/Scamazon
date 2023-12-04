@@ -63,8 +63,8 @@ public class GasPowerMachine : BaseMachine
         ToggleVisualEffect(true);
         ToggleConveyors(true);
         ToggleConveyorSFX(true);
-        gasCan.DepleteGasCan();
-        gasCan.ToggleInteractableComponent(false);
+        StartCoroutine(gasCan.DepleteGasCan());
+        gasCan.ToggleInteracionLayer(false);
     }
     public void StopMachine()
     {
@@ -73,7 +73,7 @@ public class GasPowerMachine : BaseMachine
         ToggleConveyors(false);
         ToggleConveyorSFX(false);
         MachineWasTurnedOff?.Invoke();
-        gasCan.ToggleInteractableComponent(true);
+        gasCan.ToggleInteracionLayer(true);
     }
 
     public override void MoveSwapMachine(Transform target, float moveDuration)

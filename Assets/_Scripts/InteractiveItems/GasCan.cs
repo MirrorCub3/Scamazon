@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.ShaderKeywordFilter;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
@@ -9,23 +10,25 @@ public class GasCan : Item
     private float timerLowerBound = 90f;
     [SerializeField]
     private float timerUpperBound = 150f;
+
     [SerializeField]
     private XRGrabInteractable interactable;
-    
     
     private float timeToDeplete;
 
     private void Start()
     {
         ResetTimer();
-        
+        ToggleInteracionLayer(true);
     }
 
     public void ResetGasCan()
     {
+        ToggleInteractableComponent(false);
         ResetTimer();
         RestartPosition();
         RemoveFromMachine();
+        ToggleInteractableComponent(true);
     }
 
     private void ResetTimer()
@@ -49,6 +52,14 @@ public class GasCan : Item
     { 
         yield return new WaitForSeconds(timeToDeplete);
         ResetGasCan();
+    }
+
+    public void ToggleInteracionLayer(bool on)
+    {
+        if (on)
+            gameObject.layer = 0;
+        else
+            gameObject.layer = 1;
     }
 
     public void ToggleInteractableComponent(bool toggle)
