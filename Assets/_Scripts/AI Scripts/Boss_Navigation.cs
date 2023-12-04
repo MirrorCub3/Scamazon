@@ -6,11 +6,13 @@ using UnityEngine.AI;
 public class Boss_Navigation : MonoBehaviour
 {
     [SerializeField] private Transform[] points;
+    [SerializeField] private GameObject monitor;
+    
     private int pIndex;
     private NavMeshAgent agent;
-    [SerializeField] private bool moving;
+    private bool moving;
     private bool forward;
-    [SerializeField] private GameObject monitor;
+    
     private VotingSystem votingSystem;
 
     void Start()
