@@ -37,20 +37,23 @@ public class GasCan : Item
     {
         Debug.Assert(GasPowerMachine.gasPowerMachine != null, "There is not a GasPowerMachine currently in used");
         GasPowerMachine.gasPowerMachine.FuelMachine(false);
-        interactable.enabled = true;
     }
 
     public void AddedToMachine()
     {
         Debug.Assert(GasPowerMachine.gasPowerMachine != null, "There is not a GasPowerMachine currently in used");
         GasPowerMachine.gasPowerMachine.FuelMachine(true); 
-        interactable.enabled = false;
     }
 
     public IEnumerator DepleteGasCan()
     { 
         yield return new WaitForSeconds(timeToDeplete);
         ResetGasCan();
+    }
+
+    public void ToggleInteractableComponent(bool toggle)
+    {
+        interactable.enabled = toggle;
     }
 
 }

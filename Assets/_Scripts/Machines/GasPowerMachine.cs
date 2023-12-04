@@ -64,6 +64,7 @@ public class GasPowerMachine : BaseMachine
         ToggleConveyors(true);
         ToggleConveyorSFX(true);
         gasCan.DepleteGasCan();
+        gasCan.ToggleInteractableComponent(false);
     }
     public void StopMachine()
     {
@@ -72,6 +73,7 @@ public class GasPowerMachine : BaseMachine
         ToggleConveyors(false);
         ToggleConveyorSFX(false);
         MachineWasTurnedOff?.Invoke();
+        gasCan.ToggleInteractableComponent(true);
     }
 
     public override void MoveSwapMachine(Transform target, float moveDuration)
