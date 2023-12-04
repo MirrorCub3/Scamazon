@@ -63,6 +63,7 @@ public class GasPowerMachine : BaseMachine
         ToggleVisualEffect(true);
         ToggleConveyors(true);
         ToggleConveyorSFX(true);
+        gasCan.DepleteGasCan();
     }
     public void StopMachine()
     {
