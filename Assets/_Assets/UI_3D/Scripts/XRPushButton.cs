@@ -17,6 +17,11 @@ namespace UnityEngine.XR.Content.Interaction
             internal bool m_WrongSide = false;
         }
 
+        [Space(10)]
+        [SerializeField]
+        [Tooltip("The script attached to the monitor.")]
+        private VotingSystem votingSystem;
+
         [Serializable]
         public class ValueChangeEvent : UnityEvent<float> { }
 
@@ -132,6 +137,26 @@ namespace UnityEngine.XR.Content.Interaction
         {
             if (m_Button != null)
                 m_BaseButtonPosition = m_Button.position;
+        }
+
+        public void GoodOption()
+        {
+            if (votingSystem.votingReady == true)
+            {
+                Debug.Log("PLAYER PICKED GOOD OPTION");
+
+                votingSystem.PlayerPickedGoodOption();
+            }
+        }
+
+        public void BadOption()
+        {
+            if (votingSystem.votingReady == true)
+            {
+                Debug.Log("PLAYER PICKED BAD OPTION");
+
+                votingSystem.PlayerPickedBadOption();
+            }
         }
 
         protected override void OnEnable()

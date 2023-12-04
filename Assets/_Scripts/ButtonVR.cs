@@ -11,7 +11,7 @@ public class ButtonVR : MonoBehaviour
 
     bool isPressed;
     GameObject presser;
-    [SerializeField] VotingSystem votingSystem;
+    [SerializeField] private VotingSystem votingSystem;
 
     void Start()
     {
@@ -41,16 +41,22 @@ public class ButtonVR : MonoBehaviour
 
     private void GoodOption()
     {
-        Debug.Log("PLAYER PICKED GOOD OPTION");
+        if (votingSystem.votingReady == true)
+        {
+            Debug.Log("PLAYER PICKED GOOD OPTION");
 
-        votingSystem.PlayerPickedGoodOption();
+            votingSystem.PlayerPickedGoodOption();
+        }
     }
 
     private void BadOption()
     {
-        Debug.Log("PLAYER PICKED BAD OPTION");
+        if (votingSystem.votingReady == true)
+        {
+            Debug.Log("PLAYER PICKED BAD OPTION");
 
-        votingSystem.PlayerPickedBadOption();
+            votingSystem.PlayerPickedBadOption();
+        }
     }
 
 }
