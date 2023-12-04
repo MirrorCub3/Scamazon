@@ -94,5 +94,12 @@ public class Item : MonoBehaviour
         }
     }
 
+    protected virtual void RestartPosition()
+    {
+        transform.position = respawnPoint.position;
+        transform.rotation = respawnPoint.rotation;
+    }
+
+
     //protected virtual restart, set conveyor, and repool
 }
