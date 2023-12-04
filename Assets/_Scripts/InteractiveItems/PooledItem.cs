@@ -17,6 +17,7 @@ public class PooledItem : Item
     {
         Reset();
         RepoolObject();
+        Manager_Navigation.setTarget(null, transform.position);
     }
 
     public void RepoolObject()
@@ -33,4 +34,29 @@ public class PooledItem : Item
     // reset
     // set conveyor
     // repool object
+
+    protected override void OnTriggerEnter(Collider other) // use for dropping items on the ground
+    {
+        if (other.tag.Equals("Despawn") && reactToDrop) {
+            StopAllCoroutines();
+            despawningCoroutine = StartCoroutine(DropCountDown());
+            Manager_Navigation.setTarget(gameObject, transform.position);
+        }
+    }
+
+    protected virtual void OnTriggerStay(Collider other)
+    {
+        if (other.tag.Equals("Despawn") && reactToDrop) {
+            Manager_Navigation.updateTargetLoc(gameObject, gameObject.transform.position);
+        }
+    }
+
+    protected override void OnTriggerExit(Collider other)
+    {
+        if (other.tag.Equals("Despawn") && reactToDrop) {
+            StopCoroutine(despawningCoroutine);
+            print("you remembered me!");
+            Manager_Navigation.setTarget(null, transform.position);
+        }
+    }
 }

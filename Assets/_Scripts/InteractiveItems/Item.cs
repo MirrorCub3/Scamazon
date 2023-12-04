@@ -15,7 +15,7 @@ public class Item : MonoBehaviour
     [Header("Dropped Response")]
 
     [SerializeField, Tooltip("Should item react when dropped")]
-    private bool reactToDrop;
+    protected bool reactToDrop;
 
     [SerializeField, ConditionalField("reactToDrop")]
     private GameObject poofPrefab;
@@ -32,7 +32,7 @@ public class Item : MonoBehaviour
     private Transform respawnPoint; // where to respawn if dropped
 
     private XRGrabInteractable myGrabInteractable;
-    private Coroutine despawningCoroutine;
+    protected Coroutine despawningCoroutine;
 
     private void Awake()
     {
@@ -60,7 +60,7 @@ public class Item : MonoBehaviour
         poofParticleSystem.Play();
     }
 
-    private IEnumerator DropCountDown() // counts down for the drop response
+    protected IEnumerator DropCountDown() // counts down for the drop response
     {
         yield return new WaitForSeconds(dropTime);
 
