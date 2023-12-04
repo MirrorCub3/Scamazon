@@ -12515,6 +12515,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bf9ad9099a0783458a03b5047df143e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fmodEvent:
+    Guid:
+      Data1: 491459872
+      Data2: 1276661123
+      Data3: 139922601
+      Data4: -970432647
+    Path: event:/SFX/NoLittering
   homeBase: {fileID: 2089645443}
   player: {fileID: 1300518290}
 --- !u!195 &1378722751
