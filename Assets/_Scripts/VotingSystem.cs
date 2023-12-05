@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using TMPro;
 using Image = UnityEngine.UI.Image;
 using UnityEngine.Device;
+using static UnityEngine.GraphicsBuffer;
 
 public class VotingSystem : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class VotingSystem : MonoBehaviour
     // Voting System //
     private int voteNumber;
     private bool processVote;
+    private bool SkipVoteUpdateCall;
     private bool voteSwitched;
     private bool selectedOption;
     private bool pickedGood;
@@ -47,6 +49,9 @@ public class VotingSystem : MonoBehaviour
     [SerializeField] private Slider voteProcessingSlider;
     [SerializeField] private GameObject voteTitle;          /// remove later if the vote title is in the vote screen
     [SerializeField] private string[] voteTitles;           /// remove later if the vote title is in the vote screen
+    [SerializeField] private MachineType[] machineTypes;  /// order of which the machines are going to be swapped out 
+    [SerializeField] private int machineIndex;
+    [SerializeField] private MachineManager machineManager;
     [SerializeField] private Sprite[] voteScreens;
     [SerializeField] private string[] badFactText;
     [SerializeField] private string[] goodFactText;
@@ -77,6 +82,7 @@ public class VotingSystem : MonoBehaviour
     [Header("Emissions Meter")]
     [SerializeField] private EmissionsMeter emissionsMeter;
 
+    private bool SkipVoteProcess;
 
     void Start()
     {
@@ -91,9 +97,11 @@ public class VotingSystem : MonoBehaviour
         setRotationDuration = rotationDuration;
         voteProcessingSlider.value = 0;
         voteProcessingSlider.maxValue = voteProcessingTime;
+        SkipVoteProcess = false;
 
+        machineIndex = 0;
         table = plasticTableTop;
-        paperTableTop.SetActive(false);
+        //paperTableTop.SetActive(false);
         tableCollision = table.GetComponentInChildren<TableCollision>();
         bossNav = boss.GetComponent<Boss_Navigation>();
 
@@ -151,9 +159,10 @@ public class VotingSystem : MonoBehaviour
             ActivateButtons();
         }
 
-        if (processVote == true)
+        if (processVote == true && !SkipVoteProcess)
         {
             ProcessVote();
+            SkipVoteProcess = true;
         }
 
         if (letBossLeave == true)
@@ -283,14 +292,26 @@ public class VotingSystem : MonoBehaviour
 
     IEnumerator ProcessingVote()
     {
-        if (voteProcessingSlider.value <= voteProcessingTime)
+        float time = 0;
+        
+        while (time < voteProcessingTime)
         {
-            voteProcessingSlider.value += Time.deltaTime;
+            voteProcessingSlider.value = Mathf.Lerp(0, voteProcessingTime, time / voteProcessingTime);
+            time += Time.deltaTime;
+            yield return null;
         }
 
-        yield return new WaitForSeconds(voteProcessingTime);
+
+        /*while (voteProcessingSlider.value <= voteProcessingTime)
+        {
+            voteProcessingSlider.value += Time.deltaTime;
+            yield return null;
+        }*/
+
+        //yield return new WaitForSeconds(voteProcessingTime);
 
         processVote = false;
+        SkipVoteProcess = false;
         voteProcessingSlider.value = 0;
         PickVotingOption();
     }
@@ -334,6 +355,8 @@ public class VotingSystem : MonoBehaviour
                 goodOdds += 10;
                 badOdds -= 10;
                 pickedGood = false;
+                machineManager.MoveMachineSwap(machineTypes[machineIndex]);
+                
             }
             else if (pickedBad == true)
             {
@@ -341,16 +364,18 @@ public class VotingSystem : MonoBehaviour
                 goodOdds -= 10;
                 pickedBad = false;
             }
+
         }
+        ++machineIndex;
 
         if (goodOption == true)
         {
-            emissionsMeter.emissionsValue -= 10;
+            emissionsMeter.UpdateEmissionsMeter(-10);
         }
 
         if (badOption == true)
         {
-            emissionsMeter.emissionsValue += 10;
+            emissionsMeter.UpdateEmissionsMeter(10);
         }
     }
 
