@@ -22,9 +22,14 @@ public class MachineManager : MonoBehaviour
     [SerializeField]
     private List<MachineInfo> machines;
 
+    public MeshCollider meshCollider;
+
     private Dictionary<MachineType, MachineInfo> machinesDict = new Dictionary<MachineType, MachineInfo>();
 
     private bool machinesHaveMovedUp = false;
+
+    [SerializeField]
+    private int numOfMachinesMoving;
 
     [Header("Testing Variables")]
     public bool testing;
@@ -63,14 +68,25 @@ public class MachineManager : MonoBehaviour
             }
         }
 
+        meshCollider.enabled = false;
+        
+        StartCoroutine(IMoveMachines(true));
+        StartCoroutine(IExecuteMachines());
 
         if (!testing) return;
 
-        StartCoroutine(IMoveMachines(true));
-        StartCoroutine(IExecuteMachines());
         //StartCoroutine(IMachineSwap());
         //StartCoroutine(IExecuteMachine(MachineType.Power, swapMachineTime + 5));
     }
+
+    public void TurnOffCollider()
+    {
+        numOfMachinesMoving -= 1;
+
+        if (numOfMachinesMoving <= 0) meshCollider.enabled = true;
+
+    }
+
 
     public void MachineSwap(MachineType type, float time = 0)
     {
@@ -80,7 +96,10 @@ public class MachineManager : MonoBehaviour
     }
 
     public void MoveMachineSwap(MachineType type)
-    { 
+    {
+        meshCollider.enabled = false;
+        numOfMachinesMoving += 2;
+
         MachineInfo info = machinesDict[type];
         Transform target = info.hasMovedUp ? info.DownPosition : info.UpPosition;
         info.activeMachine.MoveSwapMachine(target, info.moveDuration);
@@ -160,6 +179,8 @@ public class MachineManager : MonoBehaviour
 
     public void InternalMoveMachine(MachineType type, Transform target, bool WasMovedUp)
     {
+        meshCollider.enabled = false;
+        ++numOfMachinesMoving;
         MachineInfo info = machinesDict[type];
         info.activeMachine.MoveMachine(target, info.moveDuration);
         info.hasMovedUp = WasMovedUp;

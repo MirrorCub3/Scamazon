@@ -38,13 +38,13 @@ public class Count_Manager : MonoBehaviour
 
     public static void incrementCount()
     {
-        if(/*!bossHere &&*/ packageCount < packageQuota) // UNCOMMENT once the boss part of the gameloop is complete
-            packageCount++;
-        //totalPackaged++;
+        if (!bossHere) {
+            if (packageCount < packageQuota)
+                packageCount++;
+            //totalPackaged++;
 
-        if (!gameDone && packageCount >= packageQuota) {
-            bossAppears();
-            resetCount(); // REMOVE once the boss part of the gameloop is complete
+            if (!gameDone && packageCount >= packageQuota)
+                bossAppears();
         }
     }
 

@@ -5,13 +5,11 @@ using UnityEngine.InputSystem;
 
 public class TableCollision : MonoBehaviour
 {
-    [HideInInspector]
     public bool coffeeOn;
-    [HideInInspector]
-    public bool penOn;
+    //public bool penOn;
 
-    [SerializeField] private GameObject coffee;
-    //[SerializeField] private GameObject pen;
+    private GameObject coffee;
+    //private GameObject pen;
 
     private void Start()
     {

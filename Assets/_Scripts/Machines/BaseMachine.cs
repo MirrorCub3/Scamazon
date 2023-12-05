@@ -32,6 +32,7 @@ public abstract class BaseMachine : MonoBehaviour
     public void MoveMachine(Transform target, float duration)
     { 
         objectMover.MoveObject(transform, target, duration);
+        StartCoroutine(WaitForMovement(duration));
     }
 
     private IEnumerator WaitForActivation(float duration)
@@ -46,4 +47,11 @@ public abstract class BaseMachine : MonoBehaviour
         gameObject.SetActive(false);
         //Destroy(this);
     }
+
+    private IEnumerator WaitForMovement(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        machineManager.TurnOffCollider();
+    }
+
 }
