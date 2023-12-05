@@ -69,13 +69,14 @@ public class MachineManager : MonoBehaviour
         }
 
         meshCollider.enabled = false;
+        
+        StartCoroutine(IMoveMachines(true));
+        StartCoroutine(IExecuteMachines());
 
         if (!testing) return;
 
-        StartCoroutine(IMoveMachines(true));
-        StartCoroutine(IExecuteMachines());
-        StartCoroutine(IMachineSwap());
-        StartCoroutine(IExecuteMachine(MachineType.Power, swapMachineTime + 5));
+        //StartCoroutine(IMachineSwap());
+        //StartCoroutine(IExecuteMachine(MachineType.Power, swapMachineTime + 5));
     }
 
     public void TurnOffCollider()
