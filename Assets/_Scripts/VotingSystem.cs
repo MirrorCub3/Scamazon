@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using Image = UnityEngine.UI.Image;
+using UnityEngine.Device;
 
 public class VotingSystem : MonoBehaviour
 {
@@ -47,7 +48,9 @@ public class VotingSystem : MonoBehaviour
     [SerializeField] private GameObject voteTitle;          /// remove later if the vote title is in the vote screen
     [SerializeField] private string[] voteTitles;           /// remove later if the vote title is in the vote screen
     [SerializeField] private Sprite[] voteScreens;
-    
+    [SerializeField] private string[] badFactText;
+    [SerializeField] private string[] goodFactText;
+
     [Header("Voting Table")]
     [Tooltip("time (in seconds) it takes for the table to flip over to the voting side")]
     [SerializeField] private float rotationDuration;
@@ -65,11 +68,14 @@ public class VotingSystem : MonoBehaviour
     [SerializeField] private GameObject goodScreen;
     [SerializeField] private GameObject badScreen;
 
-    [Header("Boss Nav")]
+    [Header("Boss Navigation")]
     [SerializeField] private GameObject boss;
     [Tooltip("delay (in seconds) before the boss leaves after the vote is processed")]
     [SerializeField] private int bossLeaveDelay;
     private Boss_Navigation bossNav;
+
+    [Header("Emissions Meter")]
+    [SerializeField] private EmissionsMeter emissionsMeter;
 
 
     void Start()
@@ -172,6 +178,8 @@ public class VotingSystem : MonoBehaviour
         {
             voteScreen.GetComponent<Image>().sprite = voteScreens[voteNumber];
             voteTitle.GetComponent<TextMeshProUGUI>().text = voteTitles[voteNumber];
+            goodScreen.GetComponent<TextMeshProUGUI>().text = goodFactText[voteNumber];
+            badScreen.GetComponent<TextMeshProUGUI>().text = badFactText[voteNumber];
 
             StartCoroutine("DelayButtonActivate");
 
@@ -196,12 +204,6 @@ public class VotingSystem : MonoBehaviour
             {
                 coffee.GetComponent<Rigidbody>().isKinematic = true;
                 coffee.transform.RotateAround(table.transform.position, Vector3.right, Time.deltaTime * rotationSpeed);
-            }
-
-            ///if (tableCollision.penOn == true)
-            {
-                ///pen.GetComponent<Rigidbody>().isKinematic = true;
-                ///pen.transform.RotateAround(table.transform.position, Vector3.right, Time.deltaTime * rotationSpeed);
             }
 
             // rotates table on x-axis at specified degrees per second
@@ -256,12 +258,6 @@ public class VotingSystem : MonoBehaviour
                 coffee.transform.RotateAround(table.transform.position, Vector3.left, Time.deltaTime * rotationSpeed);
             }
 
-            ///if (tableCollision.penOn == true)
-            {
-                ///pen.GetComponent<Rigidbody>().isKinematic = true;
-                ///pen.transform.RotateAround(table.transform.position, Vector3.left, Time.deltaTime * rotationSpeed);
-            }
-
             // rotates table on x-axis at specified degrees per second
             table.transform.RotateAround(table.transform.position, Vector3.left, Time.deltaTime * rotationSpeed);
         }
@@ -272,7 +268,6 @@ public class VotingSystem : MonoBehaviour
             table.transform.eulerAngles = new Vector3(0, 0, 0);
 
             coffee.GetComponent<Rigidbody>().isKinematic = false;
-            ///pen.GetComponent<Rigidbody>().isKinematic = false;
 
             voteNumber++;
             voteSwitched = false;
@@ -346,6 +341,16 @@ public class VotingSystem : MonoBehaviour
                 goodOdds -= 10;
                 pickedBad = false;
             }
+        }
+
+        if (goodOption == true)
+        {
+            emissionsMeter.emissionsValue -= 10;
+        }
+
+        if (badOption == true)
+        {
+            emissionsMeter.emissionsValue += 10;
         }
     }
 
