@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10809,9 +10809,9 @@ MonoBehaviour:
     hasMovedUp: 0
     hasBeenSwapped: 0
     activeMachine: {fileID: 0}
-  meshCollider: {fileID: 0}
+  meshCollider: {fileID: 633633479}
   numOfMachinesMoving: 0
-  testing: 1
+  testing: 0
   moveUpTime: 2
   executeTime: 2
   swapMachineTime: 14
@@ -15098,7 +15098,7 @@ PrefabInstance:
     - target: {fileID: 4076926800069880541, guid: 9d1edc0992293ac4bbcb7bfd6319a625,
         type: 3}
       propertyPath: packQuota
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5543167622929328193, guid: 9d1edc0992293ac4bbcb7bfd6319a625,
         type: 3}
