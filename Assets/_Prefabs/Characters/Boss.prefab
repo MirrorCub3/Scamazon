@@ -148,7 +148,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: -1, z: 0}
   m_Axis: {x: 1, y: 90, z: 60}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 5.5631357e-13, y: 0.4940795, z: 0.00000014141506}
+  m_ConnectedAnchor: {x: 0, y: 0.4940798, z: 0}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -663,7 +663,7 @@ Transform:
   - {fileID: 4692757454606215499}
   - {fileID: 2986610328602186581}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &946563457362935850
 NavMeshAgent:
@@ -699,9 +699,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49e21f1d0f433604fb75eae49cc83097, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playIntro: 1
   points:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  moving: 0
+  monitor: {fileID: 0}
