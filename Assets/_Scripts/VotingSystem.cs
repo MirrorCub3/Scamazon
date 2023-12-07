@@ -174,18 +174,19 @@ public class VotingSystem : MonoBehaviour
         if (voteNumber == 1 && goodOption == true && selectedOption == true)
         {
             paperTableTop.SetActive(true);
-            machineManager.MoveMachineSwap(machineTypes[0]);
+            //machineManager.MoveMachineSwap(machineTypes[0]);
             table = paperTableTop;
         }
-        else if(voteNumber == 2 && goodOption == true && selectedOption == true)
+        else if (voteNumber == 2 && goodOption == true && selectedOption == true)
         {
             // pacakging size stuff here
+            print("PACKING SIZE CHANGE! ============================================ ");
         }
         else if (voteNumber == 4 && goodOption == true && selectedOption == true)
         {
-            // pacakging speed stuff here
+            print("PACKING SPEED CHANGE! ============================================ ");
         }
-
+        
         MonitorScreenManager();
     }
 
@@ -363,29 +364,27 @@ public class VotingSystem : MonoBehaviour
                 goodOdds += 10;
                 badOdds -= 10;
                 pickedGood = false;
-                machineManager.MoveMachineSwap(machineTypes[machineIndex]);
-                print("SWAPPING OUT MACHINE");
             }
             else if (pickedBad == true)
             {
                 badOdds += 10;
                 goodOdds -= 10;
                 pickedBad = false;
-                print("NOT SWAPPING OUT MACHINE");
             }
-
         }
-        ++machineIndex;
 
         if (goodOption == true)
         {
             emissionsMeter.UpdateEmissionsMeter(-10);
+            machineManager.MoveMachineSwap(machineTypes[machineIndex]);
+            print("SWAPPING OUT MACHINE");
         }
 
         if (badOption == true)
         {
             emissionsMeter.UpdateEmissionsMeter(10);
         }
+        ++machineIndex;
     }
 
     IEnumerator DelayBossLeave()

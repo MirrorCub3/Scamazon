@@ -10,6 +10,9 @@ public class Box : PooledItem
     private float startScale = 1.5f;
 
     [SerializeField]
+    private float endScale = 1.25f;
+
+    [SerializeField]
     private GameObject openBox;
 
     [SerializeField]
@@ -22,9 +25,9 @@ public class Box : PooledItem
         transform.localScale = Vector3.one * startScale;
     }
 
-    public void SetScale(float newScale = 1f)
+    public void SetEndScale()
     {
-        transform.localScale = Vector3.one * newScale;
+        transform.localScale = Vector3.one * endScale;
     }
 
     private void Pack()
