@@ -173,9 +173,17 @@ public class VotingSystem : MonoBehaviour
 
         if (voteNumber == 1 && goodOption == true && selectedOption == true)
         {
-            // paperTableTop.SetActive(true)
-            // switch out plastic table with paper table (make it rise from the floor)
-            // set "table = paperTable" after the table is done rising from the floor
+            paperTableTop.SetActive(true);
+            machineManager.MoveMachineSwap(machineTypes[0]);
+            table = paperTableTop;
+        }
+        else if(voteNumber == 2 && goodOption == true && selectedOption == true)
+        {
+            // pacakging size stuff here
+        }
+        else if (voteNumber == 4 && goodOption == true && selectedOption == true)
+        {
+            // pacakging speed stuff here
         }
 
         MonitorScreenManager();
@@ -356,13 +364,14 @@ public class VotingSystem : MonoBehaviour
                 badOdds -= 10;
                 pickedGood = false;
                 machineManager.MoveMachineSwap(machineTypes[machineIndex]);
-                
+                print("SWAPPING OUT MACHINE");
             }
             else if (pickedBad == true)
             {
                 badOdds += 10;
                 goodOdds -= 10;
                 pickedBad = false;
+                print("NOT SWAPPING OUT MACHINE");
             }
 
         }
