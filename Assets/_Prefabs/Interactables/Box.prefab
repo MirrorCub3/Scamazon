@@ -341,6 +341,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 97cfd4d75af811a419cf42c596fca2cb,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -4938484827991398369, guid: 97cfd4d75af811a419cf42c596fca2cb,
         type: 3}
       propertyPath: m_Name
@@ -756,7 +761,8 @@ MonoBehaviour:
   respawnOnDrop: 0
   respawnPoint: {fileID: 0}
   myConveyor: {fileID: 0}
-  startScale: 1.5
+  startScale: 1.75
+  endScale: 1.25
   openBox: {fileID: 8715862369314988701}
   closedBox: {fileID: 2301027895389660807}
 --- !u!1 &8715862369314988701 stripped

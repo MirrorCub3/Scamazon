@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8410476704094244279}
   - component: {fileID: 5912233068170863064}
   - component: {fileID: 2262361641133535106}
+  - component: {fileID: 3350812628918210828}
   m_Layer: 0
   m_Name: Coffee
   m_TagString: Desktop
@@ -303,3 +304,22 @@ MonoBehaviour:
   dropTime: 5
   respawnOnDrop: 1
   respawnPoint: {fileID: 0}
+--- !u!114 &3350812628918210828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2830233848371693089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07d3595db01c5394a97251d80932affc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fmodEvent:
+    Guid:
+      Data1: 511290541
+      Data2: 1163203909
+      Data3: -1676375135
+      Data4: 670896891
+    Path: event:/Sip

@@ -56,7 +56,7 @@ public class Boss_Navigation : MonoBehaviour
                             moving = false;
                             if (playIntro && !waitForVote) {  // play intro if necessary
                                 StartCoroutine(playingIntro());
-                            }else if(forward && !introIsPlaying) {  // start the voting if arrived to player
+                            }else if(forward && !introIsPlaying) {  // start the voting if arrived to player // or if beyond array, activate ending
                                 votingSystem.activateVoting = true;
                             }
                             forward = !forward;

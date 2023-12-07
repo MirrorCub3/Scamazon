@@ -65,6 +65,16 @@ public class PromptManager : MonoBehaviour
         }
     }
 
+    public float GetOpeningPromptLength()
+    {
+       return prompts[currPrompt].GetOpeningPromptLength();
+    }
+
+    public float GetCurrNodeLength()
+    {
+        return prompts[currPrompt].GetCurrPromptLength();
+    }
+
     #region Testing
     public int GetCurrPromptNum()
     {
