@@ -22,9 +22,14 @@ public class MachineManager : MonoBehaviour
     [SerializeField]
     private List<MachineInfo> machines;
 
+    public MeshCollider meshCollider;
+
     private Dictionary<MachineType, MachineInfo> machinesDict = new Dictionary<MachineType, MachineInfo>();
 
     private bool machinesHaveMovedUp = false;
+
+    [SerializeField]
+    private int numOfMachinesMoving;
 
     [Header("Testing Variables")]
     public bool testing;
@@ -63,24 +68,41 @@ public class MachineManager : MonoBehaviour
             }
         }
 
+        meshCollider.enabled = false;
+        
+        StartCoroutine(IMoveMachines(true));
+        StartCoroutine(IExecuteMachines());
 
         if (!testing) return;
 
-        StartCoroutine(IMoveMachines(true));
-        StartCoroutine(IExecuteMachines());
         //StartCoroutine(IMachineSwap());
         //StartCoroutine(IExecuteMachine(MachineType.Power, swapMachineTime + 5));
     }
 
+    public void TurnOffCollider()
+    {
+        numOfMachinesMoving -= 1;
+
+        if (numOfMachinesMoving <= 0) meshCollider.enabled = true;
+
+    }
+
+
     public void MachineSwap(MachineType type, float time = 0)
     {
+        if (type == MachineType.None) return;
+
         MachineInfo info = machinesDict[type];
         info.activeMachine.SwapMachine(time);
         info.hasBeenSwapped = true;
     }
 
     public void MoveMachineSwap(MachineType type)
-    { 
+    {
+        if (type == MachineType.None) return;
+        meshCollider.enabled = false;
+        numOfMachinesMoving += 2;
+
         MachineInfo info = machinesDict[type];
         Transform target = info.hasMovedUp ? info.DownPosition : info.UpPosition;
         info.activeMachine.MoveSwapMachine(target, info.moveDuration);
@@ -111,6 +133,7 @@ public class MachineManager : MonoBehaviour
 
     public void MoveMachineDown(MachineType type)
     {
+        if (type == MachineType.None) return;
         if (!machinesDict[type].hasMovedUp)
         {
             Debug.LogWarning($"Machine, {type}, have moved down. Can't move it down again");
@@ -134,6 +157,8 @@ public class MachineManager : MonoBehaviour
 
     public void MoveMachineUp(MachineType type)
     {
+        if (type == MachineType.None) return;
+
         if (machinesDict[type].hasMovedUp)
         {
             Debug.LogWarning($"Machine, {type}, have moved up. Can't move it up again");
@@ -160,6 +185,9 @@ public class MachineManager : MonoBehaviour
 
     public void InternalMoveMachine(MachineType type, Transform target, bool WasMovedUp)
     {
+        if (type == MachineType.None) return;
+        meshCollider.enabled = false;
+        ++numOfMachinesMoving;
         MachineInfo info = machinesDict[type];
         info.activeMachine.MoveMachine(target, info.moveDuration);
         info.hasMovedUp = WasMovedUp;
@@ -182,7 +210,7 @@ public class MachineManager : MonoBehaviour
     }
 
     private IEnumerator IExecuteMachine(MachineType type, float executeDelay = 0f)
-    { 
+    {
         yield return new WaitForSeconds(executeDelay);
         machinesDict[type].activeMachine.ExecuteMachine();
     }
@@ -202,5 +230,6 @@ public enum MachineType
     Power,
     WasteManagement,
     ItemConveyor,
-    BoxConveyor
+    BoxConveyor,
+    None
 }

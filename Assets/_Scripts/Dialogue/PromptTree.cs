@@ -51,6 +51,16 @@ public class PromptTree : ScriptableObject
         return openingPrompt.audioClip;
     }
 
+    public float GetOpeningPromptLength()
+    {
+        return openingPrompt.length;
+    }
+
+    public float GetCurrPromptLength()
+    {
+        return currNode.length;
+    }
+
     public FMODUnity.EventReference SelectGood() // returns the good option of the current node AND advances the current node to that option
     {
         // if(currNode == null || currNode.good == null) return null;
@@ -74,6 +84,7 @@ public class PromptTree : ScriptableObject
 public class DialogueNode
 {
     public FMODUnity.EventReference audioClip;
+    public float length = 1f;
     [HideInInspector]
     public DialogueNode good, bad;
 

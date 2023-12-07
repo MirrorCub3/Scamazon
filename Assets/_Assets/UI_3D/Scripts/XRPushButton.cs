@@ -68,6 +68,9 @@ namespace UnityEngine.XR.Content.Interaction
 
         Dictionary<IXRHoverInteractor, PressInfo> m_HoveringInteractors = new Dictionary<IXRHoverInteractor, PressInfo>();
 
+        Vector3 m_LastLoc = Vector3.zero;
+        Quaternion m_LastRot;
+
         /// <summary>
         /// The object that is visually pressed down
         /// </summary>
@@ -137,6 +140,24 @@ namespace UnityEngine.XR.Content.Interaction
         {
             if (m_Button != null)
                 m_BaseButtonPosition = m_Button.position;
+            m_LastLoc = transform.position;
+            m_LastRot = transform.rotation;
+        }
+
+        private void FixedUpdate()
+        {
+            if(transform.position != m_LastLoc || transform.rotation != m_LastRot)
+            {
+                m_LastLoc = transform.position;
+                m_LastRot = transform.rotation;
+                ReinitButton();
+            }
+        }
+
+        public void ReinitButton()
+        {
+            if (m_Button != null)
+                m_BaseButtonPosition = m_Button.position;
         }
 
         public void GoodOption()
@@ -170,6 +191,7 @@ namespace UnityEngine.XR.Content.Interaction
 
             hoverEntered.AddListener(StartHover);
             hoverExited.AddListener(EndHover);
+            ReinitButton();
         }
 
         protected override void OnDisable()

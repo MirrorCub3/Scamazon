@@ -49,10 +49,7 @@ public class Item : MonoBehaviour
         }
     }
 
-    protected virtual void OnDropped() // called when item has been on floor long enough
-    {
-        print("oh no, ive been forgotten on the floor D:");
-    }
+    protected virtual void OnDropped() { } // called when item has been on floor long enough
 
     protected void PlayPoof()
     {
@@ -90,7 +87,6 @@ public class Item : MonoBehaviour
         if (other.tag.Equals("Despawn") && reactToDrop)
         {
             StopCoroutine(despawningCoroutine);
-            print("you remembered me!");
         }
     }
 

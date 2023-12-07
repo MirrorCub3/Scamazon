@@ -103,6 +103,7 @@ public class Conveyor : MonoBehaviour
     // Set conveyor to slow speeds
     public void slowDownConveyor()
     {
+        slowDown = true;
         curMaxSpeed = -slowSpeed;
         curMaxSpawnFreq = slowSpawnFreq;
     }
