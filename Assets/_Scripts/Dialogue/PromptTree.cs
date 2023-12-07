@@ -9,6 +9,8 @@ public class PromptTree : ScriptableObject
     [Header("Opening Prompt")]
     [SerializeField]
     private DialogueNode openingPrompt;
+    [SerializeField]
+    private float openingPromptLength = 1f;
 
     [Header("Player Good Choice Branch")]
     [SerializeField]
@@ -49,6 +51,11 @@ public class PromptTree : ScriptableObject
     public FMODUnity.EventReference GetOpeningPrompt()
     {
         return openingPrompt.audioClip;
+    }
+
+    public float GetOpeningPromptLength()
+    {
+        return openingPromptLength;
     }
 
     public FMODUnity.EventReference SelectGood() // returns the good option of the current node AND advances the current node to that option

@@ -20,6 +20,7 @@ MonoBehaviour:
         Data3: 395982485
         Data4: 343658607
       Path: event:/SFX/2a
+  openingPromptLength: 13.678
   goodChoice:
     audioClip:
       Guid:

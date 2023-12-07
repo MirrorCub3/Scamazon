@@ -74,6 +74,10 @@ public class VotingSystem : MonoBehaviour
     [SerializeField] private GameObject goodScreen;
     [SerializeField] private GameObject badScreen;
 
+    [Header("DialogueSystem")]
+    [SerializeField]
+    private PromptManager promptManager;
+
     [Header("Boss Navigation")]
     [SerializeField] private GameObject boss;
     [Tooltip("delay (in seconds) before the boss leaves after the vote is processed")]
@@ -193,7 +197,6 @@ public class VotingSystem : MonoBehaviour
         }
         else if (voteNumber == 2 && !boxSizeChanged && goodOption == true && selectedOption == true)
         {
-            // pacakging size stuff here
             foreach (Box b in boxes)
                 b.SetEndScale();
             boxSizeChanged = true;
@@ -219,12 +222,14 @@ public class VotingSystem : MonoBehaviour
             StartCoroutine("DelayButtonActivate");
 
             voteSwitched = true;
+            promptManager.Play();
         }
     }
 
     IEnumerator DelayButtonActivate()
     {
-        yield return new WaitForSeconds(buttonActivateDelay);
+        float delay = promptManager.GetOpeningPromptLength();
+        yield return new WaitForSeconds(delay);
 
         activateButtons = true;
     }
@@ -402,6 +407,7 @@ public class VotingSystem : MonoBehaviour
             emissionsMeter.UpdateEmissionsMeter(10);
         }
         ++machineIndex;
+        promptManager.NextPrompt();
     }
 
     IEnumerator DelayBossLeave()
