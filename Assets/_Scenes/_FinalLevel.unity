@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -20033,6 +20033,31 @@ PrefabInstance:
       propertyPath: monitor
       value: 
       objectReference: {fileID: 1591475718}
+    - target: {fileID: 7503838507328355112, guid: 4fa7ce6ad43d8e141b1d550b46bbbce7,
+        type: 3}
+      propertyPath: fmodEvent.Path
+      value: event:/SFX/IntroTut
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503838507328355112, guid: 4fa7ce6ad43d8e141b1d550b46bbbce7,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data1
+      value: -783926942
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503838507328355112, guid: 4fa7ce6ad43d8e141b1d550b46bbbce7,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data2
+      value: 1300970477
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503838507328355112, guid: 4fa7ce6ad43d8e141b1d550b46bbbce7,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data3
+      value: -1413091712
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503838507328355112, guid: 4fa7ce6ad43d8e141b1d550b46bbbce7,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data4
+      value: -1084427266
+      objectReference: {fileID: 0}
     - target: {fileID: 7503838507328355112, guid: 4fa7ce6ad43d8e141b1d550b46bbbce7,
         type: 3}
       propertyPath: points.Array.data[0]

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 611762319643965051}
   - component: {fileID: 4450586964526329098}
   - component: {fileID: 8616266154428879091}
+  - component: {fileID: 3375529021146258253}
   m_Layer: 0
   m_Name: Flask
   m_TagString: Desktop
@@ -230,6 +231,25 @@ MonoBehaviour:
   dropTime: 5
   respawnOnDrop: 1
   respawnPoint: {fileID: 0}
+--- !u!114 &3375529021146258253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3456143615096681532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07d3595db01c5394a97251d80932affc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fmodEvent:
+    Guid:
+      Data1: 511290541
+      Data2: 1163203909
+      Data3: -1676375135
+      Data4: 670896891
+    Path: event:/Sip
 --- !u!1001 &7224663730003826627
 PrefabInstance:
   m_ObjectHideFlags: 0
