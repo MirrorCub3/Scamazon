@@ -6,10 +6,7 @@ using UnityEngine.AI;
 public class Manager_Navigation : MonoBehaviour
 {
     
-    private FMOD.Studio.EventInstance instance;
-
-    public FMODUnity.EventReference fmodEvent;
-    private int para;
+    
 // fmod stuff ^
     [SerializeField] private Transform homeBase;
     [SerializeField] private Transform player;
@@ -19,6 +16,12 @@ public class Manager_Navigation : MonoBehaviour
     private static Vector3 location;
 
     private bool turning;
+
+    
+    private FMOD.Studio.EventInstance instance;
+    public FMODUnity.EventReference fmodEvent;
+    private int para;
+
 
     private void Start()
     {
@@ -42,7 +45,7 @@ public class Manager_Navigation : MonoBehaviour
                     StartCoroutine(turn(rotation, 0.5f));
 
                     target = null;
-                    print("No littering!"); // PLAY SOUND HERE 
+
                     para += para == 3 ? -3 : 1;
                     instance.setParameterByName("NoLittering",para);
                     
