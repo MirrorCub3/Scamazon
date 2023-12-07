@@ -9,6 +9,7 @@ TagManager:
   - Gas
   - Desktop
   - Trash
+  - sip
   layers:
   - Default
   - TransparentFX
