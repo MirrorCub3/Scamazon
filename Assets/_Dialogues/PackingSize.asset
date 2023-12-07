@@ -38,7 +38,7 @@ MonoBehaviour:
         Data3: -925728354
         Data4: 405953627
       Path: event:/SFX/4a 3
-    length: 4.1
+    length: 4.2
   good_BadResult:
     audioClip:
       Guid:
@@ -47,7 +47,7 @@ MonoBehaviour:
         Data3: 447861646
         Data4: -5156996
       Path: event:/SFX/4a 4
-    length: 2.55
+    length: 2.65
   badChoice:
     audioClip:
       Guid:
@@ -56,7 +56,7 @@ MonoBehaviour:
         Data3: 1304604341
         Data4: -442483116
       Path: event:/SFX/4a 5
-    length: 4.4
+    length: 4.44
   bad_GoodResult:
     audioClip:
       Guid:
@@ -65,7 +65,7 @@ MonoBehaviour:
         Data3: -1065403753
         Data4: 1036799552
       Path: event:/SFX/4a 6
-    length: 3.08
+    length: 3.2
   bad_BadResult:
     audioClip:
       Guid:
@@ -74,4 +74,4 @@ MonoBehaviour:
         Data3: -1307378529
         Data4: -1538097177
       Path: event:/SFX/4a 7
-    length: 2.88
+    length: 2.3
