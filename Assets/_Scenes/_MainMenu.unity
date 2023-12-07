@@ -1528,6 +1528,11 @@ PrefabInstance:
       propertyPath: m_OnPress.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 4813816261363513949, guid: eeceb432c07ea3f48be82e759b17b90b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e43b5d774f798744b96996c85ab464ab, type: 2}
     - target: {fileID: 6314584466317189651, guid: eeceb432c07ea3f48be82e759b17b90b,
         type: 3}
       propertyPath: m_Name

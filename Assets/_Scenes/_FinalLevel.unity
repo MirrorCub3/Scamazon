@@ -20021,6 +20021,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 47355702}
     m_Modifications:
+    - target: {fileID: 914019695835164085, guid: b49522469178db646b85676515814895,
+        type: 3}
+      propertyPath: m_text
+      value: Pack to Fill Quota
+      objectReference: {fileID: 0}
     - target: {fileID: 942644216027817692, guid: b49522469178db646b85676515814895,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -20030,6 +20035,13 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023376583254131520, guid: b49522469178db646b85676515814895,
+        type: 3}
+      propertyPath: m_text
+      value: 'Processing Employee Votes
+
+        Please Wait........'
       objectReference: {fileID: 0}
     - target: {fileID: 2042942652224918643, guid: b49522469178db646b85676515814895,
         type: 3}
@@ -20112,6 +20124,41 @@ PrefabInstance:
       propertyPath: conveyors.Array.data[1]
       value: 
       objectReference: {fileID: 1347878702}
+    - target: {fileID: 2042942652224918643, guid: b49522469178db646b85676515814895,
+        type: 3}
+      propertyPath: voteScreens.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 1720714340e00e542a5cf64b82e31d05,
+        type: 3}
+    - target: {fileID: 2042942652224918643, guid: b49522469178db646b85676515814895,
+        type: 3}
+      propertyPath: voteScreens.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 37e6ed477f83a38459acb7709dca1721,
+        type: 3}
+    - target: {fileID: 2042942652224918643, guid: b49522469178db646b85676515814895,
+        type: 3}
+      propertyPath: voteScreens.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: c7add3e5fd59db84bb113cc8cbacdf1e,
+        type: 3}
+    - target: {fileID: 2042942652224918643, guid: b49522469178db646b85676515814895,
+        type: 3}
+      propertyPath: voteScreens.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 8880799dce9f3424caf8d132b2b6f364,
+        type: 3}
+    - target: {fileID: 2042942652224918643, guid: b49522469178db646b85676515814895,
+        type: 3}
+      propertyPath: voteScreens.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: db6ab3965def73049bcd689dc817d4a1,
+        type: 3}
+    - target: {fileID: 2360372494883152378, guid: b49522469178db646b85676515814895,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3421891904503737938, guid: b49522469178db646b85676515814895,
         type: 3}
       propertyPath: m_RootOrder
@@ -20171,6 +20218,32 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Voting Monitor
+      objectReference: {fileID: 0}
+    - target: {fileID: 6174603473016903964, guid: b49522469178db646b85676515814895,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 37e6ed477f83a38459acb7709dca1721,
+        type: 3}
+    - target: {fileID: 6174603473016903964, guid: b49522469178db646b85676515814895,
+        type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6460335196984643153, guid: b49522469178db646b85676515814895,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6519374942208229018, guid: b49522469178db646b85676515814895,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6551433322834891051, guid: b49522469178db646b85676515814895,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
