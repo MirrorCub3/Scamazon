@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5916,7 +5916,7 @@ MonoBehaviour:
   emissionsValue: 0
   emissionsMeterSlider: {fileID: 716154789}
   timeToAdjustMeter: 0
-  fill: {fileID: 0}
+  fill: {fileID: 949330576}
   emissionsMeterGradient:
     serializedVersion: 2
     key0: {r: 1, g: 1, b: 1, a: 1}
@@ -10807,7 +10807,7 @@ MonoBehaviour:
     activeMachine: {fileID: 0}
   meshCollider: {fileID: 796635837}
   numOfMachinesMoving: 0
-  testing: 0
+  testing: 1
   moveUpTime: 2
   executeTime: 2
   swapMachineTime: 14
@@ -12240,6 +12240,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2123302779}
     m_Modifications:
+    - target: {fileID: 1885254490429407113, guid: 059818b24e01a8d419ed3745b9ba5d12,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1300518290}
+    - target: {fileID: 1885254490429407113, guid: 059818b24e01a8d419ed3745b9ba5d12,
+        type: 3}
+      propertyPath: homeBase
+      value: 
+      objectReference: {fileID: 239412297}
     - target: {fileID: 2803366831794487727, guid: 059818b24e01a8d419ed3745b9ba5d12,
         type: 3}
       propertyPath: m_RootOrder
@@ -12318,10 +12328,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1378722751}
-    - targetCorrespondingSourceObject: {fileID: 8998025711534119655, guid: 059818b24e01a8d419ed3745b9ba5d12,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1378722750}
   m_SourcePrefab: {fileID: 100100000, guid: 059818b24e01a8d419ed3745b9ba5d12, type: 3}
 --- !u!1001 &1252573999
 PrefabInstance:
@@ -13637,27 +13643,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1235582471}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1378722750
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1378722748}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bf9ad9099a0783458a03b5047df143e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fmodEvent:
-    Guid:
-      Data1: 491459872
-      Data2: 1276661123
-      Data3: 139922601
-      Data4: -970432647
-    Path: event:/SFX/NoLittering
-  homeBase: {fileID: 239412297}
-  player: {fileID: 1300518290}
 --- !u!195 &1378722751
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -14005,6 +13990,11 @@ PrefabInstance:
       propertyPath: gasCan
       value: 
       objectReference: {fileID: 917231409}
+    - target: {fileID: 8330945831086961350, guid: 1b879e0c2d895b949837cce5fe4de346,
+        type: 3}
+      propertyPath: testing
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8330945831086961350, guid: 1b879e0c2d895b949837cce5fe4de346,
         type: 3}
       propertyPath: conveyors.Array.size
@@ -15191,7 +15181,7 @@ PrefabInstance:
     - target: {fileID: 4076926800069880541, guid: 9d1edc0992293ac4bbcb7bfd6319a625,
         type: 3}
       propertyPath: packQuota
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5543167622929328193, guid: 9d1edc0992293ac4bbcb7bfd6319a625,
         type: 3}
@@ -15634,6 +15624,9 @@ MonoBehaviour:
   - VOTE FOR POWER TYPE
   - VOTE FOR SHIPPING FREQUENCY
   - VOTE FOR WASTE MANAGEMENT
+  machineTypes: 0000000005000000010000000500000002000000
+  machineIndex: 0
+  machineManager: {fileID: 1027238386}
   voteScreens:
   - {fileID: 21300000, guid: 29c2121a34fc54a4a870fa5c3366cf07, type: 3}
   - {fileID: 21300000, guid: 29c2121a34fc54a4a870fa5c3366cf07, type: 3}
@@ -15662,7 +15655,7 @@ MonoBehaviour:
   goodScreen: {fileID: 145704063}
   badScreen: {fileID: 598018426}
   boss: {fileID: 449871614}
-  bossLeaveDelay: 5
+  bossLeaveDelay: 2
   emissionsMeter: {fileID: 716154788}
 --- !u!1 &1608544469
 GameObject:

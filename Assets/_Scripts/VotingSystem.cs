@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using TMPro;
 using Image = UnityEngine.UI.Image;
 using UnityEngine.Device;
+using static UnityEngine.GraphicsBuffer;
 
 public class VotingSystem : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class VotingSystem : MonoBehaviour
     // Voting System //
     private int voteNumber;
     private bool processVote;
+    private bool SkipVoteUpdateCall;
     private bool voteSwitched;
     private bool selectedOption;
     private bool pickedGood;
@@ -47,6 +49,9 @@ public class VotingSystem : MonoBehaviour
     [SerializeField] private Slider voteProcessingSlider;
     [SerializeField] private GameObject voteTitle;          /// remove later if the vote title is in the vote screen
     [SerializeField] private string[] voteTitles;           /// remove later if the vote title is in the vote screen
+    [SerializeField] private MachineType[] machineTypes;  /// order of which the machines are going to be swapped out 
+    [SerializeField] private int machineIndex;
+    [SerializeField] private MachineManager machineManager;
     [SerializeField] private Sprite[] voteScreens;
     [SerializeField] private string[] badFactText;
     [SerializeField] private string[] goodFactText;
@@ -77,6 +82,7 @@ public class VotingSystem : MonoBehaviour
     [Header("Emissions Meter")]
     [SerializeField] private EmissionsMeter emissionsMeter;
 
+    private bool SkipVoteProcess;
 
     void Start()
     {
@@ -91,9 +97,11 @@ public class VotingSystem : MonoBehaviour
         setRotationDuration = rotationDuration;
         voteProcessingSlider.value = 0;
         voteProcessingSlider.maxValue = voteProcessingTime;
+        SkipVoteProcess = false;
 
+        machineIndex = 0;
         table = plasticTableTop;
-        paperTableTop.SetActive(false);
+        //paperTableTop.SetActive(false);
         tableCollision = table.GetComponentInChildren<TableCollision>();
         bossNav = boss.GetComponent<Boss_Navigation>();
 
@@ -151,9 +159,10 @@ public class VotingSystem : MonoBehaviour
             ActivateButtons();
         }
 
-        if (processVote == true)
+        if (processVote == true && !SkipVoteProcess)
         {
             ProcessVote();
+            SkipVoteProcess = true;
         }
 
         if (letBossLeave == true)
@@ -164,9 +173,17 @@ public class VotingSystem : MonoBehaviour
 
         if (voteNumber == 1 && goodOption == true && selectedOption == true)
         {
-            // paperTableTop.SetActive(true)
-            // switch out plastic table with paper table (make it rise from the floor)
-            // set "table = paperTable" after the table is done rising from the floor
+            paperTableTop.SetActive(true);
+            machineManager.MoveMachineSwap(machineTypes[0]);
+            table = paperTableTop;
+        }
+        else if(voteNumber == 2 && goodOption == true && selectedOption == true)
+        {
+            // pacakging size stuff here
+        }
+        else if (voteNumber == 4 && goodOption == true && selectedOption == true)
+        {
+            // pacakging speed stuff here
         }
 
         MonitorScreenManager();
@@ -283,14 +300,26 @@ public class VotingSystem : MonoBehaviour
 
     IEnumerator ProcessingVote()
     {
-        if (voteProcessingSlider.value <= voteProcessingTime)
+        float time = 0;
+        
+        while (time < voteProcessingTime)
         {
-            voteProcessingSlider.value += Time.deltaTime;
+            voteProcessingSlider.value = Mathf.Lerp(0, voteProcessingTime, time / voteProcessingTime);
+            time += Time.deltaTime;
+            yield return null;
         }
 
-        yield return new WaitForSeconds(voteProcessingTime);
+
+        /*while (voteProcessingSlider.value <= voteProcessingTime)
+        {
+            voteProcessingSlider.value += Time.deltaTime;
+            yield return null;
+        }*/
+
+        //yield return new WaitForSeconds(voteProcessingTime);
 
         processVote = false;
+        SkipVoteProcess = false;
         voteProcessingSlider.value = 0;
         PickVotingOption();
     }
@@ -334,23 +363,28 @@ public class VotingSystem : MonoBehaviour
                 goodOdds += 10;
                 badOdds -= 10;
                 pickedGood = false;
+                machineManager.MoveMachineSwap(machineTypes[machineIndex]);
+                print("SWAPPING OUT MACHINE");
             }
             else if (pickedBad == true)
             {
                 badOdds += 10;
                 goodOdds -= 10;
                 pickedBad = false;
+                print("NOT SWAPPING OUT MACHINE");
             }
+
         }
+        ++machineIndex;
 
         if (goodOption == true)
         {
-            emissionsMeter.emissionsValue -= 10;
+            emissionsMeter.UpdateEmissionsMeter(-10);
         }
 
         if (badOption == true)
         {
-            emissionsMeter.emissionsValue += 10;
+            emissionsMeter.UpdateEmissionsMeter(10);
         }
     }
 
