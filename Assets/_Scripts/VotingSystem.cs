@@ -15,6 +15,8 @@ public class VotingSystem : MonoBehaviour
     public bool activateVoting;
     [HideInInspector]
     public bool votingReady;
+    [HideInInspector]
+    public bool gameOver;
 
     // Voting Odds //
     private int goodOdds;
@@ -49,6 +51,7 @@ public class VotingSystem : MonoBehaviour
     [SerializeField] private float voteProcessingTime;
     [SerializeField] private Slider voteProcessingSlider;
     [SerializeField] private GameObject voteTitle;          /// remove later if the vote title is in the vote screen
+    private TextMeshProUGUI voteTitleText;
     [SerializeField] private string[] voteTitles;           /// remove later if the vote title is in the vote screen
     [SerializeField] private MachineType[] machineTypes;  /// order of which the machines are going to be swapped out 
     [SerializeField] private int machineIndex;
@@ -70,13 +73,17 @@ public class VotingSystem : MonoBehaviour
     [Header("Monitor Screens")]
     [SerializeField] private GameObject blankScreen;
     [SerializeField] private GameObject voteScreen;
+    private Image voteScreenImage;
     [SerializeField] private GameObject processingScreen;
     [SerializeField] private GameObject goodScreen;
+    private TextMeshProUGUI goodScreenText;
     [SerializeField] private GameObject badScreen;
+    private TextMeshProUGUI badScreenText;
 
     [Header("DialogueSystem")]
-    [SerializeField]
-    private PromptManager promptManager;
+    [SerializeField] private PromptManager promptManager;
+    [SerializeField] private float closingMessageLength = 5f;
+    // SERIALIZE CLOSING DIALOGUE HERE
 
     [Header("Boss Navigation")]
     [SerializeField] private GameObject boss;
@@ -87,20 +94,23 @@ public class VotingSystem : MonoBehaviour
     [Header("Emissions Meter")]
     [SerializeField] private EmissionsMeter emissionsMeter;
 
+    [Header("End Game")]
+    [SerializeField] private Sprite endScreen;
+    [SerializeField, TextArea(1, 2)] private string endTitle;
+
     [Header("Box Sizing")]
-    [SerializeField]
-    private List<Box> boxes;
+    [SerializeField] private List<Box> boxes;
     private bool boxSizeChanged = false;
 
     [Header("Conveyors")]
-    [SerializeField]
-    private List<Conveyor> conveyors;
+    [SerializeField] private List<Conveyor> conveyors;
     private bool conveyorSpeedChanged = false;
 
     private bool SkipVoteProcess;
 
     void Start()
     {
+        gameOver = false;
         voteSwitched = false;
         selectedOption = false;
         goodOption = false;
@@ -113,6 +123,11 @@ public class VotingSystem : MonoBehaviour
         voteProcessingSlider.value = 0;
         voteProcessingSlider.maxValue = voteProcessingTime;
         SkipVoteProcess = false;
+
+        voteScreenImage = voteScreen.GetComponent<Image>();
+        voteTitleText = voteTitle.GetComponent<TextMeshProUGUI>();
+        goodScreenText = goodScreen.GetComponent<TextMeshProUGUI>();
+        badScreenText = badScreen.GetComponent<TextMeshProUGUI>();
 
         machineIndex = 0;
         table = plasticTableTop;
@@ -162,7 +177,7 @@ public class VotingSystem : MonoBehaviour
             deactivateVoting = true;
         }
 
-        if (activateVoting == true)
+        if (activateVoting == true && !gameOver)
         {
             ActivateVoting();
         }
@@ -212,12 +227,26 @@ public class VotingSystem : MonoBehaviour
 
     public void ActivateVoting()
     {
-        if (voteSwitched == false)
+        if (gameOver) return;
+
+        // checking for game over
+        if(voteNumber >= voteTitles.Length) // past the quotas, enter end game state
         {
-            voteScreen.GetComponent<Image>().sprite = voteScreens[voteNumber];
-            voteTitle.GetComponent<TextMeshProUGUI>().text = voteTitles[voteNumber];
-            goodScreen.GetComponent<TextMeshProUGUI>().text = goodFactText[voteNumber];
-            badScreen.GetComponent<TextMeshProUGUI>().text = badFactText[voteNumber];
+            gameOver = true;
+            FindObjectOfType<Count_Manager>().gameIsDone();
+            voteScreenImage.sprite = endScreen;
+            voteTitleText.text = endTitle;
+
+            // play boss ending dialogue here
+            StartCoroutine("DelayBossClosing");
+        }
+
+        else if (voteSwitched == false)
+        {
+            voteScreenImage.sprite = voteScreens[voteNumber];
+            voteTitleText.text = voteTitles[voteNumber];
+            goodScreenText.text = goodFactText[voteNumber];
+            badScreenText.text = badFactText[voteNumber];
 
             StartCoroutine("DelayButtonActivate");
 
@@ -425,6 +454,12 @@ public class VotingSystem : MonoBehaviour
         letBossLeave = true;
 
         promptManager.NextPrompt();
+    }
+
+    IEnumerator DelayBossClosing()
+    {
+        yield return new WaitForSeconds(closingMessageLength);
+        letBossLeave = true;
     }
 
     public void MonitorScreenManager()
