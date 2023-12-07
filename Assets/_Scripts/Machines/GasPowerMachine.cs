@@ -29,7 +29,10 @@ public class GasPowerMachine : BaseMachine
     private Rigidbody doorRB;
 
     [SerializeField]
-    private GasCan gasCan; 
+    private GasCan gasCan;
+
+    [SerializeField]
+    private bool testing;
 
     private void Awake()
     {
@@ -58,7 +61,7 @@ public class GasPowerMachine : BaseMachine
 
     public void StartMachine()
     {
-        if (!wasFueled) return;
+        if (!wasFueled && !testing) return;
         print("STARTING");
         ToggleVisualEffect(true);
         ToggleConveyors(true);
