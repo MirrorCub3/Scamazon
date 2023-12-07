@@ -5,6 +5,10 @@ using UnityEngine.AI;
 
 public class Boss_Navigation : MonoBehaviour
 {
+    private FMOD.Studio.EventInstance instance;
+
+    public FMODUnity.EventReference fmodEvent;
+
     [SerializeField] private bool playIntro = true;
     [SerializeField] private Transform[] points;
     [SerializeField] private GameObject monitor;
@@ -21,6 +25,7 @@ public class Boss_Navigation : MonoBehaviour
 
     void Start()
     {
+        instance = FMODUnity.RuntimeManager.CreateInstance(fmodEvent);
         agent = GetComponent<NavMeshAgent>();
         pIndex = 0;
         moving = false;
@@ -103,8 +108,10 @@ public class Boss_Navigation : MonoBehaviour
     private IEnumerator playingIntro()
     {
         // PLAY INTRO VOICE LINE
+
         print("the tutorial voices are being played");  // KANOA, remove this print statement when the voice line is working
-        yield return new WaitForSeconds(36f); // change to be how long the boss should stay
+        instance.start();
+        yield return new WaitForSeconds(36.37f); // change to be how long the boss should stay
         moveBackward();
         playIntro = false;
     }
