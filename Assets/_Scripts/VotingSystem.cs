@@ -54,8 +54,8 @@ public class VotingSystem : MonoBehaviour
     [SerializeField] private int machineIndex;
     [SerializeField] private MachineManager machineManager;
     [SerializeField] private Sprite[] voteScreens;
-    [SerializeField] private string[] badFactText;
-    [SerializeField] private string[] goodFactText;
+    [SerializeField, TextArea(1, 10)] private string[] badFactText;
+    [SerializeField, TextArea(1, 10)] private string[] goodFactText;
 
     [Header("Voting Table")]
     [Tooltip("time (in seconds) it takes for the table to flip over to the voting side")]
@@ -355,11 +355,11 @@ public class VotingSystem : MonoBehaviour
     {
         if (goodOdds >= badOdds && selectedOption == false)
         {
-            if (randomNumber < goodOdds)
+            if (randomNumber <= goodOdds)
             {
                 goodOption = true;
             }
-            else if (randomNumber >= goodOdds)
+            else if (randomNumber > goodOdds)
             {
                 badOption = true;
             }
@@ -370,11 +370,11 @@ public class VotingSystem : MonoBehaviour
 
         if (badOdds > goodOdds && selectedOption == false)
         {
-            if (randomNumber < badOdds)
+            if (randomNumber <= badOdds)
             {
                 badOption = true;
             }
-            else if (randomNumber >= badOdds)
+            else if (randomNumber > badOdds)
             {
                 goodOption = true;
             }

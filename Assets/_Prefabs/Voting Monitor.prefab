@@ -152,7 +152,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1515325269058938194
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1022,11 +1022,11 @@ MonoBehaviour:
   voteProcessingSlider: {fileID: 1119796534512725236}
   voteTitle: {fileID: 63434297021483937}
   voteTitles:
-  - VOTE FOR PACKAGING TYPE
-  - VOTE FOR PACKING SIZE
-  - VOTE FOR POWER TYPE
-  - VOTE FOR SHIPPING FREQUENCY
-  - VOTE FOR WASTE MANAGEMENT
+  - Paper VS Plastic Packaging
+  - Smaller VS Larger Boxes
+  - Solar VS Fossil Fuels
+  - Slower VS Faster Shipping
+  - Recycling VS Landfill
   machineTypes: 0000000005000000010000000500000002000000
   machineIndex: 0
   machineManager: {fileID: 0}
@@ -1037,19 +1037,40 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 29c2121a34fc54a4a870fa5c3366cf07, type: 3}
   - {fileID: 21300000, guid: 29c2121a34fc54a4a870fa5c3366cf07, type: 3}
   badFactText:
-  - BAD FACT #1
-  - BAD FACT #2
-  - BAD FACT #3
-  - BAD FACT #4
-  - BAD FACT #5
+  - "Two thousand turtles just died from your decision. They\u2019ve been chomping
+    on plastic bags in the ocean thinking it\u2019s jellyfish. \nPlastic packaging
+    can harm the environment because plastic takes a long time to degrade. When plastic
+    does degrade, small plastic molecules release toxins which can infiltrate waterways
+    and damage delicate ecosystems such as the ocean."
+  - It would have cost nothing and not a lot of extra effort to implement this change.
+    I guess you just like bigger, more useless boxes.
+  - "The Earth\u2019s global surface temperature is currently on average 1.5 degrees
+    Fahrenheit warmer than the 20th century average of 57 degrees. \nThis inaction
+    will contribute to the increase in global temperatures :D"
+  - Trucks, planes, and the transportation sector account for the biggest portion
+    of greenhouse gas emissions. Congrats! This will still be true after today.
+  - Not recycling results in an increase in landfills, which cause pollutants and
+    harm the health of people who live near them. Such harmful effects include cancer,
+    asthma, lung infections, congenital defects, and more :D
   goodFactText:
-  - GOOD FACT #1
-  - GOOD FACT #2
-  - GOOD FACT #3
-  - GOOD FACT #4
-  - GOOD FACT #5
+  - 'Paper packaging is easily recyclable and is 100% biodegradable.!
+
+    Although
+    it costs more than plastic packaging, it is worth it because turtles in the ocean
+    will have less plastic to eat and that is good.'
+  - "Although cardboard boxes are 100% biodegradable and can be recycled multiple
+    times, it is still better to optimize packing size so there is less cardboard
+    used in the first place. \nGreat job!"
+  - "Solar power is unlimited since we get it from the sun and is also cheaper than
+    using natural gas. \nIt is infinitely better for the environment as well since
+    there are no methane emissions that cause the planet to warm up. "
+  - "Slowing down shipping can reduce carbon emissions since there are less trucks
+    and planes delivering items to consumers. \nTrucks, planes, and the transportation
+    sector account for the biggest portion of greenhouse gas emissions."
+  - "Recycling has huge environmental benefits as well as economic ones. It conserves
+    natural resources as well as reducing the amount of waste and greenhouse gasses
+    produced. \nIn fact, recycling does not necessarily hinder profit at all."
   rotationDuration: 1
-  coffee: {fileID: 0}
   plasticTableTop: {fileID: 0}
   paperTableTop: {fileID: 0}
   blankScreen: {fileID: 7911842901865697334}
@@ -1057,9 +1078,21 @@ MonoBehaviour:
   processingScreen: {fileID: 6460335196984643153}
   goodScreen: {fileID: 363403515410435865}
   badScreen: {fileID: 3199455792530064455}
+  promptManager: {fileID: 0}
   boss: {fileID: 0}
   bossLeaveDelay: 2
   emissionsMeter: {fileID: 3292065232856126280}
+  boxes:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  conveyors:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &6460335196984643153
 GameObject:
   m_ObjectHideFlags: 0

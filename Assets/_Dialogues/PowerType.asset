@@ -60,18 +60,18 @@ MonoBehaviour:
   bad_GoodResult:
     audioClip:
       Guid:
-        Data1: -1461482524
-        Data2: 1307270878
-        Data3: 1840714376
-        Data4: 1214126391
-      Path: event:/SFX/3a 6
-    length: 3.1
-  bad_BadResult:
-    audioClip:
-      Guid:
         Data1: -548023524
         Data2: 1243099308
         Data3: 592485521
         Data4: 539675434
       Path: event:/SFX/3a 7
     length: 3.5
+  bad_BadResult:
+    audioClip:
+      Guid:
+        Data1: -1461482524
+        Data2: 1307270878
+        Data3: 1840714376
+        Data4: 1214126391
+      Path: event:/SFX/3a 6
+    length: 3.1
