@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeOnStart: 1
-  fadeDuration: 3
+  fadeDuration: 2
   canvasGroup: {fileID: 8101241846026405964}
 --- !u!1 &1980170166555247277
 GameObject:
