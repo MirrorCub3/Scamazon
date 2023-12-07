@@ -5,6 +5,7 @@ using TMPro;
 using Image = UnityEngine.UI.Image;
 using UnityEngine.Device;
 using static UnityEngine.GraphicsBuffer;
+using System.Collections.Generic;
 
 public class VotingSystem : MonoBehaviour
 {
@@ -82,6 +83,16 @@ public class VotingSystem : MonoBehaviour
     [Header("Emissions Meter")]
     [SerializeField] private EmissionsMeter emissionsMeter;
 
+    [Header("Box Sizing")]
+    [SerializeField]
+    private List<Box> boxes;
+    private bool boxSizeChanged = false;
+
+    [Header("Conveyors")]
+    [SerializeField]
+    private List<Conveyor> conveyors;
+    private bool conveyorSpeedChanged = false;
+
     private bool SkipVoteProcess;
 
     void Start()
@@ -106,6 +117,9 @@ public class VotingSystem : MonoBehaviour
         bossNav = boss.GetComponent<Boss_Navigation>();
 
         letBossLeave = false;
+
+        boxSizeChanged = false;
+        conveyorSpeedChanged = false;
     }
 
     void Update()
@@ -177,14 +191,17 @@ public class VotingSystem : MonoBehaviour
             //machineManager.MoveMachineSwap(machineTypes[0]);
             table = paperTableTop;
         }
-        else if (voteNumber == 2 && goodOption == true && selectedOption == true)
+        else if (voteNumber == 2 && !boxSizeChanged && goodOption == true && selectedOption == true)
         {
             // pacakging size stuff here
-            print("PACKING SIZE CHANGE! ============================================ ");
+            foreach (Box b in boxes)
+                b.SetEndScale();
+            boxSizeChanged = true;
         }
-        else if (voteNumber == 4 && goodOption == true && selectedOption == true)
+        else if (voteNumber == 4 && !conveyorSpeedChanged && goodOption == true && selectedOption == true)
         {
-            print("PACKING SPEED CHANGE! ============================================ ");
+            foreach (Conveyor c in conveyors)
+                c.slowDownConveyor();
         }
         
         MonitorScreenManager();
