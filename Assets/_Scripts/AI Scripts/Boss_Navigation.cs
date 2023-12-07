@@ -13,6 +13,8 @@ public class Boss_Navigation : MonoBehaviour
     private NavMeshAgent agent;
     private bool moving;
     private bool forward;
+    private bool introIsPlaying;
+    private bool waitForVote;
     
     private VotingSystem votingSystem;
 
@@ -25,6 +27,8 @@ public class Boss_Navigation : MonoBehaviour
         pIndex = 0;
         moving = false;
         forward = true;
+        introIsPlaying = false;
+        waitForVote = false;
         Count_Manager.bossAppears += moveForward;
 
         votingSystem = monitor.GetComponent<VotingSystem>();
@@ -45,9 +49,9 @@ public class Boss_Navigation : MonoBehaviour
 
                         } else {
                             moving = false;
-                            if (playIntro) {  // play intro if necessary
+                            if (playIntro && !waitForVote) {  // play intro if necessary
                                 StartCoroutine(playingIntro());
-                            }else if(forward) {  // start the voting if arrived to player
+                            }else if(forward && !introIsPlaying) {  // start the voting if arrived to player
                                 votingSystem.activateVoting = true;
                             }
                             forward = !forward;
@@ -77,11 +81,16 @@ public class Boss_Navigation : MonoBehaviour
 
     private void moveForward()
     {
-        pIndex = 0;
+        if (!playIntro) {
+            pIndex = 0;
+            gameObject.transform.rotation = points[0].rotation;
+            gameObject.transform.position = points[0].position;
+        } else if (introIsPlaying) {
+            waitForVote = true;
+        }
+        
         moving = true;
         forward = true;
-        gameObject.transform.rotation = points[0].rotation;
-        gameObject.transform.position = points[0].position;
     }
 
     public void moveBackward()
@@ -96,17 +105,24 @@ public class Boss_Navigation : MonoBehaviour
 
     private IEnumerator startIntro()
     {
-        yield return new WaitForSeconds(3f); // Wait for machines to rise
+        yield return new WaitForSeconds(4f); // Wait for machines to rise
         moveForward();
     }
 
     private IEnumerator playingIntro()
     {
+        introIsPlaying = true;
         // PLAY INTRO VOICE LINE
-        print("the tutorial voices are being played");  // KANOA, remove this print statement when the voice line is working
         yield return new WaitForSeconds(36f); // change to be how long the boss should stay
-        moveBackward();
-        playIntro = false;
+        if (waitForVote) {
+            playIntro = false;
+            moving = true;
+            forward = true;
+        } else {
+            moveBackward();
+            playIntro = false;
+        }
+        introIsPlaying = false;
     }
 
 }
