@@ -46,7 +46,7 @@ public class VotingSystem : MonoBehaviour
     [Tooltip("delay (in seconds) before the table flips back over to the packing side")]
     [SerializeField] private int voteDeactivateDelay;
     [Tooltip("time (in seconds) it takes for the vote to process before displaying the actual selection on screen")]
-    [SerializeField] private int voteProcessingTime;
+    [SerializeField] private float voteProcessingTime;
     [SerializeField] private Slider voteProcessingSlider;
     [SerializeField] private GameObject voteTitle;          /// remove later if the vote title is in the vote screen
     [SerializeField] private string[] voteTitles;           /// remove later if the vote title is in the vote screen
@@ -60,12 +60,12 @@ public class VotingSystem : MonoBehaviour
     [Header("Voting Table")]
     [Tooltip("time (in seconds) it takes for the table to flip over to the voting side")]
     [SerializeField] private float rotationDuration;
-    [SerializeField] private GameObject coffee;
+    //[SerializeField] private GameObject coffee;
     ///[SerializeField] private GameObject pen;
     [SerializeField] private GameObject plasticTableTop;
     [SerializeField] private GameObject paperTableTop;
     private GameObject table;
-    private TableCollision tableCollision;
+    //private TableCollision tableCollision;
 
     [Header("Monitor Screens")]
     [SerializeField] private GameObject blankScreen;
@@ -81,7 +81,7 @@ public class VotingSystem : MonoBehaviour
     [Header("Boss Navigation")]
     [SerializeField] private GameObject boss;
     [Tooltip("delay (in seconds) before the boss leaves after the vote is processed")]
-    [SerializeField] private int bossLeaveDelay;
+    [SerializeField] private float bossLeaveDelay;
     private Boss_Navigation bossNav;
 
     [Header("Emissions Meter")]
@@ -117,7 +117,7 @@ public class VotingSystem : MonoBehaviour
         machineIndex = 0;
         table = plasticTableTop;
         //paperTableTop.SetActive(false);
-        tableCollision = table.GetComponentInChildren<TableCollision>();
+        //tableCollision = table.GetComponentInChildren<TableCollision>();
         bossNav = boss.GetComponent<Boss_Navigation>();
 
         letBossLeave = false;
@@ -240,11 +240,11 @@ public class VotingSystem : MonoBehaviour
         {
             rotationDuration -= Time.deltaTime;
 
-            if (tableCollision.coffeeOn == true)
-            {
-                coffee.GetComponent<Rigidbody>().isKinematic = true;
-                coffee.transform.RotateAround(table.transform.position, Vector3.right, Time.deltaTime * rotationSpeed);
-            }
+            //if (tableCollision.coffeeOn == true)
+            //{
+            //    coffee.GetComponent<Rigidbody>().isKinematic = true;
+            //    coffee.transform.RotateAround(table.transform.position, Vector3.right, Time.deltaTime * rotationSpeed);
+            //}
 
             // rotates table on x-axis at specified degrees per second
             table.transform.RotateAround(table.transform.position, Vector3.right, Time.deltaTime * rotationSpeed);
@@ -267,6 +267,7 @@ public class VotingSystem : MonoBehaviour
         votingReady = false;
 
         StartCoroutine("DelayDeactivate");
+        promptManager.PlayGood();
     }
 
     public void PlayerPickedBadOption()
@@ -277,6 +278,7 @@ public class VotingSystem : MonoBehaviour
         votingReady = false;
 
         StartCoroutine("DelayDeactivate");
+        promptManager.PlayBad();
     }
 
     IEnumerator DelayDeactivate()
@@ -292,11 +294,11 @@ public class VotingSystem : MonoBehaviour
         {
             rotationDuration -= Time.deltaTime;
 
-            if (tableCollision.coffeeOn == true)
-            {
-                coffee.GetComponent<Rigidbody>().isKinematic = true;
-                coffee.transform.RotateAround(table.transform.position, Vector3.left, Time.deltaTime * rotationSpeed);
-            }
+            //if (tableCollision.coffeeOn == true)
+            //{
+            //    coffee.GetComponent<Rigidbody>().isKinematic = true;
+            //    coffee.transform.RotateAround(table.transform.position, Vector3.left, Time.deltaTime * rotationSpeed);
+            //}
 
             // rotates table on x-axis at specified degrees per second
             table.transform.RotateAround(table.transform.position, Vector3.left, Time.deltaTime * rotationSpeed);
@@ -307,7 +309,7 @@ public class VotingSystem : MonoBehaviour
             rotationDuration = setRotationDuration;
             table.transform.eulerAngles = new Vector3(0, 0, 0);
 
-            coffee.GetComponent<Rigidbody>().isKinematic = false;
+            //coffee.GetComponent<Rigidbody>().isKinematic = false;
 
             voteNumber++;
             voteSwitched = false;
@@ -324,7 +326,9 @@ public class VotingSystem : MonoBehaviour
     IEnumerator ProcessingVote()
     {
         float time = 0;
-        
+        voteProcessingTime = promptManager.GetCurrNodeLength(); // gets length of current line to time prompt processing
+        voteProcessingSlider.maxValue = voteProcessingTime;
+
         while (time < voteProcessingTime)
         {
             voteProcessingSlider.value = Mathf.Lerp(0, voteProcessingTime, time / voteProcessingTime);
@@ -361,7 +365,7 @@ public class VotingSystem : MonoBehaviour
             }
 
             selectedOption = true;
-            StartCoroutine("DelayBossLeave");
+            //StartCoroutine("DelayBossLeave");
         }
 
         if (badOdds > goodOdds && selectedOption == false)
@@ -376,7 +380,7 @@ public class VotingSystem : MonoBehaviour
             }
 
             selectedOption = true;
-            StartCoroutine("DelayBossLeave");
+            //StartCoroutine("DelayBossLeave");
         }
 
         if (voteNumber > 0)
@@ -400,21 +404,27 @@ public class VotingSystem : MonoBehaviour
             emissionsMeter.UpdateEmissionsMeter(-10);
             machineManager.MoveMachineSwap(machineTypes[machineIndex]);
             print("SWAPPING OUT MACHINE");
+            promptManager.PlayGood();
         }
 
         if (badOption == true)
         {
             emissionsMeter.UpdateEmissionsMeter(10);
+            promptManager.PlayBad();
         }
+        StartCoroutine("DelayBossLeave");
         ++machineIndex;
-        promptManager.NextPrompt();
+        //promptManager.NextPrompt();
     }
 
     IEnumerator DelayBossLeave()
     {
+        bossLeaveDelay = promptManager.GetCurrNodeLength();
         yield return new WaitForSeconds(bossLeaveDelay);
 
         letBossLeave = true;
+
+        promptManager.NextPrompt();
     }
 
     public void MonitorScreenManager()

@@ -20,7 +20,7 @@ MonoBehaviour:
         Data3: 1823259040
         Data4: -1184040704
       Path: event:/SFX/1a
-  openingPromptLength: 12.098
+    length: 12.098
   goodChoice:
     audioClip:
       Guid:
@@ -29,6 +29,7 @@ MonoBehaviour:
         Data3: 1475079056
         Data4: -1441988762
       Path: event:/SFX/1b
+    length: 3.3
   good_GoodResult:
     audioClip:
       Guid:
@@ -37,6 +38,7 @@ MonoBehaviour:
         Data3: 729423245
         Data4: -588424286
       Path: event:/SFX/1c
+    length: 2.95
   good_BadResult:
     audioClip:
       Guid:
@@ -45,6 +47,7 @@ MonoBehaviour:
         Data3: -1166949975
         Data4: -1785325485
       Path: event:/1h
+    length: 2.089
   badChoice:
     audioClip:
       Guid:
@@ -53,6 +56,7 @@ MonoBehaviour:
         Data3: 546626231
         Data4: -1347967368
       Path: event:/SFX/1d
+    length: 3.8
   bad_GoodResult:
     audioClip:
       Guid:
@@ -61,6 +65,7 @@ MonoBehaviour:
         Data3: -1915222631
         Data4: -1068441827
       Path: event:/SFX/1e
+    length: 3.214
   bad_BadResult:
     audioClip:
       Guid:
@@ -69,3 +74,4 @@ MonoBehaviour:
         Data3: 1692825532
         Data4: 671561032
       Path: event:/SFX/1f
+    length: 5.183
