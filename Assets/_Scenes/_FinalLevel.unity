@@ -1127,6 +1127,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 198202262}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &202486498 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8748433791850529575, guid: 94426169fe138504abb436a52349bc8d,
+    type: 3}
+  m_PrefabInstance: {fileID: 918153830}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e601cf28e9702c945abe3b90e7f51974, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &208541155
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14083,7 +14095,7 @@ PrefabInstance:
     - target: {fileID: 4076926800069880541, guid: 9d1edc0992293ac4bbcb7bfd6319a625,
         type: 3}
       propertyPath: packQuota
-      value: 10
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5543167622929328193, guid: 9d1edc0992293ac4bbcb7bfd6319a625,
         type: 3}
@@ -20517,6 +20529,16 @@ PrefabInstance:
       propertyPath: boss
       value: 
       objectReference: {fileID: 449871614}
+    - target: {fileID: 2042942652224918643, guid: b49522469178db646b85676515814895,
+        type: 3}
+      propertyPath: gasCan
+      value: 
+      objectReference: {fileID: 917231409}
+    - target: {fileID: 2042942652224918643, guid: b49522469178db646b85676515814895,
+        type: 3}
+      propertyPath: solarLever
+      value: 
+      objectReference: {fileID: 202486498}
     - target: {fileID: 2042942652224918643, guid: b49522469178db646b85676515814895,
         type: 3}
       propertyPath: paperTableTop

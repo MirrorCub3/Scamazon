@@ -6,6 +6,7 @@ using Image = UnityEngine.UI.Image;
 using UnityEngine.Device;
 using static UnityEngine.GraphicsBuffer;
 using System.Collections.Generic;
+using UnityEngine.XR.Content.Interaction;
 
 public class VotingSystem : MonoBehaviour
 {
@@ -106,6 +107,10 @@ public class VotingSystem : MonoBehaviour
     [Header("Conveyors")]
     [SerializeField] private List<Conveyor> conveyors;
     private bool conveyorSpeedChanged = false;
+
+    [Header("Stop Machines")]
+    [SerializeField] private GasCan gasCan; // reset when the vote happens
+    [SerializeField] private XRLever solarLever; // also turn this off when voting happens
 
     private bool SkipVoteProcess;
 
@@ -228,6 +233,8 @@ public class VotingSystem : MonoBehaviour
 
     public void ActivateVoting()
     {
+        gasCan.ResetGasCan();
+        solarLever.SetValue(false);
         startScreen.SetActive(false);
         if (gameOver) return;
 
