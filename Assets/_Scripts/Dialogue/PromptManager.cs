@@ -39,6 +39,11 @@ public class PromptManager : MonoBehaviour
         source.start();
     }
 
+    public void Stop()
+    {
+        source.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+    }
+
     public void PlayGood() // Call when any "good option" is selected (player or rng result)
     {
         source.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);

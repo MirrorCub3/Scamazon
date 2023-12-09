@@ -19,6 +19,8 @@ public class Box : PooledItem
     private GameObject closedBox;
     public bool IsPacked { get; private set; }
 
+    public string itemName;
+
     private void Start()
     {
         Reset();
@@ -50,6 +52,7 @@ public class Box : PooledItem
         PackableItem item = other.GetComponent<PackableItem>();
         if (item && item.IsWrapped) // only if the object is packable
         {
+            itemName = item.name;
             Pack();
             item.RepoolObject();
         }

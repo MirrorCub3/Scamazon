@@ -133,4 +133,10 @@ public class Boss_Navigation : MonoBehaviour
         introIsPlaying = false;
     }
 
+    public void StopIntro()
+    {
+        StopAllCoroutines();
+        instance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+    }
+
 }
