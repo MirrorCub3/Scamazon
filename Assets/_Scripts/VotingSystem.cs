@@ -71,6 +71,7 @@ public class VotingSystem : MonoBehaviour
     //private TableCollision tableCollision;
 
     [Header("Monitor Screens")]
+    [SerializeField] private GameObject startScreen;
     [SerializeField] private GameObject blankScreen;
     [SerializeField] private GameObject voteScreen;
     private Image voteScreenImage;
@@ -227,6 +228,7 @@ public class VotingSystem : MonoBehaviour
 
     public void ActivateVoting()
     {
+        startScreen.SetActive(false);
         if (gameOver) return;
 
         // checking for game over
@@ -498,7 +500,7 @@ public class VotingSystem : MonoBehaviour
         {
             voteTitle.SetActive(true);
             voteScreen.SetActive(true);
-            blankScreen.SetActive(false);
+            //blankScreen.SetActive(false);
             goodScreen.SetActive(false);
             badScreen.SetActive(false);
         }
