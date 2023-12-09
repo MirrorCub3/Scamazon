@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Packing Instructions
+  m_text: Pack to Fill Quota
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -483,7 +483,7 @@ RectTransform:
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: -5, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -591,9 +591,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 70e97af30bf698844adddeb943cbeb12, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 37e6ed477f83a38459acb7709dca1721, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -769,6 +769,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 4759030606074570818}
   - {fileID: 3810181626191782047}
   - {fileID: 9210432407522599477}
   - {fileID: 9153614135277162143}
@@ -1016,6 +1017,7 @@ MonoBehaviour:
   deactivateVoting: 0
   activateVoting: 0
   votingReady: 0
+  gameOver: 0
   buttonActivateDelay: 5
   voteDeactivateDelay: 1
   voteProcessingTime: 2
@@ -1031,11 +1033,11 @@ MonoBehaviour:
   machineIndex: 0
   machineManager: {fileID: 0}
   voteScreens:
-  - {fileID: 21300000, guid: 29c2121a34fc54a4a870fa5c3366cf07, type: 3}
-  - {fileID: 21300000, guid: 29c2121a34fc54a4a870fa5c3366cf07, type: 3}
-  - {fileID: 21300000, guid: 29c2121a34fc54a4a870fa5c3366cf07, type: 3}
-  - {fileID: 21300000, guid: 29c2121a34fc54a4a870fa5c3366cf07, type: 3}
-  - {fileID: 21300000, guid: 29c2121a34fc54a4a870fa5c3366cf07, type: 3}
+  - {fileID: 21300000, guid: 1720714340e00e542a5cf64b82e31d05, type: 3}
+  - {fileID: 21300000, guid: 37e6ed477f83a38459acb7709dca1721, type: 3}
+  - {fileID: 21300000, guid: c7add3e5fd59db84bb113cc8cbacdf1e, type: 3}
+  - {fileID: 21300000, guid: 8880799dce9f3424caf8d132b2b6f364, type: 3}
+  - {fileID: 21300000, guid: db6ab3965def73049bcd689dc817d4a1, type: 3}
   badFactText:
   - "Two thousand turtles just died from your decision. They\u2019ve been chomping
     on plastic bags in the ocean thinking it\u2019s jellyfish. \nPlastic packaging
@@ -1079,9 +1081,12 @@ MonoBehaviour:
   goodScreen: {fileID: 363403515410435865}
   badScreen: {fileID: 3199455792530064455}
   promptManager: {fileID: 0}
+  closingMessageLength: 5
   boss: {fileID: 0}
   bossLeaveDelay: 2
   emissionsMeter: {fileID: 3292065232856126280}
+  endScreen: {fileID: 21300000, guid: e61a1eeaa703b6849adb23fc853ed043, type: 3}
+  endTitle: Clock out, or don't.
   boxes:
   - {fileID: 0}
   - {fileID: 0}
@@ -1093,6 +1098,82 @@ MonoBehaviour:
   conveyors:
   - {fileID: 0}
   - {fileID: 0}
+--- !u!1 &5981897687815780390
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4759030606074570818}
+  - component: {fileID: 7116905890883513349}
+  - component: {fileID: 8945664142024056474}
+  m_Layer: 0
+  m_Name: BG
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &4759030606074570818
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5981897687815780390}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2372480947403130053}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &7116905890883513349
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5981897687815780390}
+  m_CullTransparentMesh: 1
+--- !u!114 &8945664142024056474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5981897687815780390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.88235295}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: e61a1eeaa703b6849adb23fc853ed043, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &6460335196984643153
 GameObject:
   m_ObjectHideFlags: 0
@@ -1148,7 +1229,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6460335196984643153}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -1369,7 +1450,7 @@ GameObject:
   - component: {fileID: 4802149615666465510}
   - component: {fileID: 4456598873106403209}
   m_Layer: 0
-  m_Name: Blank Screen
+  m_Name: StartScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1410,7 +1491,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7911842901865697334}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -1713,7 +1794,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Processing Vote
+  m_text: 'Processing Employee Votes
 
     Please Wait........'
   m_isRightToLeft: 0
