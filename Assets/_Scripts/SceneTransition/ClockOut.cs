@@ -43,15 +43,18 @@ public class ClockOut : MonoBehaviour
             }
             promptManager.Stop();
             bossDialogue.StopIntro();
-            StartCoroutine(StopAllSFX());
         }
     }
-    private IEnumerator StopAllSFX()
+    private void StopAllSFX()
     {
-        yield return new WaitForSeconds(1.5f);
         foreach(Bus b in buses)
         {
             b.stopAllEvents(STOP_MODE.IMMEDIATE);
         }
+    }
+
+    private void OnDisable()
+    {
+        StopAllSFX();
     }
 }
