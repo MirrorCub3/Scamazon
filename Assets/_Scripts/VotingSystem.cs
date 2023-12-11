@@ -85,7 +85,8 @@ public class VotingSystem : MonoBehaviour
     [Header("DialogueSystem")]
     [SerializeField] private PromptManager promptManager;
     [SerializeField] private float closingMessageLength = 5f;
-    // SERIALIZE CLOSING DIALOGUE HERE
+    [SerializeField] private FMODUnity.EventReference fmodEvent;
+    private FMOD.Studio.EventInstance instance;
 
     [Header("Boss Navigation")]
     [SerializeField] private GameObject boss;
@@ -140,6 +141,7 @@ public class VotingSystem : MonoBehaviour
         //paperTableTop.SetActive(false);
         //tableCollision = table.GetComponentInChildren<TableCollision>();
         bossNav = boss.GetComponent<Boss_Navigation>();
+        instance = FMODUnity.RuntimeManager.CreateInstance(fmodEvent);
 
         letBossLeave = false;
 
@@ -246,7 +248,7 @@ public class VotingSystem : MonoBehaviour
             voteScreenImage.sprite = endScreen;
             voteTitleText.text = endTitle;
 
-            // play boss ending dialogue here
+            instance.start();
             StartCoroutine("DelayBossClosing");
         }
 
