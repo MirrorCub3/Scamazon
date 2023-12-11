@@ -6,6 +6,18 @@ using Image = UnityEngine.UI.Image;
 
 public class EmissionsMeter : MonoBehaviour
 {
+    private FMOD.Studio.EventInstance instance;
+
+    public FMODUnity.EventReference fmodEvent;
+
+    private FMOD.Studio.EventInstance ding;
+
+    public FMODUnity.EventReference fmodEventDing;
+
+
+    [SerializeField] [Range(0f,1f)]
+    private float para;
+
     [HideInInspector]
     public float emissionsValue;
 
@@ -19,6 +31,8 @@ public class EmissionsMeter : MonoBehaviour
 
     void Start()
     {
+        instance = FMODUnity.RuntimeManager.CreateInstance(fmodEvent);
+        ding = FMODUnity.RuntimeManager.CreateInstance(fmodEventDing);
         emissionsValue = 50;
         emissionsMeterSlider.value = emissionsValue;
         fill.color = emissionsMeterGradient.Evaluate(emissionsValue/100);
@@ -28,6 +42,7 @@ public class EmissionsMeter : MonoBehaviour
     public void UpdateEmissionsMeter(float value)
     {
         emissionsValue += value;
+        para = value > 0 ? 0 : 1;
         StartCoroutine("AdjustEmissionsMeter");
         CheckEmissionsMeterGradientAmount();
     }
@@ -36,7 +51,7 @@ public class EmissionsMeter : MonoBehaviour
     {
         float value = emissionsMeterSlider.value;
         Color currentColor = fill.color;
-
+        instance.start();
         float elapsedTime = 0f;
         while(elapsedTime < timeToAdjustMeter)
         {
@@ -46,12 +61,19 @@ public class EmissionsMeter : MonoBehaviour
 
             fill.color = Color.Lerp(currentColor, newEmissionsMeterColor, (elapsedTime / timeToAdjustMeter));
 
+            para += para == 0 ? Time.deltaTime : -Time.deltaTime;
+
+            instance.setParameterByName("FillingUp",para);
+
             yield return null;
         }
+        ding.start();
     }
 
     private void CheckEmissionsMeterGradientAmount()
     {
         newEmissionsMeterColor = emissionsMeterGradient.Evaluate(emissionsValue/100);
+        
+
     }
 }

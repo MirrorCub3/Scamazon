@@ -10,6 +10,14 @@ using UnityEngine.XR.Content.Interaction;
 
 public class VotingSystem : MonoBehaviour
 {
+    private FMOD.Studio.EventInstance goodSound;
+
+    public FMODUnity.EventReference good;
+
+    private FMOD.Studio.EventInstance badSound;
+
+    public FMODUnity.EventReference bad;
+
     [HideInInspector]
     public bool deactivateVoting;
     [HideInInspector]
@@ -117,6 +125,8 @@ public class VotingSystem : MonoBehaviour
 
     void Start()
     {
+        goodSound = FMODUnity.RuntimeManager.CreateInstance(good);
+        badSound = FMODUnity.RuntimeManager.CreateInstance(bad);
         gameOver = false;
         voteSwitched = false;
         selectedOption = false;
@@ -301,6 +311,7 @@ public class VotingSystem : MonoBehaviour
 
     public void PlayerPickedGoodOption()
     {
+        goodSound.start();
         randomNumber = Random.Range(0, 100);
         processVote = true;
         pickedGood = true;
@@ -312,6 +323,7 @@ public class VotingSystem : MonoBehaviour
 
     public void PlayerPickedBadOption()
     {
+        badSound.start();
         randomNumber = Random.Range(0, 100);
         processVote = true;
         pickedBad = true;

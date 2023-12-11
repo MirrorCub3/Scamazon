@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class PackableItem : PooledItem
 {
+    [Header("FMOD Stuff")]
+    private FMOD.Studio.EventInstance instance;
+
+    public FMODUnity.EventReference fmodEvent;
+
     [Header("Pack Variables")]
     [SerializeField]
     private Wrapper myWrapper;
@@ -13,6 +18,7 @@ public class PackableItem : PooledItem
     private void Start()
     {
         IsWrapped = false;
+        instance = FMODUnity.RuntimeManager.CreateInstance(fmodEvent);
     }
 
     protected override void OnTriggerEnter(Collider other)
@@ -21,6 +27,7 @@ public class PackableItem : PooledItem
 
         if (other.tag.Equals("Wrapping") && !IsWrapped) 
         {
+            instance.start();
             IsWrapped = true;
             WrappingMaterial wrappingMat = other.GetComponent<WrappingMaterial>();
             myWrapper.Wrap(wrappingMat.GetWrappingMat());

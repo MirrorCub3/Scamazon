@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class Box : PooledItem
 {
+    [SerializeField] [Range(0f,1f)]
+    private float para;
+    private FMOD.Studio.EventInstance instance;
+
+    public FMODUnity.EventReference fmodEvent;
+
+    private bool soundOff;
+
     [Header("Box Variables")]
 
     [SerializeField]
@@ -25,6 +33,11 @@ public class Box : PooledItem
     {
         Reset();
         transform.localScale = Vector3.one * startScale;
+        instance = FMODUnity.RuntimeManager.CreateInstance(fmodEvent);
+    }
+    private void OnEnable()
+    {
+    StartCoroutine("SoundOff");
     }
 
     public void SetEndScale()
@@ -44,6 +57,7 @@ public class Box : PooledItem
         IsPacked = false;
         openBox.SetActive(true);
         closedBox.SetActive(false);
+        
     }
 
     protected override void OnTriggerEnter(Collider other)
@@ -56,5 +70,21 @@ public class Box : PooledItem
             Pack();
             item.RepoolObject();
         }
+    }
+        private void OnCollisionEnter(Collision other)
+    {
+        if (!soundOff) {
+            para = other.relativeVelocity.magnitude / 7;
+            para = para > 1f ? 1: para;
+            instance.setParameterByName("Velocity",para);
+            instance.setParameterByName("Pitch",Random.Range(0f,1.5f));
+            instance.start();
+        }
+    }
+    IEnumerator SoundOff()
+    {
+        soundOff = true;
+        yield return new WaitForSeconds(0.3f);
+        soundOff = false;
     }
 }
