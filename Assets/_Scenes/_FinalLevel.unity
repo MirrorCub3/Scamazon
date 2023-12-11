@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -686,6 +686,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Box (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8495281948880657743, guid: 2659d3f0834249f49b32a9fc104c3a57,
+        type: 3}
+      propertyPath: fmodEvent.Path
+      value: event:/SFX/BoxHit
+      objectReference: {fileID: 0}
+    - target: {fileID: 8495281948880657743, guid: 2659d3f0834249f49b32a9fc104c3a57,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data1
+      value: 1725125463
+      objectReference: {fileID: 0}
+    - target: {fileID: 8495281948880657743, guid: 2659d3f0834249f49b32a9fc104c3a57,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data2
+      value: 1258368240
+      objectReference: {fileID: 0}
+    - target: {fileID: 8495281948880657743, guid: 2659d3f0834249f49b32a9fc104c3a57,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data3
+      value: -493877616
+      objectReference: {fileID: 0}
+    - target: {fileID: 8495281948880657743, guid: 2659d3f0834249f49b32a9fc104c3a57,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data4
+      value: -1713115380
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5038,6 +5063,31 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4904972678195513232, guid: e9f5d6dee00b5564dbdf7121a0a84e9d,
+        type: 3}
+      propertyPath: fmodEvent.Path
+      value: event:/Wrap
+      objectReference: {fileID: 0}
+    - target: {fileID: 4904972678195513232, guid: e9f5d6dee00b5564dbdf7121a0a84e9d,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data1
+      value: -576637
+      objectReference: {fileID: 0}
+    - target: {fileID: 4904972678195513232, guid: e9f5d6dee00b5564dbdf7121a0a84e9d,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data2
+      value: 1077057217
+      objectReference: {fileID: 0}
+    - target: {fileID: 4904972678195513232, guid: e9f5d6dee00b5564dbdf7121a0a84e9d,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data3
+      value: 618705041
+      objectReference: {fileID: 0}
+    - target: {fileID: 4904972678195513232, guid: e9f5d6dee00b5564dbdf7121a0a84e9d,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data4
+      value: -559784224
+      objectReference: {fileID: 0}
     - target: {fileID: 5827581415133974420, guid: e9f5d6dee00b5564dbdf7121a0a84e9d,
         type: 3}
       propertyPath: m_Mass
@@ -5193,6 +5243,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483214431439468649, guid: 5414f13c5fbbea246bf05955c1486e62,
+        type: 3}
+      propertyPath: fmodEvent.Path
+      value: event:/Wrap
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483214431439468649, guid: 5414f13c5fbbea246bf05955c1486e62,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data1
+      value: -576637
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483214431439468649, guid: 5414f13c5fbbea246bf05955c1486e62,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data2
+      value: 1077057217
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483214431439468649, guid: 5414f13c5fbbea246bf05955c1486e62,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data3
+      value: 618705041
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483214431439468649, guid: 5414f13c5fbbea246bf05955c1486e62,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data4
+      value: -559784224
       objectReference: {fileID: 0}
     - target: {fileID: 6884300981663114425, guid: 5414f13c5fbbea246bf05955c1486e62,
         type: 3}
@@ -5837,6 +5912,31 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 559553730}
     m_Modifications:
+    - target: {fileID: 281877562330276384, guid: 1bbf4beeb484cbe479815bc6829f090a,
+        type: 3}
+      propertyPath: fmodEvent.Path
+      value: event:/Wrap
+      objectReference: {fileID: 0}
+    - target: {fileID: 281877562330276384, guid: 1bbf4beeb484cbe479815bc6829f090a,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data1
+      value: -576637
+      objectReference: {fileID: 0}
+    - target: {fileID: 281877562330276384, guid: 1bbf4beeb484cbe479815bc6829f090a,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data2
+      value: 1077057217
+      objectReference: {fileID: 0}
+    - target: {fileID: 281877562330276384, guid: 1bbf4beeb484cbe479815bc6829f090a,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data3
+      value: 618705041
+      objectReference: {fileID: 0}
+    - target: {fileID: 281877562330276384, guid: 1bbf4beeb484cbe479815bc6829f090a,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data4
+      value: -559784224
+      objectReference: {fileID: 0}
     - target: {fileID: 2506303042650598288, guid: 1bbf4beeb484cbe479815bc6829f090a,
         type: 3}
       propertyPath: m_CollisionDetection
@@ -6935,6 +7035,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8907229074776649971, guid: 8f3ef4442614a5044add77bf818b277b,
+        type: 3}
+      propertyPath: fmodEvent.Path
+      value: event:/Wrap
+      objectReference: {fileID: 0}
+    - target: {fileID: 8907229074776649971, guid: 8f3ef4442614a5044add77bf818b277b,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data1
+      value: -576637
+      objectReference: {fileID: 0}
+    - target: {fileID: 8907229074776649971, guid: 8f3ef4442614a5044add77bf818b277b,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data2
+      value: 1077057217
+      objectReference: {fileID: 0}
+    - target: {fileID: 8907229074776649971, guid: 8f3ef4442614a5044add77bf818b277b,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data3
+      value: 618705041
+      objectReference: {fileID: 0}
+    - target: {fileID: 8907229074776649971, guid: 8f3ef4442614a5044add77bf818b277b,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data4
+      value: -559784224
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9442,6 +9567,31 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 2004997279}
+    - target: {fileID: 1076372125053558852, guid: dc28bd6f2c7346c4cbd9949b07557d7c,
+        type: 3}
+      propertyPath: fmodEvent.Path
+      value: event:/Wrap
+      objectReference: {fileID: 0}
+    - target: {fileID: 1076372125053558852, guid: dc28bd6f2c7346c4cbd9949b07557d7c,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data1
+      value: -576637
+      objectReference: {fileID: 0}
+    - target: {fileID: 1076372125053558852, guid: dc28bd6f2c7346c4cbd9949b07557d7c,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data2
+      value: 1077057217
+      objectReference: {fileID: 0}
+    - target: {fileID: 1076372125053558852, guid: dc28bd6f2c7346c4cbd9949b07557d7c,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data3
+      value: 618705041
+      objectReference: {fileID: 0}
+    - target: {fileID: 1076372125053558852, guid: dc28bd6f2c7346c4cbd9949b07557d7c,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data4
+      value: -559784224
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10958,6 +11108,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7016795272949010754, guid: 5cb7fb306c47117488275a16fdfd985b,
+        type: 3}
+      propertyPath: fmodEvent.Path
+      value: event:/Wrap
+      objectReference: {fileID: 0}
+    - target: {fileID: 7016795272949010754, guid: 5cb7fb306c47117488275a16fdfd985b,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data1
+      value: -576637
+      objectReference: {fileID: 0}
+    - target: {fileID: 7016795272949010754, guid: 5cb7fb306c47117488275a16fdfd985b,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data2
+      value: 1077057217
+      objectReference: {fileID: 0}
+    - target: {fileID: 7016795272949010754, guid: 5cb7fb306c47117488275a16fdfd985b,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data3
+      value: 618705041
+      objectReference: {fileID: 0}
+    - target: {fileID: 7016795272949010754, guid: 5cb7fb306c47117488275a16fdfd985b,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data4
+      value: -559784224
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11152,6 +11327,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Colliders.Array.size
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7398983136249349107, guid: a1330a2f18d45a743a591ee8d9a81745,
+        type: 3}
+      propertyPath: fmodEvent.Path
+      value: event:/Wrap
+      objectReference: {fileID: 0}
+    - target: {fileID: 7398983136249349107, guid: a1330a2f18d45a743a591ee8d9a81745,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data1
+      value: -576637
+      objectReference: {fileID: 0}
+    - target: {fileID: 7398983136249349107, guid: a1330a2f18d45a743a591ee8d9a81745,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data2
+      value: 1077057217
+      objectReference: {fileID: 0}
+    - target: {fileID: 7398983136249349107, guid: a1330a2f18d45a743a591ee8d9a81745,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data3
+      value: 618705041
+      objectReference: {fileID: 0}
+    - target: {fileID: 7398983136249349107, guid: a1330a2f18d45a743a591ee8d9a81745,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data4
+      value: -559784224
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12394,6 +12594,31 @@ PrefabInstance:
       propertyPath: myConveyor
       value: 
       objectReference: {fileID: 1347878702}
+    - target: {fileID: 8547264237365916109, guid: 96ad1d06ca9bb224caa00124ad75f515,
+        type: 3}
+      propertyPath: fmodEvent.Path
+      value: event:/Wrap
+      objectReference: {fileID: 0}
+    - target: {fileID: 8547264237365916109, guid: 96ad1d06ca9bb224caa00124ad75f515,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data1
+      value: -576637
+      objectReference: {fileID: 0}
+    - target: {fileID: 8547264237365916109, guid: 96ad1d06ca9bb224caa00124ad75f515,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data2
+      value: 1077057217
+      objectReference: {fileID: 0}
+    - target: {fileID: 8547264237365916109, guid: 96ad1d06ca9bb224caa00124ad75f515,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data3
+      value: 618705041
+      objectReference: {fileID: 0}
+    - target: {fileID: 8547264237365916109, guid: 96ad1d06ca9bb224caa00124ad75f515,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data4
+      value: -559784224
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12650,6 +12875,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Box
+      objectReference: {fileID: 0}
+    - target: {fileID: 8495281948880657743, guid: 2659d3f0834249f49b32a9fc104c3a57,
+        type: 3}
+      propertyPath: fmodEvent.Path
+      value: event:/SFX/BoxHit
+      objectReference: {fileID: 0}
+    - target: {fileID: 8495281948880657743, guid: 2659d3f0834249f49b32a9fc104c3a57,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data1
+      value: 1725125463
+      objectReference: {fileID: 0}
+    - target: {fileID: 8495281948880657743, guid: 2659d3f0834249f49b32a9fc104c3a57,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data2
+      value: 1258368240
+      objectReference: {fileID: 0}
+    - target: {fileID: 8495281948880657743, guid: 2659d3f0834249f49b32a9fc104c3a57,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data3
+      value: -493877616
+      objectReference: {fileID: 0}
+    - target: {fileID: 8495281948880657743, guid: 2659d3f0834249f49b32a9fc104c3a57,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data4
+      value: -1713115380
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13978,6 +14228,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Box (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8495281948880657743, guid: 2659d3f0834249f49b32a9fc104c3a57,
+        type: 3}
+      propertyPath: fmodEvent.Path
+      value: event:/SFX/BoxHit
+      objectReference: {fileID: 0}
+    - target: {fileID: 8495281948880657743, guid: 2659d3f0834249f49b32a9fc104c3a57,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data1
+      value: 1725125463
+      objectReference: {fileID: 0}
+    - target: {fileID: 8495281948880657743, guid: 2659d3f0834249f49b32a9fc104c3a57,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data2
+      value: 1258368240
+      objectReference: {fileID: 0}
+    - target: {fileID: 8495281948880657743, guid: 2659d3f0834249f49b32a9fc104c3a57,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data3
+      value: -493877616
+      objectReference: {fileID: 0}
+    - target: {fileID: 8495281948880657743, guid: 2659d3f0834249f49b32a9fc104c3a57,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data4
+      value: -1713115380
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16660,6 +16935,31 @@ PrefabInstance:
       propertyPath: m_Tangents.Array.data[270].z
       value: NaN
       objectReference: {fileID: 0}
+    - target: {fileID: 5384978305462496057, guid: f189208be80282e4cb13252179741584,
+        type: 3}
+      propertyPath: fmodEvent.Path
+      value: event:/Wrap
+      objectReference: {fileID: 0}
+    - target: {fileID: 5384978305462496057, guid: f189208be80282e4cb13252179741584,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data1
+      value: -576637
+      objectReference: {fileID: 0}
+    - target: {fileID: 5384978305462496057, guid: f189208be80282e4cb13252179741584,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data2
+      value: 1077057217
+      objectReference: {fileID: 0}
+    - target: {fileID: 5384978305462496057, guid: f189208be80282e4cb13252179741584,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data3
+      value: 618705041
+      objectReference: {fileID: 0}
+    - target: {fileID: 5384978305462496057, guid: f189208be80282e4cb13252179741584,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data4
+      value: -559784224
+      objectReference: {fileID: 0}
     - target: {fileID: 7036759142164008862, guid: f189208be80282e4cb13252179741584,
         type: 3}
       propertyPath: m_Name
@@ -16764,6 +17064,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Box (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8495281948880657743, guid: 2659d3f0834249f49b32a9fc104c3a57,
+        type: 3}
+      propertyPath: fmodEvent.Path
+      value: event:/SFX/BoxHit
+      objectReference: {fileID: 0}
+    - target: {fileID: 8495281948880657743, guid: 2659d3f0834249f49b32a9fc104c3a57,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data1
+      value: 1725125463
+      objectReference: {fileID: 0}
+    - target: {fileID: 8495281948880657743, guid: 2659d3f0834249f49b32a9fc104c3a57,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data2
+      value: 1258368240
+      objectReference: {fileID: 0}
+    - target: {fileID: 8495281948880657743, guid: 2659d3f0834249f49b32a9fc104c3a57,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data3
+      value: -493877616
+      objectReference: {fileID: 0}
+    - target: {fileID: 8495281948880657743, guid: 2659d3f0834249f49b32a9fc104c3a57,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data4
+      value: -1713115380
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18594,6 +18919,31 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 559553730}
     m_Modifications:
+    - target: {fileID: 1688077945534713643, guid: 6fca9fa47d9d1014b8632f7ae26f0789,
+        type: 3}
+      propertyPath: fmodEvent.Path
+      value: event:/Wrap
+      objectReference: {fileID: 0}
+    - target: {fileID: 1688077945534713643, guid: 6fca9fa47d9d1014b8632f7ae26f0789,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data1
+      value: -576637
+      objectReference: {fileID: 0}
+    - target: {fileID: 1688077945534713643, guid: 6fca9fa47d9d1014b8632f7ae26f0789,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data2
+      value: 1077057217
+      objectReference: {fileID: 0}
+    - target: {fileID: 1688077945534713643, guid: 6fca9fa47d9d1014b8632f7ae26f0789,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data3
+      value: 618705041
+      objectReference: {fileID: 0}
+    - target: {fileID: 1688077945534713643, guid: 6fca9fa47d9d1014b8632f7ae26f0789,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data4
+      value: -559784224
+      objectReference: {fileID: 0}
     - target: {fileID: 8169520561329429757, guid: 6fca9fa47d9d1014b8632f7ae26f0789,
         type: 3}
       propertyPath: m_RootOrder
@@ -18960,6 +19310,31 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 559553730}
     m_Modifications:
+    - target: {fileID: 3579117888506892307, guid: 0baaa00877e9505408ee0ad719905775,
+        type: 3}
+      propertyPath: fmodEvent.Path
+      value: event:/Wrap
+      objectReference: {fileID: 0}
+    - target: {fileID: 3579117888506892307, guid: 0baaa00877e9505408ee0ad719905775,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data1
+      value: -576637
+      objectReference: {fileID: 0}
+    - target: {fileID: 3579117888506892307, guid: 0baaa00877e9505408ee0ad719905775,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data2
+      value: 1077057217
+      objectReference: {fileID: 0}
+    - target: {fileID: 3579117888506892307, guid: 0baaa00877e9505408ee0ad719905775,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data3
+      value: 618705041
+      objectReference: {fileID: 0}
+    - target: {fileID: 3579117888506892307, guid: 0baaa00877e9505408ee0ad719905775,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data4
+      value: -559784224
+      objectReference: {fileID: 0}
     - target: {fileID: 8387812288188927564, guid: 0baaa00877e9505408ee0ad719905775,
         type: 3}
       propertyPath: m_RootOrder
@@ -19465,6 +19840,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Box (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8495281948880657743, guid: 2659d3f0834249f49b32a9fc104c3a57,
+        type: 3}
+      propertyPath: fmodEvent.Path
+      value: event:/SFX/BoxHit
+      objectReference: {fileID: 0}
+    - target: {fileID: 8495281948880657743, guid: 2659d3f0834249f49b32a9fc104c3a57,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data1
+      value: 1725125463
+      objectReference: {fileID: 0}
+    - target: {fileID: 8495281948880657743, guid: 2659d3f0834249f49b32a9fc104c3a57,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data2
+      value: 1258368240
+      objectReference: {fileID: 0}
+    - target: {fileID: 8495281948880657743, guid: 2659d3f0834249f49b32a9fc104c3a57,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data3
+      value: -493877616
+      objectReference: {fileID: 0}
+    - target: {fileID: 8495281948880657743, guid: 2659d3f0834249f49b32a9fc104c3a57,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data4
+      value: -1713115380
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20064,6 +20464,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Box (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 8495281948880657743, guid: 2659d3f0834249f49b32a9fc104c3a57,
+        type: 3}
+      propertyPath: fmodEvent.Path
+      value: event:/SFX/BoxHit
+      objectReference: {fileID: 0}
+    - target: {fileID: 8495281948880657743, guid: 2659d3f0834249f49b32a9fc104c3a57,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data1
+      value: 1725125463
+      objectReference: {fileID: 0}
+    - target: {fileID: 8495281948880657743, guid: 2659d3f0834249f49b32a9fc104c3a57,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data2
+      value: 1258368240
+      objectReference: {fileID: 0}
+    - target: {fileID: 8495281948880657743, guid: 2659d3f0834249f49b32a9fc104c3a57,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data3
+      value: -493877616
+      objectReference: {fileID: 0}
+    - target: {fileID: 8495281948880657743, guid: 2659d3f0834249f49b32a9fc104c3a57,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data4
+      value: -1713115380
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20477,6 +20902,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Box (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 8495281948880657743, guid: 2659d3f0834249f49b32a9fc104c3a57,
+        type: 3}
+      propertyPath: fmodEvent.Path
+      value: event:/SFX/BoxHit
+      objectReference: {fileID: 0}
+    - target: {fileID: 8495281948880657743, guid: 2659d3f0834249f49b32a9fc104c3a57,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data1
+      value: 1725125463
+      objectReference: {fileID: 0}
+    - target: {fileID: 8495281948880657743, guid: 2659d3f0834249f49b32a9fc104c3a57,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data2
+      value: 1258368240
+      objectReference: {fileID: 0}
+    - target: {fileID: 8495281948880657743, guid: 2659d3f0834249f49b32a9fc104c3a57,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data3
+      value: -493877616
+      objectReference: {fileID: 0}
+    - target: {fileID: 8495281948880657743, guid: 2659d3f0834249f49b32a9fc104c3a57,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data4
+      value: -1713115380
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20536,6 +20986,16 @@ PrefabInstance:
       objectReference: {fileID: 917231409}
     - target: {fileID: 2042942652224918643, guid: b49522469178db646b85676515814895,
         type: 3}
+      propertyPath: bad.Path
+      value: event:/BadChoice
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042942652224918643, guid: b49522469178db646b85676515814895,
+        type: 3}
+      propertyPath: good.Path
+      value: event:/SFX/Click
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042942652224918643, guid: b49522469178db646b85676515814895,
+        type: 3}
       propertyPath: solarLever
       value: 
       objectReference: {fileID: 202486498}
@@ -20551,9 +21011,54 @@ PrefabInstance:
       objectReference: {fileID: 1804791051}
     - target: {fileID: 2042942652224918643, guid: b49522469178db646b85676515814895,
         type: 3}
+      propertyPath: bad.Guid.Data1
+      value: 724851984
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042942652224918643, guid: b49522469178db646b85676515814895,
+        type: 3}
+      propertyPath: bad.Guid.Data2
+      value: 1267347559
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042942652224918643, guid: b49522469178db646b85676515814895,
+        type: 3}
+      propertyPath: bad.Guid.Data3
+      value: -52287843
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042942652224918643, guid: b49522469178db646b85676515814895,
+        type: 3}
+      propertyPath: bad.Guid.Data4
+      value: 646857943
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042942652224918643, guid: b49522469178db646b85676515814895,
+        type: 3}
+      propertyPath: fmodEvent.Path
+      value: event:/Closing
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042942652224918643, guid: b49522469178db646b85676515814895,
+        type: 3}
       propertyPath: machineManager
       value: 
       objectReference: {fileID: 1027238386}
+    - target: {fileID: 2042942652224918643, guid: b49522469178db646b85676515814895,
+        type: 3}
+      propertyPath: good.Guid.Data1
+      value: -1737754808
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042942652224918643, guid: b49522469178db646b85676515814895,
+        type: 3}
+      propertyPath: good.Guid.Data2
+      value: 1233884846
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042942652224918643, guid: b49522469178db646b85676515814895,
+        type: 3}
+      propertyPath: good.Guid.Data3
+      value: -1111953496
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042942652224918643, guid: b49522469178db646b85676515814895,
+        type: 3}
+      propertyPath: good.Guid.Data4
+      value: -584394281
+      objectReference: {fileID: 0}
     - target: {fileID: 2042942652224918643, guid: b49522469178db646b85676515814895,
         type: 3}
       propertyPath: plasticTableTop
@@ -20596,6 +21101,26 @@ PrefabInstance:
       objectReference: {fileID: 2131449009}
     - target: {fileID: 2042942652224918643, guid: b49522469178db646b85676515814895,
         type: 3}
+      propertyPath: fmodEvent.Guid.Data1
+      value: 1924940085
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042942652224918643, guid: b49522469178db646b85676515814895,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data2
+      value: 1195611074
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042942652224918643, guid: b49522469178db646b85676515814895,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data3
+      value: -211358846
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042942652224918643, guid: b49522469178db646b85676515814895,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data4
+      value: 1654895845
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042942652224918643, guid: b49522469178db646b85676515814895,
+        type: 3}
       propertyPath: conveyors.Array.data[0]
       value: 
       objectReference: {fileID: 561383041}
@@ -20604,6 +21129,56 @@ PrefabInstance:
       propertyPath: conveyors.Array.data[1]
       value: 
       objectReference: {fileID: 1347878702}
+    - target: {fileID: 3292065232856126280, guid: b49522469178db646b85676515814895,
+        type: 3}
+      propertyPath: fmodEvent.Path
+      value: event:/SFX/FillingUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3292065232856126280, guid: b49522469178db646b85676515814895,
+        type: 3}
+      propertyPath: fmodEventDing.Path
+      value: event:/SFX/Ding
+      objectReference: {fileID: 0}
+    - target: {fileID: 3292065232856126280, guid: b49522469178db646b85676515814895,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data1
+      value: 2032046344
+      objectReference: {fileID: 0}
+    - target: {fileID: 3292065232856126280, guid: b49522469178db646b85676515814895,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data2
+      value: 1172304255
+      objectReference: {fileID: 0}
+    - target: {fileID: 3292065232856126280, guid: b49522469178db646b85676515814895,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data3
+      value: 1944996012
+      objectReference: {fileID: 0}
+    - target: {fileID: 3292065232856126280, guid: b49522469178db646b85676515814895,
+        type: 3}
+      propertyPath: fmodEvent.Guid.Data4
+      value: 1748756166
+      objectReference: {fileID: 0}
+    - target: {fileID: 3292065232856126280, guid: b49522469178db646b85676515814895,
+        type: 3}
+      propertyPath: fmodEventDing.Guid.Data1
+      value: 1763434178
+      objectReference: {fileID: 0}
+    - target: {fileID: 3292065232856126280, guid: b49522469178db646b85676515814895,
+        type: 3}
+      propertyPath: fmodEventDing.Guid.Data2
+      value: 1119119903
+      objectReference: {fileID: 0}
+    - target: {fileID: 3292065232856126280, guid: b49522469178db646b85676515814895,
+        type: 3}
+      propertyPath: fmodEventDing.Guid.Data3
+      value: 1749629071
+      objectReference: {fileID: 0}
+    - target: {fileID: 3292065232856126280, guid: b49522469178db646b85676515814895,
+        type: 3}
+      propertyPath: fmodEventDing.Guid.Data4
+      value: -1061412235
+      objectReference: {fileID: 0}
     - target: {fileID: 3421891904503737938, guid: b49522469178db646b85676515814895,
         type: 3}
       propertyPath: m_RootOrder
