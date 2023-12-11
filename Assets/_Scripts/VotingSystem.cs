@@ -10,6 +10,14 @@ using UnityEngine.XR.Content.Interaction;
 
 public class VotingSystem : MonoBehaviour
 {
+    private FMOD.Studio.EventInstance goodSound;
+
+    public FMODUnity.EventReference good;
+
+    private FMOD.Studio.EventInstance badSound;
+
+    public FMODUnity.EventReference bad;
+
     [HideInInspector]
     public bool deactivateVoting;
     [HideInInspector]
@@ -85,7 +93,8 @@ public class VotingSystem : MonoBehaviour
     [Header("DialogueSystem")]
     [SerializeField] private PromptManager promptManager;
     [SerializeField] private float closingMessageLength = 5f;
-    // SERIALIZE CLOSING DIALOGUE HERE
+    [SerializeField] private FMODUnity.EventReference fmodEvent;
+    private FMOD.Studio.EventInstance instance;
 
     [Header("Boss Navigation")]
     [SerializeField] private GameObject boss;
@@ -116,6 +125,8 @@ public class VotingSystem : MonoBehaviour
 
     void Start()
     {
+        goodSound = FMODUnity.RuntimeManager.CreateInstance(good);
+        badSound = FMODUnity.RuntimeManager.CreateInstance(bad);
         gameOver = false;
         voteSwitched = false;
         selectedOption = false;
@@ -140,6 +151,7 @@ public class VotingSystem : MonoBehaviour
         //paperTableTop.SetActive(false);
         //tableCollision = table.GetComponentInChildren<TableCollision>();
         bossNav = boss.GetComponent<Boss_Navigation>();
+        instance = FMODUnity.RuntimeManager.CreateInstance(fmodEvent);
 
         letBossLeave = false;
 
@@ -246,7 +258,7 @@ public class VotingSystem : MonoBehaviour
             voteScreenImage.sprite = endScreen;
             voteTitleText.text = endTitle;
 
-            // play boss ending dialogue here
+            instance.start();
             StartCoroutine("DelayBossClosing");
         }
 
@@ -299,6 +311,7 @@ public class VotingSystem : MonoBehaviour
 
     public void PlayerPickedGoodOption()
     {
+        goodSound.start();
         randomNumber = Random.Range(0, 100);
         processVote = true;
         pickedGood = true;
@@ -310,6 +323,7 @@ public class VotingSystem : MonoBehaviour
 
     public void PlayerPickedBadOption()
     {
+        badSound.start();
         randomNumber = Random.Range(0, 100);
         processVote = true;
         pickedBad = true;

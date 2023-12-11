@@ -150,6 +150,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 5175647463975217895}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 04f9a8e880cfb3646b96a887db85c11d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5576461683592018269}
   m_SourcePrefab: {fileID: 100100000, guid: 04f9a8e880cfb3646b96a887db85c11d, type: 3}
 --- !u!1 &6783645214472522589 stripped
 GameObject:
@@ -353,3 +357,34 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+--- !u!114 &5576461683592018269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6783645214472522589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 768253844
+      Data2: 1260083812
+      Data3: 164175535
+      Data4: 181711853
+    Path: event:/SFX/TapeStop
+  Event: 
+  PlayEvent: 11
+  StopEvent: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
