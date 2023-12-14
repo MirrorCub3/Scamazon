@@ -64,4 +64,9 @@ public class Count_Manager : MonoBehaviour
     {
         bossHere = true;
     }
+
+    private void OnDestroy()
+    {
+        bossAppears -= bossIsHere;
+    }
 }

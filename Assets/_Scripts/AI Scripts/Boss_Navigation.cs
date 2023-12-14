@@ -139,4 +139,9 @@ public class Boss_Navigation : MonoBehaviour
         instance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
     }
 
+
+    private void OnDestroy()
+    {
+        Count_Manager.bossAppears -= moveForward;
+    }
 }
